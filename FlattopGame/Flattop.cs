@@ -122,11 +122,17 @@ namespace FlattopGame
 					break;
 				//влево
 				case Direction.Left:
-					// Продумать логику
+					if (_startPosX > _pictureWidth - (_pictureWidth - step))
+					{
+						_startPosX -= step;
+					}
 					break;
 				//вверх
 				case Direction.Up:
-					// Продумать логику
+					if (_startPosY > _pictureHeight - (_pictureHeight - step))
+					{
+						_startPosY -= step;
+					}
 					break;
 				//вниз
 				case Direction.Down:
