@@ -99,7 +99,10 @@ namespace FlattopGame
 		/// <param name="height">Высота картинки</param>
 		public void SetPosition(int x, int y, int width, int height)
 		{
-			// Продумать логику
+			_startPosX = x;
+			_startPosY = y;
+			_pictureWidth = width;
+			_pictureHeight = height;
 		}
 		/// <summary>
 		/// Изменение направления пермещения

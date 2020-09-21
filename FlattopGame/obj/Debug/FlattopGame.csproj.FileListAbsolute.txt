@@ -8,3 +8,13 @@ D:\Projects\C#\FlattopGame\FlattopGame\FlattopGame\obj\Debug\FlattopGame.csproj.
 D:\Projects\C#\FlattopGame\FlattopGame\FlattopGame\obj\Debug\FlattopGame.exe
 D:\Projects\C#\FlattopGame\FlattopGame\FlattopGame\obj\Debug\FlattopGame.pdb
 D:\Projects\C#\FlattopGame\FlattopGame\FlattopGame\obj\Debug\FlattopGame.FlattopForm.resources
+D:\Projects\C#\FlattopGame\FlattopGame\bin\Debug\FlattopGame.exe.config
+D:\Projects\C#\FlattopGame\FlattopGame\bin\Debug\FlattopGame.exe
+D:\Projects\C#\FlattopGame\FlattopGame\bin\Debug\FlattopGame.pdb
+D:\Projects\C#\FlattopGame\FlattopGame\obj\Debug\FlattopGame.csprojAssemblyReference.cache
+D:\Projects\C#\FlattopGame\FlattopGame\obj\Debug\FlattopGame.FlattopForm.resources
+D:\Projects\C#\FlattopGame\FlattopGame\obj\Debug\FlattopGame.Properties.Resources.resources
+D:\Projects\C#\FlattopGame\FlattopGame\obj\Debug\FlattopGame.csproj.GenerateResource.cache
+D:\Projects\C#\FlattopGame\FlattopGame\obj\Debug\FlattopGame.csproj.CoreCompileInputs.cache
+D:\Projects\C#\FlattopGame\FlattopGame\obj\Debug\FlattopGame.exe
+D:\Projects\C#\FlattopGame\FlattopGame\obj\Debug\FlattopGame.pdb
