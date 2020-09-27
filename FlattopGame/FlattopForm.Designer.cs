@@ -45,11 +45,10 @@
 			this.FlattopPictureBox.Size = new System.Drawing.Size(884, 461);
 			this.FlattopPictureBox.TabIndex = 0;
 			this.FlattopPictureBox.TabStop = false;
-			this.FlattopPictureBox.Click += new System.EventHandler(this.FlattopPictureBox_Click);
 			// 
 			// button5
 			// 
-			this.button5.Location = new System.Drawing.Point(13, 13);
+			this.button5.Location = new System.Drawing.Point(12, 12);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(103, 28);
 			this.button5.TabIndex = 6;
@@ -118,7 +117,6 @@
 			this.Controls.Add(this.FlattopPictureBox);
 			this.Name = "FlattopForm";
 			this.Text = "FlattopForm";
-			this.Load += new System.EventHandler(this.FlattopForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.FlattopPictureBox)).EndInit();
 			this.ResumeLayout(false);
 
