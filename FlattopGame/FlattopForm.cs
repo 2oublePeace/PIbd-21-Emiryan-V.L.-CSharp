@@ -56,5 +56,10 @@ namespace FlattopGame
 			}
 			Draw();
 		}
+
+		private void FlattopPictureBox_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -45,6 +45,7 @@
 			this.FlattopPictureBox.Size = new System.Drawing.Size(884, 461);
 			this.FlattopPictureBox.TabIndex = 0;
 			this.FlattopPictureBox.TabStop = false;
+			this.FlattopPictureBox.Click += new System.EventHandler(this.FlattopPictureBox_Click);
 			// 
 			// button5
 			// 
