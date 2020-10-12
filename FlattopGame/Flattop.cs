@@ -156,32 +156,32 @@ namespace FlattopGame
 			//границы автомобиля
 			int _startPosXtoInt = (int)_startPosX;
 			int _startPosYtoInt = (int)_startPosY;
-			int[] xPoints = { 
-				_startPosXtoInt, 
-				_startPosXtoInt + 0, 
+			int[] xPoints = {
+				_startPosXtoInt,
+				_startPosXtoInt + 15,
 				_startPosXtoInt + 30,
-				_startPosXtoInt + 150, 
+				_startPosXtoInt + 45,
+				_startPosXtoInt + 175, 
 				_startPosXtoInt + 320, 
-				_startPosXtoInt + 370, 
-				_startPosXtoInt + 370, 
 				_startPosXtoInt + 320, 
-				_startPosXtoInt + 150,
+				_startPosXtoInt + 175,
+				_startPosXtoInt + 45,
 				_startPosXtoInt + 30,
-				_startPosXtoInt + 0,
+				_startPosXtoInt + 15,
 				_startPosXtoInt
 			};
 			int[] yPoints = { 
-				_startPosYtoInt + 30, 
-				_startPosYtoInt + 30, 
+				_startPosYtoInt + 30,  
+				_startPosYtoInt + 15,  
+				_startPosYtoInt + 15,  
 				_startPosYtoInt, 
-				_startPosYtoInt, 
+				_startPosYtoInt,
 				_startPosYtoInt + 30, 
-				_startPosYtoInt + 30, 
-				_startPosYtoInt + 60, 
 				_startPosYtoInt + 60,
 				_startPosYtoInt + 90,
 				_startPosYtoInt + 90,
-				_startPosYtoInt + 60,
+				_startPosYtoInt + 75,
+				_startPosYtoInt + 75,
 				_startPosYtoInt + 60,
 			};
 
@@ -191,15 +191,25 @@ namespace FlattopGame
 				pointF[i] = new Point(xPoints[i], yPoints[i]);
 			}
 			g.DrawPolygon(pen, pointF);
-			Brush br = new SolidBrush(Color.Gray);
+			Brush br = new SolidBrush(Color.LightSlateGray);
 			g.FillPolygon(br, pointF);
+			br = new SolidBrush(Color.DarkGray);
+			g.FillRectangle(br, _startPosX, _startPosY + 30, 320, 30);
+			pen = new Pen(Color.Yellow);
+			PointF pointLine1 = new PointF(_startPosXtoInt, _startPosYtoInt + 45);
+			PointF pointLine2 = new PointF(_startPosXtoInt + 320, _startPosYtoInt + 45);
+			g.DrawLine(pen, pointLine1, pointLine2);
+			br = new SolidBrush(Color.Red);
+			g.FillRectangle(br, _startPosX + 85, _startPosY + 60, 60, 30);
+			br = new SolidBrush(Color.DarkGray);
+			g.FillEllipse(br, _startPosX + 85, _startPosY + 60, 30, 30);
 			// рисуем задний спойлер автомобиля
-			if (BackSpoiler)
+			/*if (BackSpoiler)
 			{
 				Brush spoiler = new SolidBrush(DopColor);
 				g.FillRectangle(spoiler, _startPosX - 5, _startPosY, 10, 50);
 				g.DrawRectangle(pen, _startPosX - 5, _startPosY, 10, 50);
-			}
+			}*/
 		}
 	}
 }
