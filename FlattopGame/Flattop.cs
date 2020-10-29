@@ -31,11 +31,11 @@ namespace FlattopGame
 		/// <summary>
 		/// Ширина отрисовки автомобиля
 		/// </summary>
-		private readonly int carWidth = 100;
+		private readonly int carWidth = 320;
 		/// <summary>
 		/// Высота отрисовки автомобиля
 		/// </summary>
-		private readonly int carHeight = 60;
+		private readonly int carHeight = 90;
 		/// <summary>
 		/// Максимальная скорость
 		/// </summary>
@@ -53,21 +53,17 @@ namespace FlattopGame
 		/// </summary>
 		public Color DopColor { private set; get; }
 		/// <summary>
-		/// Признак наличия переднего спойлера
+		/// Признак наличия передней пушки
 		/// </summary>
-		public bool FrontSpoiler { private set; get; }
+		public bool FrontGun { private set; get; }
 		/// <summary>
-		/// Признак наличия боковых спойлеров
+		/// Признак наличия посадочной площадки для вертолета
 		/// </summary>
-		public bool SideSpoiler { private set; get; }
+		public bool HelicopterStand { private set; get; }
 		/// <summary>
-		/// Признак наличия заднего спойлера
+		/// Признак наличия спутникого локатора
 		/// </summary>
-		public bool BackSpoiler { private set; get; }
-		/// <summary>
-		/// Признак наличия гоночной полосы
-		/// </summary>
-		public bool SportLine { private set; get; }
+		public bool SatelliteLocator { private set; get; }
 		/// <summary>
 		/// Конструктор
 		/// </summary>
@@ -79,16 +75,15 @@ namespace FlattopGame
 		/// <param name="sideSpoiler">Признак наличия боковых спойлеров</param>
 		/// <param name="backSpoiler">Признак наличия заднего спойлера</param>
 		/// <param name="sportLine">Признак наличия гоночной полосы</param>
-		public Flattop(int maxSpeed, float weight, Color mainColor, Color dopColor, bool frontSpoiler, bool sideSpoiler, bool backSpoiler, bool sportLine)
+		public Flattop(int maxSpeed, float weight, Color mainColor, Color dopColor, bool satelliteLocator, bool helicopterStand, bool frontGun)
 		{
 			MaxSpeed = maxSpeed;
 			Weight = weight;
 			MainColor = mainColor;
 			DopColor = dopColor;
-			FrontSpoiler = frontSpoiler;
-			SideSpoiler = sideSpoiler;
-			BackSpoiler = backSpoiler;
-			SportLine = sportLine;
+			SatelliteLocator = satelliteLocator;
+			HelicopterStand = helicopterStand;
+			FrontGun = frontGun;
 		}
 		/// <summary>
 		/// Установка позиции автомобиля
@@ -156,7 +151,7 @@ namespace FlattopGame
 			//границы автомобиля
 			int _startPosXtoInt = (int)_startPosX;
 			int _startPosYtoInt = (int)_startPosY;
-			int[] xPoints = {
+			int[] xSheepPoints = {
 				_startPosXtoInt,
 				_startPosXtoInt + 15,
 				_startPosXtoInt + 30,
@@ -170,7 +165,7 @@ namespace FlattopGame
 				_startPosXtoInt + 15,
 				_startPosXtoInt
 			};
-			int[] yPoints = { 
+			int[] ySheepPoints = { 
 				_startPosYtoInt + 30,  
 				_startPosYtoInt + 15,  
 				_startPosYtoInt + 15,  
@@ -185,31 +180,76 @@ namespace FlattopGame
 				_startPosYtoInt + 60,
 			};
 
-			PointF[] pointF = new PointF[12];
+			PointF[] sheepSpritePoints = new PointF[12];
 			for (int i = 0; i < 12; i++)
 			{
-				pointF[i] = new Point(xPoints[i], yPoints[i]);
+				sheepSpritePoints[i] = new Point(xSheepPoints[i], ySheepPoints[i]);
 			}
-			g.DrawPolygon(pen, pointF);
-			Brush br = new SolidBrush(Color.LightSlateGray);
-			g.FillPolygon(br, pointF);
-			br = new SolidBrush(Color.DarkGray);
+			g.DrawPolygon(pen, sheepSpritePoints);
+			Brush br = new SolidBrush(MainColor);
+			g.FillPolygon(br, sheepSpritePoints);
+			br = new SolidBrush(DopColor);
 			g.FillRectangle(br, _startPosX, _startPosY + 30, 320, 30);
-			pen = new Pen(Color.Yellow);
+			//Полоса
+			pen = new Pen(Color.White);
 			PointF pointLine1 = new PointF(_startPosXtoInt, _startPosYtoInt + 45);
 			PointF pointLine2 = new PointF(_startPosXtoInt + 320, _startPosYtoInt + 45);
 			g.DrawLine(pen, pointLine1, pointLine2);
-			br = new SolidBrush(Color.Red);
-			g.FillRectangle(br, _startPosX + 85, _startPosY + 60, 60, 30);
-			br = new SolidBrush(Color.DarkGray);
-			g.FillEllipse(br, _startPosX + 85, _startPosY + 60, 30, 30);
+			//Кабина
+			pen = new Pen(Color.Black);
+			g.DrawEllipse(pen, _startPosX + 85, _startPosY + 60, 60, 30);
+			br = new SolidBrush(Color.Gray);
+			g.FillEllipse(br, _startPosX + 85, _startPosY + 60, 60, 30);
 			// рисуем задний спойлер автомобиля
-			/*if (BackSpoiler)
+			if (FrontGun)
 			{
-				Brush spoiler = new SolidBrush(DopColor);
-				g.FillRectangle(spoiler, _startPosX - 5, _startPosY, 10, 50);
-				g.DrawRectangle(pen, _startPosX - 5, _startPosY, 10, 50);
-			}*/
+				int[] xGun1Points = {
+					_startPosXtoInt + 210,
+					_startPosXtoInt + 290,
+					_startPosXtoInt + 290
+				};
+				int[] yGun1Points = {
+					_startPosYtoInt + 7,
+					_startPosYtoInt + 7,
+					_startPosYtoInt + 23
+				};
+				PointF[] gunSpritePoints = new PointF[3];
+				for (int i = 0; i < 3; i++)
+				{
+					gunSpritePoints[i] = new Point(xGun1Points[i], yGun1Points[i]);
+				}
+				g.DrawPolygon(pen, gunSpritePoints);
+				br = new SolidBrush(DopColor);
+				g.FillPolygon(br, gunSpritePoints);
+				int[] yGun2Points = {
+					_startPosYtoInt + 82,
+					_startPosYtoInt + 82,
+					_startPosYtoInt + 66
+				};
+				for (int i = 0; i < 3; i++)
+				{
+					gunSpritePoints[i] = new Point(xGun1Points[i], yGun2Points[i]);
+				}
+				g.DrawPolygon(pen, gunSpritePoints);
+				g.FillPolygon(br, gunSpritePoints);
+			}
+			if (HelicopterStand)
+			{
+				br = new SolidBrush(Color.Black);
+				g.FillEllipse(br, _startPosX + 30, _startPosY, 45, 45);
+				pen = new Pen(Color.Black);
+				g.DrawEllipse(pen, _startPosX + 30, _startPosY, 45, 45);
+				g.DrawString("H", new Font("Arial", 24, FontStyle.Bold), Brushes.Yellow, _startPosX + 36, _startPosY + 5);
+			}
+			if (SatelliteLocator)
+			{
+				br = new SolidBrush(Color.White);
+				g.FillEllipse(br, _startPosX + 30, _startPosY + 50, 45, 45);
+				pen = new Pen(Color.Black);
+				g.DrawEllipse(pen, _startPosX + 30, _startPosY + 50, 45, 45);
+				g.DrawLine(pen, _startPosX + 37, _startPosY + 57, _startPosX + 68, _startPosY + 88);
+				g.DrawLine(pen, _startPosX + 37, _startPosY + 88, _startPosX + 68, _startPosY + 57);
+			}
 		}
 	}
 }
