@@ -339,5 +339,6 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-FlattopGame/obj/
-FlattopGame/bin/
+FlattopGame/obj
+FlattopGame/bin
+FlattopGame/Properties
