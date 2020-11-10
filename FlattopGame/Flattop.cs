@@ -50,6 +50,7 @@ namespace FlattopGame
 			Brush dopBrush = new SolidBrush(DopColor);
 			g.FillRectangle(dopBrush, _startPosX, _startPosY + 30, 320, 30);
 			// отрисуем сперва передние пушки авианосца (чтобы потом отрисовка авианосца на него "легла")
+			base.DrawTransport(g);
 			if (FrontGun)
 			{
 				int[] xGun1Points = {
