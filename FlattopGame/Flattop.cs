@@ -14,28 +14,27 @@ namespace FlattopGame
 		/// </summary>
 		public Color DopColor { private set; get; }
 		/// <summary>
-		/// Признак наличия переднего спойлера
+		/// Признак наличия передних пушек
 		/// </summary>
 		public bool FrontGun { private set; get; }
 		/// <summary>
-		/// Признак наличия боковых спойлеров
+		/// Признак наличия вертолетной площадки
 		/// </summary>
 		public bool HelicopterStand { private set; get; }
 		/// <summary>
-		/// Признак наличия заднего спойлера
+		/// Признак наличия спутникого локатора
 		/// </summary>
 		public bool SatelliteLocator { private set; get; }
 		/// <summary>
 		/// Конструктор
 		/// </summary>
 		/// <param name="maxSpeed">Максимальная скорость</param>
-		/// <param name="weight">Вес автомобиля</param>
+		/// <param name="weight">Вес авианосца</param>
 		/// <param name="mainColor">Основной цвет кузова</param>
 		/// <param name="dopColor">Дополнительный цвет</param>
-		/// <param name="frontSpoiler">Признак наличия переднего спойлера</param>
-		/// <param name="sideSpoiler">Признак наличия боковых спойлеров</param>
-		/// <param name="backSpoiler">Признак наличия заднего спойлера</param>
-		/// <param name="sportLine">Признак наличия гоночной полосы</param>
+		/// <param name="FrontGun">Признак наличия передних пушек</param>
+		/// <param name="HelicopterStand">Признак наличия вертолетной площадки</param>
+		/// <param name="SatelliteLocator">Признак наличия спутникого локатора</param>
 		public Flattop(int maxSpeed, float weight, Color mainColor, Color dopColor, bool frontGun, bool hellicopterStand, bool satelliteLocator) : base(maxSpeed, weight, mainColor, 100, 60)
 		{
 			DopColor = dopColor;
@@ -50,7 +49,7 @@ namespace FlattopGame
 			Pen pen = new Pen(Color.Black);
 			Brush dopBrush = new SolidBrush(DopColor);
 			g.FillRectangle(dopBrush, _startPosX, _startPosY + 30, 320, 30);
-			// отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка автомобиля на него "легла")
+			// отрисуем сперва передние пушки авианосца (чтобы потом отрисовка авианосца на него "легла")
 			if (FrontGun)
 			{
 				int[] xGun1Points = {

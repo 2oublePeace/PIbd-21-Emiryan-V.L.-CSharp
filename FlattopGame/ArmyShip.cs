@@ -10,19 +10,19 @@ namespace FlattopGame
 	public class ArmyShip : Vehicle
 	{
 		/// <summary>
-		/// Ширина отрисовки автомобиля
+		/// Ширина отрисовки армейского корабля
 		/// </summary>
 		protected readonly int carWidth = 90;
 		/// <summary>
-		/// Высота отрисовки автомобиля
+		/// Высота отрисовки армейского корабля
 		/// </summary>
 		protected readonly int carHeight = 50;
 		/// <summary>
 		/// Конструктор
 		/// </summary>
 		/// <param name="maxSpeed">Максимальная скорость</param>
-		/// <param name="weight">Вес автомобиля</param>
-		/// <param name="mainColor">Основной цвет кузова</param>
+		/// <param name="weight">Вес армейского корабля</param>
+		/// <param name="mainColor">Основной цвет армейского корабля</param>
 		public ArmyShip(int maxSpeed, float weight, Color mainColor)
 		{
 			MaxSpeed = maxSpeed;
@@ -30,20 +30,20 @@ namespace FlattopGame
 			MainColor = mainColor;
 		}
 		/// <summary>
-		/// Конструкторс изменением размеров машины
+		/// Конструкторс изменением размеров армейского корабля
 		/// </summary>
 		/// <param name="maxSpeed">Максимальная скорость</param>
-		/// <param name="weight">Вес автомобиля</param>
-		/// <param name="mainColor">Основной цвет кузова</param>
-		/// <param name="carWidth">Ширина отрисовки автомобиля</param>
-		/// <param name="carHeight">Высота отрисовки автомобиля</param>
-		protected ArmyShip(int maxSpeed, float weight, Color mainColor, int carWidth, int carHeight)
+		/// <param name="weight">Вес армейского корабля</param>
+		/// <param name="mainColor">Основной цвет армейского корабля</param>
+		/// <param name="shipWidth">Ширина отрисовки армейского корабля</param>
+		/// <param name="shipHeight">Высота отрисовки армейского корабля</param>
+		protected ArmyShip(int maxSpeed, float weight, Color mainColor, int shipWidth, int shipHeight)
 		{
 			MaxSpeed = maxSpeed;
 			Weight = weight;
 			MainColor = mainColor;
-			this.carWidth = carWidth;
-			this.carHeight = carHeight;
+			this.carWidth = shipWidth;
+			this.carHeight = shipHeight;
 		}
 		public override void MoveTransport(Direction direction)
 		{
@@ -81,19 +81,15 @@ namespace FlattopGame
 			}
 		}
 		/// <summary>
-		/// Отрисовка автомобиля
+		/// Отрисовка армейского корабля
 		/// </summary>
 		/// <param name="g"></param>
 		public override void DrawTransport(Graphics g)
 		{
 			Pen pen = new Pen(Color.Black);
-			// отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка автомобиля на него "легла")
-
-			// теперь отрисуем основной кузов автомобиля
-			//границы автомобиля
 			int _startPosXtoInt = (int)_startPosX;
 			int _startPosYtoInt = (int)_startPosY;
-			int[] xSheepPoints = {
+			int[] xShipPoints = {
 				_startPosXtoInt,
 				_startPosXtoInt + 15,
 				_startPosXtoInt + 30,
@@ -107,7 +103,7 @@ namespace FlattopGame
 				_startPosXtoInt + 15,
 				_startPosXtoInt
 			};
-			int[] ySheepPoints = { 
+			int[] yShipPoints = { 
 				_startPosYtoInt + 30,  
 				_startPosYtoInt + 15,  
 				_startPosYtoInt + 15,  
@@ -121,21 +117,21 @@ namespace FlattopGame
 				_startPosYtoInt + 75,
 				_startPosYtoInt + 60,
 			};
-
-			PointF[] sheepSpritePoints = new PointF[12];
+			PointF[] shipSpritePoints = new PointF[12];
 			for (int i = 0; i < 12; i++)
 			{
-				sheepSpritePoints[i] = new Point(xSheepPoints[i], ySheepPoints[i]);
+				shipSpritePoints[i] = new Point(xShipPoints[i], yShipPoints[i]);
 			}
-			g.DrawPolygon(pen, sheepSpritePoints);
+			//Отрисовка кузова корабля
+			g.DrawPolygon(pen, shipSpritePoints);
 			Brush br = new SolidBrush(MainColor);
-			g.FillPolygon(br, sheepSpritePoints);
-			//Полоса
+			g.FillPolygon(br, shipSpritePoints);
+			//Отрисовкв полосы
 			pen = new Pen(Color.White);
 			PointF pointLine1 = new PointF(_startPosXtoInt, _startPosYtoInt + 45);
 			PointF pointLine2 = new PointF(_startPosXtoInt + 320, _startPosYtoInt + 45);
 			g.DrawLine(pen, pointLine1, pointLine2);
-			//Кабина
+			//Отрисовка кабины
 			pen = new Pen(Color.Black);
 			g.DrawEllipse(pen, _startPosX + 85, _startPosY + 60, 60, 30);
 			br = new SolidBrush(Color.Gray);
