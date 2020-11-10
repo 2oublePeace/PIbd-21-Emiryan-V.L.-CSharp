@@ -34,6 +34,7 @@
 			this.buttonRight = new System.Windows.Forms.Button();
 			this.buttonDown = new System.Windows.Forms.Button();
 			this.buttonLeft = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.FlattopPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -45,7 +46,6 @@
 			this.FlattopPictureBox.Size = new System.Drawing.Size(884, 461);
 			this.FlattopPictureBox.TabIndex = 0;
 			this.FlattopPictureBox.TabStop = false;
-			this.FlattopPictureBox.Click += new System.EventHandler(this.FlattopPictureBox_Click);
 			// 
 			// button5
 			// 
@@ -53,9 +53,9 @@
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(103, 28);
 			this.button5.TabIndex = 6;
-			this.button5.Text = "Создать";
+			this.button5.Text = "Базовый";
 			this.button5.UseVisualStyleBackColor = true;
-			this.button5.Click += new System.EventHandler(this.buttonCreate_Click);
+			this.button5.Click += new System.EventHandler(this.buttonCreateArmyShip_Click);
 			// 
 			// buttonUp
 			// 
@@ -105,18 +105,29 @@
 			this.buttonLeft.UseVisualStyleBackColor = true;
 			this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
 			// 
-			// FlattopForm
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(135, 12);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(103, 28);
+			this.button1.TabIndex = 7;
+			this.button1.Text = "Кастом";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.buttonCreateFlattop_Click);
+			// 
+			// ArmyShipForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 461);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.button5);
 			this.Controls.Add(this.buttonUp);
 			this.Controls.Add(this.buttonRight);
 			this.Controls.Add(this.buttonDown);
 			this.Controls.Add(this.buttonLeft);
 			this.Controls.Add(this.FlattopPictureBox);
-			this.Name = "FlattopForm";
+			this.Name = "ArmyShipForm";
 			this.Text = "FlattopForm";
 			((System.ComponentModel.ISupportInitialize)(this.FlattopPictureBox)).EndInit();
 			this.ResumeLayout(false);
@@ -131,6 +142,7 @@
 		private System.Windows.Forms.Button buttonRight;
 		private System.Windows.Forms.Button buttonDown;
 		private System.Windows.Forms.Button buttonLeft;
+		private System.Windows.Forms.Button button1;
 	}
 }
 

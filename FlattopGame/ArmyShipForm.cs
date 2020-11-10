@@ -12,29 +12,53 @@ namespace FlattopGame
 {
 	public partial class ArmyShipForm : Form
 	{
-		private ArmyShip flattop;
-
+		private ITransport armyShip;
+		/// <summary>
+		/// Конструктор
+		/// </summary>
 		public ArmyShipForm()
 		{
 			InitializeComponent();
 		}
-
+		/// <summary>
+		/// Метод отрисовки машины
+		/// </summary>
 		private void Draw()
 		{
 			Bitmap bmp = new Bitmap(FlattopPictureBox.Width, FlattopPictureBox.Height);
 			Graphics gr = Graphics.FromImage(bmp);
-			flattop.DrawTransport(gr);
+			armyShip.DrawTransport(gr);
 			FlattopPictureBox.Image = bmp;
 		}
-
-		private void buttonCreate_Click(object sender, EventArgs e)
+		/// <summary>
+		/// Обработка нажатия кнопки "Создать автомобиль"
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonCreateArmyShip_Click(object sender, EventArgs e)
 		{
 			Random rnd = new Random();
-			flattop = new ArmyShip(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true, true);
-			flattop.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), FlattopPictureBox.Width, FlattopPictureBox.Height);
+			armyShip = new ArmyShip(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
+			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), FlattopPictureBox.Width, FlattopPictureBox.Height);
 			Draw();
 		}
-
+		/// <summary>
+		/// Обработка нажатия кнопки "Создать гоночный автомобиль"
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonCreateFlattop_Click(object sender, EventArgs e)
+		{
+			Random rnd = new Random();
+			armyShip = new Flattop(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, false, false, false);
+			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), FlattopPictureBox.Width, FlattopPictureBox.Height);
+			Draw();
+		}
+		/// <summary>
+		/// Обработка нажатия кнопок управления
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void buttonMove_Click(object sender, EventArgs e)
 		{
 			//получаем имя кнопки
@@ -42,24 +66,19 @@ namespace FlattopGame
 			switch (name)
 			{
 				case "buttonUp":
-					flattop.MoveTransport(Direction.Up);
+					armyShip.MoveTransport(Direction.Up);
 					break;
 				case "buttonDown":
-					flattop.MoveTransport(Direction.Down);
+					armyShip.MoveTransport(Direction.Down);
 					break;
 				case "buttonLeft":
-					flattop.MoveTransport(Direction.Left);
+					armyShip.MoveTransport(Direction.Left);
 					break;
 				case "buttonRight":
-					flattop.MoveTransport(Direction.Right);
+					armyShip.MoveTransport(Direction.Right);
 					break;
 			}
 			Draw();
-		}
-
-		private void FlattopPictureBox_Click(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

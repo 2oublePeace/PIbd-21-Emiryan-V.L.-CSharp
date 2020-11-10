@@ -54,6 +54,8 @@
     <Compile Include="ArmyShipForm.Designer.cs">
       <DependentUpon>ArmyShipForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flattop.cs" />
+    <Compile Include="Vehicle.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
