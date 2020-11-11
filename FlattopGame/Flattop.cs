@@ -44,58 +44,67 @@ namespace FlattopGame
 		}
 		public override void DrawTransport(Graphics g)
 		{
+			//Конвертируем double в int
 			int _startPosXtoInt = (int)_startPosX;
 			int _startPosYtoInt = (int)_startPosY;
+			base.DrawTransport(g);
+			//Объявляем и инициализируем средства рисования графики
 			Pen pen = new Pen(Color.Black);
 			Brush dopBrush = new SolidBrush(DopColor);
-			g.FillRectangle(dopBrush, _startPosX, _startPosY + 30, 320, 30);
-			// отрисуем сперва передние пушки авианосца (чтобы потом отрисовка авианосца на него "легла")
-			base.DrawTransport(g);
+			//Условие отрисовки передних пушек
 			if (FrontGun)
 			{
-				int[] xGun1Points = {
+				//Точки границ левой пушки
+				int[] leftGunXPoints = {
 					_startPosXtoInt + 210,
 					_startPosXtoInt + 290,
 					_startPosXtoInt + 290
 				};
-				int[] yGun1Points = {
+				int[] leftGunYPoints = {
 					_startPosYtoInt + 7,
 					_startPosYtoInt + 7,
 					_startPosYtoInt + 23
 				};
-				PointF[] gunSpritePoints = new PointF[3];
-				for (int i = 0; i < 3; i++)
+				PointF[] gunSpritePoints = new PointF[leftGunXPoints.Length];
+				for (int i = 0; i < gunSpritePoints.Length; i++)
 				{
-					gunSpritePoints[i] = new Point(xGun1Points[i], yGun1Points[i]);
+					gunSpritePoints[i] = new Point(leftGunXPoints[i], leftGunYPoints[i]);
 				}
+				//Отрисовка левой пушки
 				g.DrawPolygon(pen, gunSpritePoints);
-				dopBrush = new SolidBrush(DopColor);
 				g.FillPolygon(dopBrush, gunSpritePoints);
-				int[] yGun2Points = {
+				//Точки границ правой пушки
+				int[] rightGunXPoints = {
+					_startPosXtoInt + 210,
+					_startPosXtoInt + 290,
+					_startPosXtoInt + 290
+				};
+				int[] rightGunYPoints = {
 					_startPosYtoInt + 82,
 					_startPosYtoInt + 82,
 					_startPosYtoInt + 66
 				};
 				for (int i = 0; i < 3; i++)
 				{
-					gunSpritePoints[i] = new Point(xGun1Points[i], yGun2Points[i]);
+					gunSpritePoints[i] = new Point(leftGunXPoints[i], rightGunYPoints[i]);
 				}
+				//Отрисовка правой пушки
 				g.DrawPolygon(pen, gunSpritePoints);
 				g.FillPolygon(dopBrush, gunSpritePoints);
 			}
+			//Условие отрисовки вертолетной площадки
 			if (HelicopterStand)
 			{
-				dopBrush = new SolidBrush(Color.Black);
-				g.FillEllipse(dopBrush, _startPosX + 30, _startPosY, 45, 45);
-				pen = new Pen(Color.Black);
+				Brush blackCircleBrush = new SolidBrush(Color.Black);
+				g.FillEllipse(blackCircleBrush, _startPosX + 30, _startPosY, 45, 45);
 				g.DrawEllipse(pen, _startPosX + 30, _startPosY, 45, 45);
-				g.DrawString("H", new Font("Arial", 24, FontStyle.Bold), Brushes.Yellow, _startPosX + 36, _startPosY + 5);
+				g.DrawString("H", new Font("Arial", 24, FontStyle.Bold), dopBrush, _startPosX + 36, _startPosY + 5);
 			}
+			//Условие отрисовки спутникого локатора
 			if (SatelliteLocator)
 			{
-				dopBrush = new SolidBrush(Color.White);
-				g.FillEllipse(dopBrush, _startPosX + 30, _startPosY + 50, 45, 45);
-				pen = new Pen(Color.Black);
+				Brush locatorBrush = new SolidBrush(Color.White);
+				g.FillEllipse(locatorBrush, _startPosX + 30, _startPosY + 50, 45, 45);
 				g.DrawEllipse(pen, _startPosX + 30, _startPosY + 50, 45, 45);
 				g.DrawLine(pen, _startPosX + 37, _startPosY + 57, _startPosX + 68, _startPosY + 88);
 				g.DrawLine(pen, _startPosX + 37, _startPosY + 88, _startPosX + 68, _startPosY + 57);
