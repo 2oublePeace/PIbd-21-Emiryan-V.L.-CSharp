@@ -111,7 +111,7 @@
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(103, 28);
 			this.button1.TabIndex = 7;
-			this.button1.Text = "Кастом";
+			this.button1.Text = "Кастомный";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.buttonCreateFlattop_Click);
 			// 
