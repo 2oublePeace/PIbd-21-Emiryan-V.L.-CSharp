@@ -31,11 +31,11 @@ namespace FlattopGame
 		/// <summary>
 		/// Ширина отрисовки автомобиля
 		/// </summary>
-		private readonly int carWidth = 320;
+		private readonly int shipWidth = 320;
 		/// <summary>
 		/// Высота отрисовки автомобиля
 		/// </summary>
-		private readonly int carHeight = 90;
+		private readonly int shipHeight = 90;
 		/// <summary>
 		/// Максимальная скорость
 		/// </summary>
@@ -110,7 +110,7 @@ namespace FlattopGame
 			{
 				// вправо
 				case Direction.Right:
-					if (_startPosX + step < _pictureWidth - carWidth)
+					if (_startPosX + step < _pictureWidth - shipWidth)
 					{
 						_startPosX += step;
 					}
@@ -131,7 +131,7 @@ namespace FlattopGame
 					break;
 				//вниз
 				case Direction.Down:
-					if (_startPosY + step < _pictureHeight - carHeight)
+					if (_startPosY + step < _pictureHeight - shipHeight)
 					{
 						_startPosY += step;
 					}
