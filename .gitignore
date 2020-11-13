@@ -338,3 +338,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Technology of programming
+.vs
+FlattopGame/obj
+FlattopGame/bin
+FlattopGame/Properties
