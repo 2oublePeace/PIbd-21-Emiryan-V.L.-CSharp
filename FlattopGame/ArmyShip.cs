@@ -12,11 +12,11 @@ namespace FlattopGame
 		/// <summary>
 		/// Ширина отрисовки армейского корабля
 		/// </summary>
-		protected readonly int carWidth = 90;
+		protected readonly int shipWidth = 320;
 		/// <summary>
 		/// Высота отрисовки армейского корабля
 		/// </summary>
-		protected readonly int carHeight = 50;
+		protected readonly int shipHeight = 90;
 		/// <summary>
 		/// Конструктор
 		/// </summary>
@@ -42,8 +42,8 @@ namespace FlattopGame
 			MaxSpeed = maxSpeed;
 			Weight = weight;
 			MainColor = mainColor;
-			this.carWidth = shipWidth;
-			this.carHeight = shipHeight;
+			this.shipWidth = shipWidth;
+			this.shipHeight = shipHeight;
 		}
 		public override void MoveTransport(Direction direction)
 		{
@@ -52,7 +52,7 @@ namespace FlattopGame
 			{
 				// вправо
 				case Direction.Right:
-					if (_startPosX + step < _pictureWidth - carWidth)
+					if (_startPosX + step < _pictureWidth - shipWidth)
 					{
 						_startPosX += step;
 					}
@@ -73,7 +73,7 @@ namespace FlattopGame
 					break;
 				//вниз
 				case Direction.Down:
-					if (_startPosY + step < _pictureHeight - carHeight)
+					if (_startPosY + step < _pictureHeight - shipHeight)
 					{
 						_startPosY += step;
 					}
