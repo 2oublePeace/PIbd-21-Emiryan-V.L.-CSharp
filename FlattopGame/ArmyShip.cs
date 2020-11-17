@@ -126,11 +126,6 @@ namespace FlattopGame
 			g.DrawPolygon(pen, shipSpritePoints);
 			Brush br = new SolidBrush(MainColor);
 			g.FillPolygon(br, shipSpritePoints);
-			//Отрисовкв полосы
-			pen = new Pen(Color.White);
-			PointF pointLine1 = new PointF(_startPosXtoInt, _startPosYtoInt + 45);
-			PointF pointLine2 = new PointF(_startPosXtoInt + 320, _startPosYtoInt + 45);
-			g.DrawLine(pen, pointLine1, pointLine2);
 			//Отрисовка кабины
 			pen = new Pen(Color.Black);
 			g.DrawEllipse(pen, _startPosX + 85, _startPosY + 60, 60, 30);

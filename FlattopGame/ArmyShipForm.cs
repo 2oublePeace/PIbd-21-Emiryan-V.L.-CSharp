@@ -50,7 +50,7 @@ namespace FlattopGame
 		private void buttonCreateFlattop_Click(object sender, EventArgs e)
 		{
 			Random rnd = new Random();
-			armyShip = new Flattop(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true, true, true);
+			armyShip = new Flattop(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true, true, true, true, true);
 			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), FlattopPictureBox.Width, FlattopPictureBox.Height);
 			Draw();
 		}
