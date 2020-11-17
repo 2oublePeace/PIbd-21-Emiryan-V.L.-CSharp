@@ -30,7 +30,7 @@ namespace FlattopGame
 		private void buttonCreate_Click(object sender, EventArgs e)
 		{
 			Random rnd = new Random();
-			flattop = new Flattop(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true, true);
+			flattop = new Flattop(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true, true, true, true);
 			flattop.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), FlattopPictureBox.Width, FlattopPictureBox.Height);
 			Draw();
 		}

@@ -8,16 +8,16 @@ using System.Drawing;
 namespace FlattopGame
 {
 	/// <summary>
-	/// Класс отрисовки автомобиля
+	/// Класс отрисовки авианосца
 	/// </summary>
 	public class Flattop
 	{
 		/// <summary>
-		/// Левая координата отрисовки автомобиля
+		/// Левая координата отрисовки авианоссца
 		/// </summary>
 		private float _startPosX;
 		/// <summary>
-		/// Правая кооридната отрисовки автомобиля
+		/// Правая кооридната отрисовки авианоссца
 		/// </summary>
 		private float _startPosY;
 		/// <summary>
@@ -29,19 +29,19 @@ namespace FlattopGame
 		/// </summary>
 		private int _pictureHeight;
 		/// <summary>
-		/// Ширина отрисовки автомобиля
+		/// Ширина отрисовки авианоссца
 		/// </summary>
 		private readonly int shipWidth = 320;
 		/// <summary>
-		/// Высота отрисовки автомобиля
+		/// Высота отрисовки авианоссца
 		/// </summary>
 		private readonly int shipHeight = 90;
 		/// <summary>
-		/// Максимальная скорость
+		/// Максимальная авианоссца
 		/// </summary>
 		public int MaxSpeed { private set; get; }
 		/// <summary>
-		/// Вес автомобиля
+		/// Вес авианоссца
 		/// </summary>
 		public float Weight { private set; get; }
 		/// <summary>
@@ -53,13 +53,21 @@ namespace FlattopGame
 		/// </summary>
 		public Color DopColor { private set; get; }
 		/// <summary>
-		/// Признак наличия передней пушки
+		/// Признак наличия передних пушек
 		/// </summary>
 		public bool FrontGun { private set; get; }
 		/// <summary>
 		/// Признак наличия посадочной площадки для вертолета
 		/// </summary>
 		public bool HelicopterStand { private set; get; }
+		/// <summary>
+		/// Признак наличия самолета на авианосце
+		/// </summary>
+		public bool Plane { private set; get; }
+		/// <summary>
+		/// Признак наличия взлетно-посадочной полосы
+		/// </summary>
+		public bool LandingStrip { private set; get; }
 		/// <summary>
 		/// Признак наличия спутникого локатора
 		/// </summary>
@@ -68,14 +76,15 @@ namespace FlattopGame
 		/// Конструктор
 		/// </summary>
 		/// <param name="maxSpeed">Максимальная скорость</param>
-		/// <param name="weight">Вес автомобиля</param>
+		/// <param name="weight">Вес авианоссца</param>
 		/// <param name="mainColor">Основной цвет кузова</param>
 		/// <param name="dopColor">Дополнительный цвет</param>
-		/// <param name="frontSpoiler">Признак наличия переднего спойлера</param>
-		/// <param name="sideSpoiler">Признак наличия боковых спойлеров</param>
-		/// <param name="backSpoiler">Признак наличия заднего спойлера</param>
-		/// <param name="sportLine">Признак наличия гоночной полосы</param>
-		public Flattop(int maxSpeed, float weight, Color mainColor, Color dopColor, bool satelliteLocator, bool helicopterStand, bool frontGun)
+		/// <param name="satelliteLocator">Признак наличия спутникого локатора</param>
+		/// <param name="helicopterStand">Признак наличия вертолетной площадки</param>
+		/// <param name="frontGun">Признак наличия передних пушек</param>
+		/// <param name="plane">Признак наличия передних пушек</param>
+		/// <param name="landingStrip">Признак наличия передних пушек</param>
+		public Flattop(int maxSpeed, float weight, Color mainColor, Color dopColor, bool satelliteLocator, bool helicopterStand, bool frontGun, bool plane, bool landingStrip)
 		{
 			MaxSpeed = maxSpeed;
 			Weight = weight;
@@ -84,9 +93,11 @@ namespace FlattopGame
 			SatelliteLocator = satelliteLocator;
 			HelicopterStand = helicopterStand;
 			FrontGun = frontGun;
+			Plane = plane;
+			LandingStrip = landingStrip;
 		}
 		/// <summary>
-		/// Установка позиции автомобиля
+		/// Установка позиции авианосца
 		/// </summary>
 		/// <param name="x">Координата X</param>
 		/// <param name="y">Координата Y</param>
@@ -139,16 +150,13 @@ namespace FlattopGame
 			}
 		}
 		/// <summary>
-		/// Отрисовка автомобиля
+		/// Отрисовка авианосца
 		/// </summary>
 		/// <param name="g"></param>
 		public void DrawTransport(Graphics g)
 		{
 			Pen pen = new Pen(Color.Black);
-			// отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка автомобиля на него "легла")
-
-			// теперь отрисуем основной кузов автомобиля
-			//границы автомобиля
+			//границы авианосца
 			int _startPosXtoInt = (int)_startPosX;
 			int _startPosYtoInt = (int)_startPosY;
 			int[] xSheepPoints = {
@@ -188,21 +196,27 @@ namespace FlattopGame
 			g.DrawPolygon(pen, sheepSpritePoints);
 			Brush br = new SolidBrush(MainColor);
 			g.FillPolygon(br, sheepSpritePoints);
-			br = new SolidBrush(DopColor);
-			g.FillRectangle(br, _startPosX, _startPosY + 30, 320, 30);
-			//Полоса
-			pen = new Pen(Color.White);
-			PointF pointLine1 = new PointF(_startPosXtoInt, _startPosYtoInt + 45);
-			PointF pointLine2 = new PointF(_startPosXtoInt + 320, _startPosYtoInt + 45);
-			g.DrawLine(pen, pointLine1, pointLine2);
 			//Кабина
 			pen = new Pen(Color.Black);
 			g.DrawEllipse(pen, _startPosX + 85, _startPosY + 60, 60, 30);
 			br = new SolidBrush(Color.Gray);
 			g.FillEllipse(br, _startPosX + 85, _startPosY + 60, 60, 30);
-			// рисуем задний спойлер автомобиля
+			//Условие наличия взлетно-посадочной полосы
+			if (LandingStrip)
+			{
+				//Взлетно-посадочная полоса
+				br = new SolidBrush(Color.Gray);
+				g.FillRectangle(br, _startPosX, _startPosY + 30, 320, 30);
+				//Полоса
+				pen = new Pen(Color.White);
+				PointF pointLine1 = new PointF(_startPosXtoInt, _startPosYtoInt + 45);
+				PointF pointLine2 = new PointF(_startPosXtoInt + 320, _startPosYtoInt + 45);
+				g.DrawLine(pen, pointLine1, pointLine2);
+			}
+			// рисуем передние пушки
 			if (FrontGun)
 			{
+				//Левая пушка
 				int[] xGun1Points = {
 					_startPosXtoInt + 210,
 					_startPosXtoInt + 290,
@@ -213,26 +227,33 @@ namespace FlattopGame
 					_startPosYtoInt + 7,
 					_startPosYtoInt + 23
 				};
-				PointF[] gunSpritePoints = new PointF[3];
-				for (int i = 0; i < 3; i++)
+				PointF[] gunSpritePoints = new PointF[xGun1Points.Length];
+				for (int i = 0; i < xGun1Points.Length; i++)
 				{
 					gunSpritePoints[i] = new Point(xGun1Points[i], yGun1Points[i]);
 				}
 				g.DrawPolygon(pen, gunSpritePoints);
 				br = new SolidBrush(DopColor);
 				g.FillPolygon(br, gunSpritePoints);
+				//правая пушка
+				int[] xGun2Points = {
+					_startPosXtoInt + 210,
+					_startPosXtoInt + 290,
+					_startPosXtoInt + 290
+				};
 				int[] yGun2Points = {
 					_startPosYtoInt + 82,
 					_startPosYtoInt + 82,
 					_startPosYtoInt + 66
 				};
-				for (int i = 0; i < 3; i++)
+				for (int i = 0; i < xGun1Points.Length; i++)
 				{
-					gunSpritePoints[i] = new Point(xGun1Points[i], yGun2Points[i]);
+					gunSpritePoints[i] = new Point(xGun2Points[i], yGun2Points[i]);
 				}
 				g.DrawPolygon(pen, gunSpritePoints);
 				g.FillPolygon(br, gunSpritePoints);
 			}
+			//Условие наличия вертолетной площадки
 			if (HelicopterStand)
 			{
 				br = new SolidBrush(Color.Black);
@@ -241,6 +262,7 @@ namespace FlattopGame
 				g.DrawEllipse(pen, _startPosX + 30, _startPosY, 45, 45);
 				g.DrawString("H", new Font("Arial", 24, FontStyle.Bold), Brushes.Yellow, _startPosX + 36, _startPosY + 5);
 			}
+			//Условие наличия спутникого локатора
 			if (SatelliteLocator)
 			{
 				br = new SolidBrush(Color.White);
@@ -249,6 +271,32 @@ namespace FlattopGame
 				g.DrawEllipse(pen, _startPosX + 30, _startPosY + 50, 45, 45);
 				g.DrawLine(pen, _startPosX + 37, _startPosY + 57, _startPosX + 68, _startPosY + 88);
 				g.DrawLine(pen, _startPosX + 37, _startPosY + 88, _startPosX + 68, _startPosY + 57);
+			}
+			//Условие наличия самолета
+			if (Plane)
+			{
+				int[] xPlanePoints = {
+					_startPosXtoInt + 140,
+					_startPosXtoInt + 140,
+					_startPosXtoInt + 100,
+					_startPosXtoInt + 125,
+					_startPosXtoInt + 140
+				};
+				int[] yPlanePoints = {
+					_startPosYtoInt + 35,
+					_startPosYtoInt + 5,
+					_startPosYtoInt + 15,
+					_startPosYtoInt + 18,
+					_startPosYtoInt + 35,
+				};
+				PointF[] planeSpritePoints = new PointF[xPlanePoints.Length];
+				for (int i = 0; i < xPlanePoints.Length; i++)
+				{
+					planeSpritePoints[i] = new Point(xPlanePoints[i], yPlanePoints[i]);
+				}
+				g.DrawPolygon(pen, planeSpritePoints);
+				br = new SolidBrush(DopColor);
+				g.FillPolygon(br, planeSpritePoints);
 			}
 		}
 	}

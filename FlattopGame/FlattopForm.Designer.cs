@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlattopForm));
 			this.FlattopPictureBox = new System.Windows.Forms.PictureBox();
 			this.button5 = new System.Windows.Forms.Button();
 			this.buttonUp = new System.Windows.Forms.Button();
@@ -60,7 +61,7 @@
 			// buttonUp
 			// 
 			this.buttonUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonUp.BackgroundImage = global::FlattopGame.Properties.Resources.up;
+			this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
 			this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.buttonUp.Location = new System.Drawing.Point(735, 312);
 			this.buttonUp.Name = "buttonUp";
@@ -72,7 +73,7 @@
 			// buttonRight
 			// 
 			this.buttonRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonRight.BackgroundImage = global::FlattopGame.Properties.Resources.right;
+			this.buttonRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRight.BackgroundImage")));
 			this.buttonRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.buttonRight.Location = new System.Drawing.Point(806, 383);
 			this.buttonRight.Name = "buttonRight";
@@ -84,7 +85,7 @@
 			// buttonDown
 			// 
 			this.buttonDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonDown.BackgroundImage = global::FlattopGame.Properties.Resources.down;
+			this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
 			this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.buttonDown.Location = new System.Drawing.Point(735, 383);
 			this.buttonDown.Name = "buttonDown";
@@ -96,7 +97,7 @@
 			// buttonLeft
 			// 
 			this.buttonLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonLeft.BackgroundImage = global::FlattopGame.Properties.Resources.left;
+			this.buttonLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLeft.BackgroundImage")));
 			this.buttonLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.buttonLeft.Location = new System.Drawing.Point(664, 383);
 			this.buttonLeft.Name = "buttonLeft";
