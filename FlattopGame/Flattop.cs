@@ -54,6 +54,7 @@ namespace FlattopGame
 			Plane = plane;
 			LandingStrip = landingStrip;
 		}
+
 		public override void DrawTransport(Graphics g)
 		{
 			//Конвертируем double в int

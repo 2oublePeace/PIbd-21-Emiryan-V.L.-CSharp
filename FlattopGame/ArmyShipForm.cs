@@ -21,13 +21,22 @@ namespace FlattopGame
 			InitializeComponent();
 		}
 		/// <summary>
+		/// Передача машины на форму
+		/// </summary>
+		/// <param name="car"></param>
+		public void SetCar(ITransport armyShip)
+		{
+			this.armyShip = armyShip;
+			Draw();
+	    }
+		/// <summary>
 		/// Метод отрисовки транспортного средства
 		/// </summary>
 		private void Draw()
 		{
 			Bitmap bmp = new Bitmap(FlattopPictureBox.Width, FlattopPictureBox.Height);
 			Graphics gr = Graphics.FromImage(bmp);
-			armyShip.DrawTransport(gr);
+			armyShip?.DrawTransport(gr);
 			FlattopPictureBox.Image = bmp;
 		}
 		/// <summary>
