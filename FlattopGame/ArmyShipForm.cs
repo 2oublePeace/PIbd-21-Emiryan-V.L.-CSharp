@@ -21,23 +21,23 @@ namespace FlattopGame
 			InitializeComponent();
 		}
 		/// <summary>
-		/// Передача машины на форму
+		/// Передача армейских кораблей на форму
 		/// </summary>
-		/// <param name="car"></param>
-		public void SetCar(ITransport armyShip)
+		/// <param name="armyShip"></param>
+		public void SetArmyShip(ITransport armyShip)
 		{
 			this.armyShip = armyShip;
 			Draw();
 	    }
 		/// <summary>
-		/// Метод отрисовки транспортного средства
+		/// Метод отрисовки армейского корабля
 		/// </summary>
 		private void Draw()
 		{
-			Bitmap bmp = new Bitmap(FlattopPictureBox.Width, FlattopPictureBox.Height);
+			Bitmap bmp = new Bitmap(ArmyShipPictureBox.Width, ArmyShipPictureBox.Height);
 			Graphics gr = Graphics.FromImage(bmp);
 			armyShip?.DrawTransport(gr);
-			FlattopPictureBox.Image = bmp;
+			ArmyShipPictureBox.Image = bmp;
 		}
 		/// <summary>
 		/// Обработка нажатия кнопки "Создать армейский корабль"
@@ -48,7 +48,7 @@ namespace FlattopGame
 		{
 			Random rnd = new Random();
 			armyShip = new ArmyShip(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
-			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), FlattopPictureBox.Width, FlattopPictureBox.Height);
+			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), ArmyShipPictureBox.Width, ArmyShipPictureBox.Height);
 			Draw();
 		}
 		/// <summary>
@@ -60,7 +60,7 @@ namespace FlattopGame
 		{
 			Random rnd = new Random();
 			armyShip = new Flattop(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true, true, true, true, true);
-			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), FlattopPictureBox.Width, FlattopPictureBox.Height);
+			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), ArmyShipPictureBox.Width, ArmyShipPictureBox.Height);
 			Draw();
 		}
 		/// <summary>

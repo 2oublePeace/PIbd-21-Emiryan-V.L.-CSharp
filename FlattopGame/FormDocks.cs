@@ -13,27 +13,27 @@ namespace FlattopGame
 	public partial class FormDocks : Form
 	{
 		/// <summary>
-		/// Объект от класса-парковки
+		/// Объект от класса-доков
 		/// </summary>
-		private readonly Parking<ArmyShip> parking;
+		private readonly Parking<ArmyShip> docks;
 		public FormDocks()
 		{
 			InitializeComponent();
-			parking = new Parking<ArmyShip>(pictureBoxParking.Width, pictureBoxParking.Height);
+			docks = new Parking<ArmyShip>(pictureBoxParking.Width, pictureBoxParking.Height);
 			Draw();
 		}
 		/// <summary>
-		/// Метод отрисовки парковки
+		/// Метод отрисовки доков
 		/// </summary>
 		private void Draw()
 		{
 			Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
 			Graphics gr = Graphics.FromImage(bmp);
-			parking.Draw(gr);
+			docks.Draw(gr);
 			pictureBoxParking.Image = bmp;
 		}
 		/// <summary>
-		/// Обработка нажатия кнопки "Припарковать автомобиль"
+		/// Обработка нажатия кнопки "Припарковать корабль"
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -43,18 +43,18 @@ namespace FlattopGame
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
 				var armyShip = new ArmyShip(100, 1000, dialog.Color);
-				if (parking + armyShip)
+				if (docks + armyShip)
 				{
 					Draw();
 				}
 				else
 				{
-					MessageBox.Show("Парковка переполнена");
+					MessageBox.Show("Все доки заняты");
 				}
 			}
 		}
 		/// <summary>
-		/// Обработка нажатия кнопки "Припарковать гоночный автомобиль"
+		/// Обработка нажатия кнопки "Припарковать Авианосец"
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -67,13 +67,13 @@ namespace FlattopGame
 				if (dialogDop.ShowDialog() == DialogResult.OK)
 				{
 					var armyShip = new Flattop(100, 1000, dialog.Color, dialogDop.Color, true, true, true, true, true);
-					if (parking + armyShip)
+					if (docks + armyShip)
 					{
 						Draw();
 					}
 					else
 					{
-						MessageBox.Show("Парковка переполнена");
+						MessageBox.Show("Все доки заняты");
 					}
 				}
 			}
@@ -83,15 +83,15 @@ namespace FlattopGame
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void buttonTakeCar_Click(object sender, EventArgs e)
+		private void buttonTakeShip_Click(object sender, EventArgs e)
 		{
 			if (maskedTextBox.Text != "")
 			{
-				var car = parking - Convert.ToInt32(maskedTextBox.Text);
-				if (car != null)
+				var armyShip = docks - Convert.ToInt32(maskedTextBox.Text);
+				if (armyShip != null)
 				{
 					ArmyShipForm form = new ArmyShipForm();
-					form.SetCar(car);
+					form.SetArmyShip(armyShip);
 					form.ShowDialog();
 				}
 				Draw();

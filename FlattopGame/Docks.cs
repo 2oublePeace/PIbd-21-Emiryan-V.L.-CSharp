@@ -30,32 +30,32 @@ namespace FlattopGame
 		/// </summary>
 		private readonly int pictureHeight;
 		/// <summary>
-		/// Размер парковочного места (ширина)
+		/// Размер дока (ширина)
 		/// </summary>
 		private readonly int _placeSizeWidth = 330;
 		/// <summary>
-		/// Размер парковочного места (высота)
+		/// Размер дока (высота)
 		/// </summary>
 		private readonly int _placeSizeHeight = 110;
 		/// <summary>
 		/// Конструктор
 		/// </summary>
-		/// <param name="picWidth">Рамзер парковки - ширина</param>
-		/// <param name="picHeight">Рамзер парковки - высота</param>
-		public Parking(int picWidth, int picHeight)
+		/// <param name="pitureWidthParam">Рамзер дока - ширина</param>
+		/// <param name="pictureHeightParam">Рамзер дока на причале - высота</param>
+		public Parking(int pitureWidthParam, int pictureHeightParam)
 		{
-			int width = picWidth / _placeSizeWidth;
-			int height = picHeight / _placeSizeHeight;
+			int width = pitureWidthParam / _placeSizeWidth;
+			int height = pictureHeightParam / _placeSizeHeight;
 			_places = new T[width * height];
-			pictureWidth = picWidth;
-			pictureHeight = picHeight;
+			pictureWidth = pitureWidthParam;
+			pictureHeight = pictureHeightParam;
 		}
 		/// <summary>
 		/// Перегрузка оператора сложения
-		/// Логика действия: на парковку добавляется автомобиль
+		/// Логика действия: на парковку добавляется корабль
 		/// </summary>
-		/// <param name="p">Парковка</param>
-		/// <param name="armyShip">Добавляемый автомобиль</param>
+		/// <param name="p">Доки</param>
+		/// <param name="armyShip">Добавляемый корабль</param>
 		/// <returns></returns>
 		public static bool operator +(Parking<T> p, T armyShip)
 		{
@@ -65,13 +65,12 @@ namespace FlattopGame
 				return true;
 			}
 			return false;
-			
 		}
 		/// <summary>
 		/// Перегрузка оператора вычитания
-		/// Логика действия: с парковки забираем автомобиль
+		/// Логика действия: с дока забираем корабль
 		/// </summary>
-		/// <param name="p">Парковка</param>
+		/// <param name="p">Доки</param>
 		/// <param name="index">Индекс места, с которого пытаемся извлечь объект
 		/// </param>
 		/// <returns></returns>
@@ -83,7 +82,7 @@ namespace FlattopGame
 			return gettingTransport;
 		}
 		/// <summary>
-		/// Метод отрисовки парковки
+		/// Метод отрисовки доков
 		/// </summary>
 		/// <param name="g"></param>
 		public void Draw(Graphics g)
@@ -98,7 +97,7 @@ namespace FlattopGame
 			}
 		}
 		/// <summary>
-		/// Метод отрисовки разметки парковочных мест
+		/// Метод отрисовки разметки доков
 		/// </summary>
 		/// <param name="g"></param>
 		private void DrawMarking(Graphics g)

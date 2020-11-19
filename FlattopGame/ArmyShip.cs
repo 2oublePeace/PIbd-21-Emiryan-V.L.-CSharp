@@ -30,7 +30,7 @@ namespace FlattopGame
 			MainColor = mainColor;
 		}
 		/// <summary>
-		/// Конструкторс изменением размеров армейского корабля
+		/// Конструктор с изменением размеров армейского корабля
 		/// </summary>
 		/// <param name="maxSpeed">Максимальная скорость</param>
 		/// <param name="weight">Вес армейского корабля</param>
