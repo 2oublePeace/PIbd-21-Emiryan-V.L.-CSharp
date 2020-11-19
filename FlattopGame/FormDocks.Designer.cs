@@ -45,7 +45,7 @@
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(114, 44);
 			this.button1.TabIndex = 0;
-			this.button1.Text = "Припарковать автомобиль";
+			this.button1.Text = "Припарковать корабль";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.buttonSetArmyShip_Click);
 			// 
@@ -55,7 +55,7 @@
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(114, 60);
 			this.button2.TabIndex = 1;
-			this.button2.Text = "Припарковать гоночный автомобиль";
+			this.button2.Text = "Припарковать авианосец";
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.buttonSetFlattop_Click);
 			// 
@@ -69,7 +69,7 @@
 			this.groupBox1.Size = new System.Drawing.Size(114, 97);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Забрать машину";
+			this.groupBox1.Text = "Забрать корабль";
 			// 
 			// button3
 			// 
@@ -106,7 +106,7 @@
 			this.pictureBoxParking.TabIndex = 3;
 			this.pictureBoxParking.TabStop = false;
 			// 
-			// FormParking
+			// FormDocks
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +115,7 @@
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
-			this.Name = "FormParking";
+			this.Name = "FormDocks";
 			this.Text = "FormParking";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
