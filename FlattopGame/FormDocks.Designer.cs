@@ -45,7 +45,7 @@
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(114, 44);
 			this.button1.TabIndex = 0;
-			this.button1.Text = "Припарковать корабль";
+			this.button1.Text = "Пришвартовать корабль";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.buttonSetArmyShip_Click);
 			// 
@@ -55,7 +55,7 @@
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(114, 60);
 			this.button2.TabIndex = 1;
-			this.button2.Text = "Припарковать авианосец";
+			this.button2.Text = "Пришвартовать авианосец";
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.buttonSetFlattop_Click);
 			// 
