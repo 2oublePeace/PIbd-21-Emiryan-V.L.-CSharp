@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace FlattopGame
 {
-	public partial class FormParking : Form
+	public partial class FormDocks : Form
 	{
 		/// <summary>
 		/// Объект от класса-парковки
 		/// </summary>
 		private readonly Parking<ArmyShip> parking;
-		public FormParking()
+		public FormDocks()
 		{
 			InitializeComponent();
 			parking = new Parking<ArmyShip>(pictureBoxParking.Width, pictureBoxParking.Height);

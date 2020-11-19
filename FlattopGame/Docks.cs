@@ -16,7 +16,7 @@ namespace FlattopGame
 		/// <summary>
 		/// Индекс объекта
 		/// </summary>
-		private static int index;
+		private static int placeIndex;
 		/// <summary>
 		/// Массив объектов, которые храним
 		/// </summary>
@@ -32,11 +32,11 @@ namespace FlattopGame
 		/// <summary>
 		/// Размер парковочного места (ширина)
 		/// </summary>
-		private readonly int _placeSizeWidth = 320;
+		private readonly int _placeSizeWidth = 330;
 		/// <summary>
 		/// Размер парковочного места (высота)
 		/// </summary>
-		private readonly int _placeSizeHeight = 90;
+		private readonly int _placeSizeHeight = 110;
 		/// <summary>
 		/// Конструктор
 		/// </summary>
@@ -59,9 +59,9 @@ namespace FlattopGame
 		/// <returns></returns>
 		public static bool operator +(Parking<T> p, T armyShip)
 		{
-			if(index < p._places.Length && p._places[index] == null)
+			if(placeIndex < p._places.Length && p._places[placeIndex] == null)
 			{
-				p._places[index++] = armyShip;
+				p._places[placeIndex++] = armyShip;
 				return true;
 			}
 			return false;
@@ -77,7 +77,10 @@ namespace FlattopGame
 		/// <returns></returns>
 		public static T operator -(Parking<T> p, int index)
 		{
-			return p._places[index];
+			placeIndex = index;
+			T gettingTransport = p._places[index];
+			p._places[index] = null;
+			return gettingTransport;
 		}
 		/// <summary>
 		/// Метод отрисовки парковки
@@ -88,8 +91,8 @@ namespace FlattopGame
 			DrawMarking(g);
 			for (int i = 0; i < _places.Length; i++)
 			{
-				int x = (i / (pictureHeight / _placeSizeHeight)) * _placeSizeWidth;
-				int y = (i % (pictureHeight / _placeSizeHeight)) * _placeSizeHeight;
+				int x = (i / (pictureHeight / _placeSizeHeight)) * _placeSizeWidth + ((_placeSizeWidth - 320) / 2);
+				int y = (i % (pictureHeight / _placeSizeHeight)) * _placeSizeHeight + ((_placeSizeHeight - 90) / 2);
 				_places[i]?.SetPosition(x, y, pictureWidth, pictureHeight);
 				_places[i]?.DrawTransport(g);
 			}

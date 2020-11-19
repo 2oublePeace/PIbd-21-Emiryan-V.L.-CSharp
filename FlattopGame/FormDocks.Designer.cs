@@ -1,6 +1,6 @@
 ﻿namespace FlattopGame
 {
-	partial class FormParking
+	partial class FormDocks
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -31,9 +31,9 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
 			this.button3 = new System.Windows.Forms.Button();
+			this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBoxParking = new System.Windows.Forms.PictureBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
@@ -71,22 +71,6 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Забрать машину";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(18, 33);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(42, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Место:";
-			// 
-			// maskedTextBox
-			// 
-			this.maskedTextBox.Location = new System.Drawing.Point(63, 30);
-			this.maskedTextBox.Name = "maskedTextBox";
-			this.maskedTextBox.Size = new System.Drawing.Size(35, 20);
-			this.maskedTextBox.TabIndex = 1;
-			// 
 			// button3
 			// 
 			this.button3.Location = new System.Drawing.Point(21, 60);
@@ -97,12 +81,28 @@
 			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += new System.EventHandler(this.buttonTakeCar_Click);
 			// 
+			// maskedTextBox
+			// 
+			this.maskedTextBox.Location = new System.Drawing.Point(63, 30);
+			this.maskedTextBox.Name = "maskedTextBox";
+			this.maskedTextBox.Size = new System.Drawing.Size(35, 20);
+			this.maskedTextBox.TabIndex = 1;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(18, 33);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(42, 13);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Место:";
+			// 
 			// pictureBoxParking
 			// 
 			this.pictureBoxParking.Dock = System.Windows.Forms.DockStyle.Left;
 			this.pictureBoxParking.Location = new System.Drawing.Point(0, 0);
 			this.pictureBoxParking.Name = "pictureBoxParking";
-			this.pictureBoxParking.Size = new System.Drawing.Size(672, 450);
+			this.pictureBoxParking.Size = new System.Drawing.Size(672, 496);
 			this.pictureBoxParking.TabIndex = 3;
 			this.pictureBoxParking.TabStop = false;
 			// 
@@ -110,7 +110,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(800, 496);
 			this.Controls.Add(this.pictureBoxParking);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.button2);
