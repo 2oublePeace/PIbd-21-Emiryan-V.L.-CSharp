@@ -13,24 +13,67 @@ namespace FlattopGame
 	public partial class FormDocks : Form
 	{
 		/// <summary>
+		/// Объект от класса-коллекции парковок
+		/// </summary>
+		private readonly DockCollection dockCollection;
+		/// <summary>
 		/// Объект от класса-доков
 		/// </summary>
 		private readonly Docks<ArmyShip> docks;
 		public FormDocks()
 		{
 			InitializeComponent();
-			docks = new Docks<ArmyShip>(pictureBoxParking.Width, pictureBoxParking.Height);
+			dockCollection = new DockCollection(pictureBoxDock.Width, pictureBoxDock.Height);
+			docks = new Docks<ArmyShip>(pictureBoxDock.Width, pictureBoxDock.Height);
 			Draw();
+		}
+		/// <summary>
+		/// Заполнение listBoxLevels
+		/// </summary>
+		private void ReloadLevels()
+		{
+			int index = listBoxDocks.SelectedIndex;
+			listBoxDocks.Items.Clear();
+			for (int i = 0; i < dockCollection.Keys.Count; i++)
+			{
+				listBoxDocks.Items.Add(dockCollection.Keys[i]);
+			}
+			if (listBoxDocks.Items.Count > 0 && (index == -1 || index >=
+		   listBoxDocks.Items.Count))
+			{
+				listBoxDocks.SelectedIndex = 0;
+			}
+			else if (listBoxDocks.Items.Count > 0 && index > -1 && index <
+		   listBoxDocks.Items.Count)
+			{
+				listBoxDocks.SelectedIndex = index;
+			}
 		}
 		/// <summary>
 		/// Метод отрисовки доков
 		/// </summary>
 		private void Draw()
 		{
-			Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
+			Bitmap bmp = new Bitmap(pictureBoxDock.Width, pictureBoxDock.Height);
 			Graphics gr = Graphics.FromImage(bmp);
 			docks.Draw(gr);
-			pictureBoxParking.Image = bmp;
+			pictureBoxDock.Image = bmp;
+		}
+		/// <summary>
+		/// Обработка нажатия кнопки "Добавить парковку"
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonAddParking_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(textBoxNewLevelName.Text))
+			{
+				MessageBox.Show("Введите название парковки", "Ошибка",
+			   MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+	    parkingCollection.AddParking(textBoxNewLevelName.Text);
+			ReloadLevels();
 		}
 		/// <summary>
 		/// Обработка нажатия кнопки "Припарковать корабль"
@@ -97,5 +140,7 @@ namespace FlattopGame
 				Draw();
 			}
 		}
+
+		
 	}
 }

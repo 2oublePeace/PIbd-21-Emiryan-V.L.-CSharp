@@ -34,10 +34,14 @@
 			this.button3 = new System.Windows.Forms.Button();
 			this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.pictureBoxParking = new System.Windows.Forms.PictureBox();
-			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.pictureBoxDock = new System.Windows.Forms.PictureBox();
+			this.listBoxDocks = new System.Windows.Forms.ListBox();
+			this.textBoxNewLevelName = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.addDocks = new System.Windows.Forms.Button();
+			this.delDocks = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDock)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -98,30 +102,68 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Место:";
 			// 
-			// pictureBoxParking
+			// pictureBoxDock
 			// 
-			this.pictureBoxParking.Dock = System.Windows.Forms.DockStyle.Left;
-			this.pictureBoxParking.Location = new System.Drawing.Point(0, 0);
-			this.pictureBoxParking.Name = "pictureBoxParking";
-			this.pictureBoxParking.Size = new System.Drawing.Size(672, 496);
-			this.pictureBoxParking.TabIndex = 3;
-			this.pictureBoxParking.TabStop = false;
+			this.pictureBoxDock.Dock = System.Windows.Forms.DockStyle.Left;
+			this.pictureBoxDock.Location = new System.Drawing.Point(0, 0);
+			this.pictureBoxDock.Name = "pictureBoxDock";
+			this.pictureBoxDock.Size = new System.Drawing.Size(672, 496);
+			this.pictureBoxDock.TabIndex = 3;
+			this.pictureBoxDock.TabStop = false;
 			// 
-			// listBox1
+			// listBoxDocks
 			// 
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(678, 82);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(113, 82);
-			this.listBox1.TabIndex = 4;
+			this.listBoxDocks.FormattingEnabled = true;
+			this.listBoxDocks.Location = new System.Drawing.Point(678, 82);
+			this.listBoxDocks.Name = "listBoxDocks";
+			this.listBoxDocks.Size = new System.Drawing.Size(114, 82);
+			this.listBoxDocks.TabIndex = 4;
+			// 
+			// textBoxNewLevelName
+			// 
+			this.textBoxNewLevelName.Location = new System.Drawing.Point(678, 29);
+			this.textBoxNewLevelName.Name = "textBoxNewLevelName";
+			this.textBoxNewLevelName.Size = new System.Drawing.Size(113, 20);
+			this.textBoxNewLevelName.TabIndex = 5;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(694, 16);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(35, 13);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "label2";
+			// 
+			// addDocks
+			// 
+			this.addDocks.Location = new System.Drawing.Point(678, 55);
+			this.addDocks.Name = "addDocks";
+			this.addDocks.Size = new System.Drawing.Size(114, 21);
+			this.addDocks.TabIndex = 7;
+			this.addDocks.Text = "button4";
+			this.addDocks.UseVisualStyleBackColor = true;
+			// 
+			// delDocks
+			// 
+			this.delDocks.Location = new System.Drawing.Point(678, 170);
+			this.delDocks.Name = "delDocks";
+			this.delDocks.Size = new System.Drawing.Size(114, 22);
+			this.delDocks.TabIndex = 8;
+			this.delDocks.Text = "button5";
+			this.delDocks.UseVisualStyleBackColor = true;
 			// 
 			// FormDocks
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 496);
-			this.Controls.Add(this.listBox1);
-			this.Controls.Add(this.pictureBoxParking);
+			this.Controls.Add(this.delDocks);
+			this.Controls.Add(this.addDocks);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.textBoxNewLevelName);
+			this.Controls.Add(this.listBoxDocks);
+			this.Controls.Add(this.pictureBoxDock);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
@@ -129,8 +171,9 @@
 			this.Text = "FormParking";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDock)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -142,7 +185,11 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.MaskedTextBox maskedTextBox;
-		private System.Windows.Forms.PictureBox pictureBoxParking;
-		private System.Windows.Forms.ListBox listBox1;
+		private System.Windows.Forms.PictureBox pictureBoxDock;
+		private System.Windows.Forms.ListBox listBoxDocks;
+		private System.Windows.Forms.TextBox textBoxNewLevelName;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button addDocks;
+		private System.Windows.Forms.Button delDocks;
 	}
 }
