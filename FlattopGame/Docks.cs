@@ -18,7 +18,7 @@ namespace FlattopGame
 		/// </summary>
 		private readonly List<T> _places;
 		/// <summary>
-		/// Максимальное количество мест на парковке
+		/// Максимальное количество мест на уровне
 		/// </summary>
 		private readonly int _maxCount;
 		/// <summary>
@@ -40,14 +40,14 @@ namespace FlattopGame
 		/// <summary>
 		/// Конструктор
 		/// </summary>
-		/// <param name="pitureWidthParam">Рамзер дока - ширина</param>
+		/// <param name="pictureWidthParam">Рамзер дока - ширина</param>
 		/// <param name="pictureHeightParam">Рамзер дока на причале - высота</param>
-		public Docks(int pitureWidthParam, int pictureHeightParam)
+		public Docks(int pictureWidthParam, int pictureHeightParam)
 		{
-			int width = pitureWidthParam / _placeSizeWidth;
+			int width = pictureWidthParam / _placeSizeWidth;
 			int height = pictureHeightParam / _placeSizeHeight;
 			_maxCount = width * height;
-			pictureWidth = pitureWidthParam;
+			pictureWidth = pictureWidthParam;
 			pictureHeight = pictureHeightParam;
 			_places = new List<T>();
 		}
@@ -96,7 +96,8 @@ namespace FlattopGame
 			{
 				int x = (i / (pictureHeight / _placeSizeHeight)) * _placeSizeWidth + ((_placeSizeWidth - 320) / 2);
 				int y = (i % (pictureHeight / _placeSizeHeight)) * _placeSizeHeight + ((_placeSizeHeight - 90) / 2);
-				_places[i]?.SetPosition(x, y, pictureWidth, pictureHeight);
+				ArmyShipForm armyShipForm = new ArmyShipForm();
+				_places[i]?.SetPosition(x, y, armyShipForm.GameFieldWidth, armyShipForm.GameFieldHeight);
 				_places[i]?.DrawTransport(g);
 			}
 		}

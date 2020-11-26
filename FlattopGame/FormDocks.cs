@@ -13,7 +13,7 @@ namespace FlattopGame
 	public partial class FormDocks : Form
 	{
 		/// <summary>
-		/// Объект от класса-коллекции парковок
+		/// Объект от класса-коллекции уровней доков
 		/// </summary>
 		private readonly DockCollection dockCollection;
 		public FormDocks()
@@ -54,7 +54,7 @@ namespace FlattopGame
 			pictureBoxDock.Image = bmp;
 		}
 		/// <summary>
-		/// Обработка нажатия кнопки "Добавить парковку"
+		/// Обработка нажатия кнопки "Добавить уровень доков"
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -69,7 +69,7 @@ namespace FlattopGame
 			ReloadLevels();
 		}
 		/// <summary>
-		/// Обработка нажатия кнопки "Удалить парковку"
+		/// Обработка нажатия кнопки "Удалить уровень с доками"
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -128,6 +128,7 @@ namespace FlattopGame
 						if (dockCollection[listBoxDocks.SelectedItem.ToString()] + armyShip)
 						{
 							Draw();
+
 						}
 						else
 						{
@@ -146,12 +147,11 @@ namespace FlattopGame
 		{
 			if (listBoxDocks.SelectedIndex > -1 && maskedTextBox.Text != "")
 			{
-				var car = dockCollection[listBoxDocks.SelectedItem.ToString()] -
-			   Convert.ToInt32(maskedTextBox.Text);
-				if (car != null)
+				var armyShip = dockCollection[listBoxDocks.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox.Text);
+				if (armyShip != null)
 				{
 					ArmyShipForm form = new ArmyShipForm();
-					form.SetArmyShip(car);
+					form.SetArmyShip(armyShip);
 					form.ShowDialog();
 				}
 				Draw();

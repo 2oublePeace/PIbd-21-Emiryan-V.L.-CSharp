@@ -13,6 +13,8 @@ namespace FlattopGame
 	public partial class ArmyShipForm : Form
 	{
 		private ITransport armyShip;
+		public int GameFieldWidth { set { } get { return ArmyShipPictureBox.Width; } }
+		public int GameFieldHeight { set { } get { return ArmyShipPictureBox.Height; } }
 		/// <summary>
 		/// Конструктор
 		/// </summary>
