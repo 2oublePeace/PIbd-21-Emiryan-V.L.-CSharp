@@ -38,8 +38,8 @@
 			this.listBoxDocks = new System.Windows.Forms.ListBox();
 			this.textBoxNewLevelName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.addDocks = new System.Windows.Forms.Button();
-			this.delDocks = new System.Windows.Forms.Button();
+			this.addLevel = new System.Windows.Forms.Button();
+			this.delLevel = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDock)).BeginInit();
 			this.SuspendLayout();
@@ -135,31 +135,32 @@
 			this.label2.TabIndex = 6;
 			this.label2.Text = "label2";
 			// 
-			// addDocks
+			// addLevel
 			// 
-			this.addDocks.Location = new System.Drawing.Point(678, 55);
-			this.addDocks.Name = "addDocks";
-			this.addDocks.Size = new System.Drawing.Size(114, 21);
-			this.addDocks.TabIndex = 7;
-			this.addDocks.Text = "button4";
-			this.addDocks.UseVisualStyleBackColor = true;
+			this.addLevel.Location = new System.Drawing.Point(678, 55);
+			this.addLevel.Name = "addLevel";
+			this.addLevel.Size = new System.Drawing.Size(114, 21);
+			this.addLevel.TabIndex = 7;
+			this.addLevel.Text = "button4";
+			this.addLevel.UseVisualStyleBackColor = true;
+			this.addLevel.Click += new System.EventHandler(this.addLevel_Click);
 			// 
-			// delDocks
+			// delLevel
 			// 
-			this.delDocks.Location = new System.Drawing.Point(678, 170);
-			this.delDocks.Name = "delDocks";
-			this.delDocks.Size = new System.Drawing.Size(114, 22);
-			this.delDocks.TabIndex = 8;
-			this.delDocks.Text = "button5";
-			this.delDocks.UseVisualStyleBackColor = true;
+			this.delLevel.Location = new System.Drawing.Point(678, 170);
+			this.delLevel.Name = "delLevel";
+			this.delLevel.Size = new System.Drawing.Size(114, 22);
+			this.delLevel.TabIndex = 8;
+			this.delLevel.Text = "button5";
+			this.delLevel.UseVisualStyleBackColor = true;
 			// 
 			// FormDocks
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 496);
-			this.Controls.Add(this.delDocks);
-			this.Controls.Add(this.addDocks);
+			this.Controls.Add(this.delLevel);
+			this.Controls.Add(this.addLevel);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.textBoxNewLevelName);
 			this.Controls.Add(this.listBoxDocks);
@@ -189,7 +190,7 @@
 		private System.Windows.Forms.ListBox listBoxDocks;
 		private System.Windows.Forms.TextBox textBoxNewLevelName;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Button addDocks;
-		private System.Windows.Forms.Button delDocks;
+		private System.Windows.Forms.Button addLevel;
+		private System.Windows.Forms.Button delLevel;
 	}
 }
