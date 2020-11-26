@@ -48,30 +48,6 @@ namespace FlattopGame
 			ArmyShipPictureBox.Image = bmp;
 		}
 		/// <summary>
-		/// Обработка нажатия кнопки "Создать армейский корабль"
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void buttonCreateArmyShip_Click(object sender, EventArgs e)
-		{
-			Random rnd = new Random();
-			armyShip = new ArmyShip(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
-			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), ArmyShipPictureBox.Width, ArmyShipPictureBox.Height);
-			Draw();
-		}
-		/// <summary>
-		/// Обработка нажатия кнопки "Создать авианосец"
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void buttonCreateFlattop_Click(object sender, EventArgs e)
-		{
-			Random rnd = new Random();
-			armyShip = new Flattop(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true, true, true, true, true);
-			armyShip.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), ArmyShipPictureBox.Width, ArmyShipPictureBox.Height);
-			Draw();
-		}
-		/// <summary>
 		/// Обработка нажатия кнопок управления
 		/// </summary>
 		/// <param name="sender"></param>
