@@ -30,12 +30,10 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArmyShipForm));
 			this.ArmyShipPictureBox = new System.Windows.Forms.PictureBox();
-			this.baseButton = new System.Windows.Forms.Button();
 			this.buttonUp = new System.Windows.Forms.Button();
 			this.buttonRight = new System.Windows.Forms.Button();
 			this.buttonDown = new System.Windows.Forms.Button();
 			this.buttonLeft = new System.Windows.Forms.Button();
-			this.customButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.ArmyShipPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -47,16 +45,6 @@
 			this.ArmyShipPictureBox.Size = new System.Drawing.Size(884, 461);
 			this.ArmyShipPictureBox.TabIndex = 0;
 			this.ArmyShipPictureBox.TabStop = false;
-			// 
-			// baseButton
-			// 
-			this.baseButton.Location = new System.Drawing.Point(12, 12);
-			this.baseButton.Name = "baseButton";
-			this.baseButton.Size = new System.Drawing.Size(103, 28);
-			this.baseButton.TabIndex = 6;
-			this.baseButton.Text = "Базовый";
-			this.baseButton.UseVisualStyleBackColor = true;
-			this.baseButton.Click += new System.EventHandler(this.buttonCreateArmyShip_Click);
 			// 
 			// buttonUp
 			// 
@@ -106,23 +94,11 @@
 			this.buttonLeft.UseVisualStyleBackColor = true;
 			this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
 			// 
-			// customButton
-			// 
-			this.customButton.Location = new System.Drawing.Point(135, 12);
-			this.customButton.Name = "customButton";
-			this.customButton.Size = new System.Drawing.Size(103, 28);
-			this.customButton.TabIndex = 7;
-			this.customButton.Text = "Кастомный";
-			this.customButton.UseVisualStyleBackColor = true;
-			this.customButton.Click += new System.EventHandler(this.buttonCreateFlattop_Click);
-			// 
 			// ArmyShipForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 461);
-			this.Controls.Add(this.customButton);
-			this.Controls.Add(this.baseButton);
 			this.Controls.Add(this.buttonUp);
 			this.Controls.Add(this.buttonRight);
 			this.Controls.Add(this.buttonDown);
@@ -138,12 +114,10 @@
 		#endregion
 
 		private System.Windows.Forms.PictureBox ArmyShipPictureBox;
-		private System.Windows.Forms.Button baseButton;
 		private System.Windows.Forms.Button buttonUp;
 		private System.Windows.Forms.Button buttonRight;
 		private System.Windows.Forms.Button buttonDown;
 		private System.Windows.Forms.Button buttonLeft;
-		private System.Windows.Forms.Button customButton;
 	}
 }
 
