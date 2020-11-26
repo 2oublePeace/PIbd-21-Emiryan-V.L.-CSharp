@@ -92,11 +92,11 @@ namespace FlattopGame
 		public void Draw(Graphics g)
 		{
 			DrawMarking(g);
+			ArmyShipForm armyShipForm = new ArmyShipForm();
 			for (int i = 0; i < _places.Count; i++)
 			{
 				int x = (i / (pictureHeight / _placeSizeHeight)) * _placeSizeWidth + ((_placeSizeWidth - 320) / 2);
 				int y = (i % (pictureHeight / _placeSizeHeight)) * _placeSizeHeight + ((_placeSizeHeight - 90) / 2);
-				ArmyShipForm armyShipForm = new ArmyShipForm();
 				_places[i]?.SetPosition(x, y, armyShipForm.GameFieldWidth, armyShipForm.GameFieldHeight);
 				_places[i]?.DrawTransport(g);
 			}
