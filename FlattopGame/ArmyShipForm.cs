@@ -14,6 +14,14 @@ namespace FlattopGame
 	{
 		private ITransport armyShip;
 		/// <summary>
+		/// Ширина окна игрового поля
+		/// </summary>
+		public int GameFieldWidth { set { } get { return ArmyShipPictureBox.Width; } }
+		/// <summary>
+		/// Высота окна игрового поля
+		/// </summary>
+		public int GameFieldHeight { set { } get { return ArmyShipPictureBox.Height; } }
+		/// <summary>
 		/// Конструктор
 		/// </summary>
 		public ArmyShipForm()
