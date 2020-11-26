@@ -11,16 +11,16 @@ namespace FlattopGame
 	/// Параметризованный класс для хранения набора объектов от интерфейса ITransport
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public class Parking<T> where T : class, ITransport
+	public class Docks<T> where T : class, ITransport
 	{
 		/// <summary>
-		/// Индекс объекта
+		/// Список объектов, которые храним
 		/// </summary>
-		private static int placeIndex;
+		private readonly List<T> _places;
 		/// <summary>
-		/// Массив объектов, которые храним
+		/// Максимальное количество мест на парковке
 		/// </summary>
-		private readonly T[] _places;
+		private readonly int _maxCount;
 		/// <summary>
 		/// Ширина окна отрисовки
 		/// </summary>
@@ -42,13 +42,14 @@ namespace FlattopGame
 		/// </summary>
 		/// <param name="pitureWidthParam">Рамзер дока - ширина</param>
 		/// <param name="pictureHeightParam">Рамзер дока на причале - высота</param>
-		public Parking(int pitureWidthParam, int pictureHeightParam)
+		public Docks(int pitureWidthParam, int pictureHeightParam)
 		{
 			int width = pitureWidthParam / _placeSizeWidth;
 			int height = pictureHeightParam / _placeSizeHeight;
-			_places = new T[width * height];
+			_maxCount = width * height;
 			pictureWidth = pitureWidthParam;
 			pictureHeight = pictureHeightParam;
+			_places = new List<T>();
 		}
 		/// <summary>
 		/// Перегрузка оператора сложения
@@ -57,14 +58,14 @@ namespace FlattopGame
 		/// <param name="p">Доки</param>
 		/// <param name="armyShip">Добавляемый корабль</param>
 		/// <returns></returns>
-		public static bool operator +(Parking<T> p, T armyShip)
+		public static bool operator +(Docks<T> p, T armyShip)
 		{
-			if(placeIndex < p._places.Length && p._places[placeIndex] == null)
+			if (p._places.Count >= p._maxCount)
 			{
-				p._places[placeIndex++] = armyShip;
-				return true;
+				return false;
 			}
-			return false;
+			p._places.Add(armyShip);
+			return true;
 		}
 		/// <summary>
 		/// Перегрузка оператора вычитания
@@ -74,12 +75,15 @@ namespace FlattopGame
 		/// <param name="index">Индекс места, с которого пытаемся извлечь объект
 		/// </param>
 		/// <returns></returns>
-		public static T operator -(Parking<T> p, int index)
+		public static T operator -(Docks<T> p, int index)
 		{
-			placeIndex = index;
-			T gettingTransport = p._places[index];
-			p._places[index] = null;
-			return gettingTransport;
+			if (index < -1 || index > p._places.Count)
+			{
+				return null;
+			}
+			T armyShip = p._places[index];
+			p._places.RemoveAt(index);
+			return armyShip;
 		}
 		/// <summary>
 		/// Метод отрисовки доков
@@ -88,7 +92,7 @@ namespace FlattopGame
 		public void Draw(Graphics g)
 		{
 			DrawMarking(g);
-			for (int i = 0; i < _places.Length; i++)
+			for (int i = 0; i < _places.Count; i++)
 			{
 				int x = (i / (pictureHeight / _placeSizeHeight)) * _placeSizeWidth + ((_placeSizeWidth - 320) / 2);
 				int y = (i % (pictureHeight / _placeSizeHeight)) * _placeSizeHeight + ((_placeSizeHeight - 90) / 2);

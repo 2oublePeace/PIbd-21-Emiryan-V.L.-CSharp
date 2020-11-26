@@ -15,11 +15,11 @@ namespace FlattopGame
 		/// <summary>
 		/// Объект от класса-доков
 		/// </summary>
-		private readonly Parking<ArmyShip> docks;
+		private readonly Docks<ArmyShip> docks;
 		public FormDocks()
 		{
 			InitializeComponent();
-			docks = new Parking<ArmyShip>(pictureBoxParking.Width, pictureBoxParking.Height);
+			docks = new Docks<ArmyShip>(pictureBoxParking.Width, pictureBoxParking.Height);
 			Draw();
 		}
 		/// <summary>

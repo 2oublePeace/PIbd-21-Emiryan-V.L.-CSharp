@@ -54,6 +54,7 @@
     <Compile Include="ArmyShipForm.Designer.cs">
       <DependentUpon>ArmyShipForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DockCollection.cs" />
     <Compile Include="Flattop.cs" />
     <Compile Include="FormDocks.cs">
       <SubType>Form</SubType>
