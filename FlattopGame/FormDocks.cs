@@ -20,7 +20,6 @@ namespace FlattopGame
 		{
 			InitializeComponent();
 			dockCollection = new DockCollection(pictureBoxDock.Width, pictureBoxDock.Height);
-			Draw();
 		}
 		/// <summary>
 		/// Заполнение listBoxLevels
@@ -151,12 +150,22 @@ namespace FlattopGame
 			   Convert.ToInt32(maskedTextBox.Text);
 				if (car != null)
 				{
-					FormCar form = new FormCar();
-					form.SetCar(car);
+					ArmyShipForm form = new ArmyShipForm();
+					form.SetArmyShip(car);
 					form.ShowDialog();
 				}
 				Draw();
 			}
 		}
+		/// <summary>
+		/// Метод обработки выбора элемента на listBoxLevels
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void listBoxDocks_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Draw();
+		}
+
 	}
 }

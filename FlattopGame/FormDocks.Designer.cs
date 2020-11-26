@@ -113,11 +113,13 @@
 			// 
 			// listBoxDocks
 			// 
+			this.listBoxDocks.Cursor = System.Windows.Forms.Cursors.Default;
 			this.listBoxDocks.FormattingEnabled = true;
 			this.listBoxDocks.Location = new System.Drawing.Point(678, 82);
 			this.listBoxDocks.Name = "listBoxDocks";
 			this.listBoxDocks.Size = new System.Drawing.Size(114, 82);
 			this.listBoxDocks.TabIndex = 4;
+			this.listBoxDocks.SelectedIndexChanged += new System.EventHandler(this.listBoxDocks_SelectedIndexChanged);
 			// 
 			// textBoxNewLevelName
 			// 
@@ -129,11 +131,11 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(694, 16);
+			this.label2.Location = new System.Drawing.Point(713, 13);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(35, 13);
+			this.label2.Size = new System.Drawing.Size(45, 13);
 			this.label2.TabIndex = 6;
-			this.label2.Text = "label2";
+			this.label2.Text = "Уровни";
 			// 
 			// addLevel
 			// 
@@ -141,7 +143,7 @@
 			this.addLevel.Name = "addLevel";
 			this.addLevel.Size = new System.Drawing.Size(114, 21);
 			this.addLevel.TabIndex = 7;
-			this.addLevel.Text = "button4";
+			this.addLevel.Text = "Добавить уровень";
 			this.addLevel.UseVisualStyleBackColor = true;
 			this.addLevel.Click += new System.EventHandler(this.addLevel_Click);
 			// 
@@ -151,8 +153,9 @@
 			this.delLevel.Name = "delLevel";
 			this.delLevel.Size = new System.Drawing.Size(114, 22);
 			this.delLevel.TabIndex = 8;
-			this.delLevel.Text = "button5";
+			this.delLevel.Text = "Удалить уровень";
 			this.delLevel.UseVisualStyleBackColor = true;
+			this.delLevel.Click += new System.EventHandler(this.delLevel_Click);
 			// 
 			// FormDocks
 			// 
