@@ -56,7 +56,6 @@
 			this.baseButton.TabIndex = 6;
 			this.baseButton.Text = "Базовый";
 			this.baseButton.UseVisualStyleBackColor = true;
-			this.baseButton.Click += new System.EventHandler(this.buttonCreateArmyShip_Click);
 			// 
 			// buttonUp
 			// 
@@ -114,7 +113,6 @@
 			this.customButton.TabIndex = 7;
 			this.customButton.Text = "Кастомный";
 			this.customButton.UseVisualStyleBackColor = true;
-			this.customButton.Click += new System.EventHandler(this.buttonCreateFlattop_Click);
 			// 
 			// ArmyShipForm
 			// 
