@@ -11,7 +11,9 @@ namespace FlattopGame
 	/// Параметризованный класс для хранения набора объектов от интерфейса ITransport
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public class Parking<T> where T : class, ITransport
+	public class Parking<T, U>
+		where U : ArmyShipForm, new()
+		where T : class, ITransport
 	{
 		/// <summary>
 		/// Индекс объекта
@@ -57,7 +59,7 @@ namespace FlattopGame
 		/// <param name="p">Доки</param>
 		/// <param name="armyShip">Добавляемый корабль</param>
 		/// <returns></returns>
-		public static bool operator +(Parking<T> p, T armyShip)
+		public static bool operator +(Parking<T,U> p, T armyShip)
 		{
 			if(placeIndex < p._places.Length && p._places[placeIndex] == null)
 			{
@@ -74,7 +76,7 @@ namespace FlattopGame
 		/// <param name="index">Индекс места, с которого пытаемся извлечь объект
 		/// </param>
 		/// <returns></returns>
-		public static T operator -(Parking<T> p, int index)
+		public static T operator -(Parking<T, U> p, int index)
 		{
 			placeIndex = index;
 			T gettingTransport = p._places[index];
@@ -88,7 +90,7 @@ namespace FlattopGame
 		public void Draw(Graphics g)
 		{
 			DrawMarking(g);
-			ArmyShipForm armyShipForm = new ArmyShipForm();
+			U armyShipForm = new U();
 			for (int i = 0; i < _places.Length; i++)
 			{
 				int x = (i / (pictureHeight / _placeSizeHeight)) * _placeSizeWidth + ((_placeSizeWidth - 320) / 2);
