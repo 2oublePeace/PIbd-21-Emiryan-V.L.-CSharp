@@ -28,9 +28,9 @@ namespace FlattopGame
 		{
 			int index = listBoxDocks.SelectedIndex;
 			listBoxDocks.Items.Clear();
-			for (int i = 0; i < dockCollection.Keys.Count; i++)
+			foreach (var dock in dockCollection.Keys)
 			{
-				listBoxDocks.Items.Add(dockCollection.Keys[i]);
+				listBoxDocks.Items.Add(dock);
 			}
 			if (listBoxDocks.Items.Count > 0 && (index == -1 || index >=
 		   listBoxDocks.Items.Count))
