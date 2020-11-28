@@ -15,11 +15,70 @@ namespace FlattopGame
 		/// <summary>
 		/// Переменная-выбранная машина
 		/// </summary>
-		ITransport armyShip = null;
+		Vehicle armyShip = null;
+		private event CarDelegate eventAddCar;
 		public FormShipConfig()
 		{
 			InitializeComponent();
 		}
+		/// <summary>
+		/// Отправляем цвет с панели
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void panelColor_MouseDown(object sender, MouseEventArgs e)
+		{
+			Panel panel = sender as Panel;
+			panel.DoDragDrop(panel.BackColor, DragDropEffects.Move | DragDropEffects.Copy);
+		}
+		/// <summary>
+		/// Проверка получаемой информации (ее типа на соответствие требуемому)
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void labelBaseColor_DragEnter(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent("Color"))
+			{
+				e.Effect = DragDropEffects.Copy;
+			}
+			else
+			{
+				e.Effect = DragDropEffects.None;
+			}
+		}
+		/// <summary>
+		/// Принимаем основной цвет
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void labelBaseColor_DragDrop(object sender, DragEventArgs e)
+		{
+			switch (e.Data.GetData(DataFormats.Text).ToString())
+			{
+				case "Red":
+					armyShip.SetMainColor(Color.Red);
+					break;
+			}
+			DrawShip();
+		}
+		/// <summary>
+		/// Принимаем дополнительный цвет
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void labelDopColor_DragDrop(object sender, DragEventArgs e)
+		{
+			Flattop vehicle = sender as Flattop;
+			switch (e.Data.GetData(DataFormats.Text).ToString())
+			{
+				case "Red":
+					vehicle.SetDopColor(Color.Red);
+					break;
+			}
+			DrawShip();
+		}
+
 		/// <summary>
 		/// Отрисовать машину
 		/// </summary>
@@ -32,6 +91,21 @@ namespace FlattopGame
 				armyShip.SetPosition(5, 5, pictureBoxShip.Width, pictureBoxShip.Height);
 				armyShip.DrawTransport(gr);
 				pictureBoxShip.Image = bmp;
+			}
+		}
+		/// <summary>
+		/// Добавление события
+		/// </summary>
+		/// <param name="ev"></param>
+		public void AddEvent(CarDelegate ev)
+		{
+			if (eventAddCar == null)
+			{
+				eventAddCar = new CarDelegate(ev);
+			}
+			else
+			{
+				eventAddCar += ev;
 			}
 		}
 		/// <summary>
