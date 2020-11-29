@@ -1,6 +1,6 @@
 ﻿namespace FlattopGame
 {
-	partial class FlattopForm
+	partial class ArmyShipForm
 	{
 		/// <summary>
 		/// Обязательная переменная конструктора.
@@ -28,13 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlattopForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArmyShipForm));
 			this.FlattopPictureBox = new System.Windows.Forms.PictureBox();
-			this.button5 = new System.Windows.Forms.Button();
+			this.baseCreateButton = new System.Windows.Forms.Button();
 			this.buttonUp = new System.Windows.Forms.Button();
 			this.buttonRight = new System.Windows.Forms.Button();
 			this.buttonDown = new System.Windows.Forms.Button();
 			this.buttonLeft = new System.Windows.Forms.Button();
+			this.customCreateButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.FlattopPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -46,17 +47,16 @@
 			this.FlattopPictureBox.Size = new System.Drawing.Size(884, 461);
 			this.FlattopPictureBox.TabIndex = 0;
 			this.FlattopPictureBox.TabStop = false;
-			this.FlattopPictureBox.Click += new System.EventHandler(this.FlattopPictureBox_Click);
 			// 
-			// button5
+			// baseCreateButton
 			// 
-			this.button5.Location = new System.Drawing.Point(12, 12);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(103, 28);
-			this.button5.TabIndex = 6;
-			this.button5.Text = "Создать";
-			this.button5.UseVisualStyleBackColor = true;
-			this.button5.Click += new System.EventHandler(this.buttonCreate_Click);
+			this.baseCreateButton.Location = new System.Drawing.Point(12, 12);
+			this.baseCreateButton.Name = "baseCreateButton";
+			this.baseCreateButton.Size = new System.Drawing.Size(103, 28);
+			this.baseCreateButton.TabIndex = 6;
+			this.baseCreateButton.Text = "Базовый";
+			this.baseCreateButton.UseVisualStyleBackColor = true;
+			this.baseCreateButton.Click += new System.EventHandler(this.buttonCreateArmyShip_Click);
 			// 
 			// buttonUp
 			// 
@@ -106,18 +106,29 @@
 			this.buttonLeft.UseVisualStyleBackColor = true;
 			this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
 			// 
-			// FlattopForm
+			// customCreateButton
+			// 
+			this.customCreateButton.Location = new System.Drawing.Point(135, 12);
+			this.customCreateButton.Name = "customCreateButton";
+			this.customCreateButton.Size = new System.Drawing.Size(103, 28);
+			this.customCreateButton.TabIndex = 7;
+			this.customCreateButton.Text = "Кастомный";
+			this.customCreateButton.UseVisualStyleBackColor = true;
+			this.customCreateButton.Click += new System.EventHandler(this.buttonCreateFlattop_Click);
+			// 
+			// ArmyShipForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 461);
-			this.Controls.Add(this.button5);
+			this.Controls.Add(this.customCreateButton);
+			this.Controls.Add(this.baseCreateButton);
 			this.Controls.Add(this.buttonUp);
 			this.Controls.Add(this.buttonRight);
 			this.Controls.Add(this.buttonDown);
 			this.Controls.Add(this.buttonLeft);
 			this.Controls.Add(this.FlattopPictureBox);
-			this.Name = "FlattopForm";
+			this.Name = "ArmyShipForm";
 			this.Text = "FlattopForm";
 			((System.ComponentModel.ISupportInitialize)(this.FlattopPictureBox)).EndInit();
 			this.ResumeLayout(false);
@@ -127,11 +138,12 @@
 		#endregion
 
 		private System.Windows.Forms.PictureBox FlattopPictureBox;
-		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button baseCreateButton;
 		private System.Windows.Forms.Button buttonUp;
 		private System.Windows.Forms.Button buttonRight;
 		private System.Windows.Forms.Button buttonDown;
 		private System.Windows.Forms.Button buttonLeft;
+		private System.Windows.Forms.Button customCreateButton;
 	}
 }
 
