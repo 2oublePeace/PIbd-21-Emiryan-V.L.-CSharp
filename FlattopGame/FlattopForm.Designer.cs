@@ -1,4 +1,4 @@
-﻿namespace FlattopGame
+namespace FlattopGame
 {
 	partial class FlattopForm
 	{
@@ -134,4 +134,3 @@
 		private System.Windows.Forms.Button buttonLeft;
 	}
 }
-
