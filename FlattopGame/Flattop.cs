@@ -45,11 +45,11 @@ namespace FlattopGame
 		/// <param name="satelliteLocator">Признак наличия спутникого локатора</param>
 		/// <param name="plane">Признак наличия самолета</param>
 		/// <param name="landingStrip">Признак наличия передних пушек</param>
-		public Flattop(int maxSpeed, float weight, Color mainColor, Color dopColor, bool frontGun, bool hellicopterStand, bool satelliteLocator, bool plane, bool landingStrip) : base(maxSpeed, weight, mainColor, 320, 90)
+		public Flattop(int maxSpeed, float weight, Color mainColor, Color dopColor, bool frontGun, bool helicopterStand, bool satelliteLocator, bool plane, bool landingStrip) : base(maxSpeed, weight, mainColor, 320, 90)
 		{
 			DopColor = dopColor;
 			FrontGun = frontGun;
-			HelicopterStand = hellicopterStand;
+			HelicopterStand = helicopterStand;
 			SatelliteLocator = satelliteLocator;
 			Plane = plane;
 			LandingStrip = landingStrip;
