@@ -1,4 +1,4 @@
-﻿namespace FlattopGame
+namespace FlattopGame
 {
 	partial class ArmyShipForm
 	{
@@ -146,4 +146,3 @@
 		private System.Windows.Forms.Button customCreateButton;
 	}
 }
-
