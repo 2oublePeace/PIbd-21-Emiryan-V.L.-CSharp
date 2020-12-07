@@ -342,5 +342,9 @@ healthchecksdb
 # Technology of programming
 .vs
 FlattopGame/obj
+<<<<<<< HEAD
+FlattopGame/bin
+=======
 FlattopGame/bin
 FlattopGame/Properties
+>>>>>>> 79b8a095208537f5e68e4a57339ec171dd23bf8b
