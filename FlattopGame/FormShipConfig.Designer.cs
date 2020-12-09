@@ -43,21 +43,22 @@
 			this.pictureBoxShip = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
+			this.label2 = new System.Windows.Forms.Label();
+			this.mainColorLabel = new System.Windows.Forms.Label();
+			this.panel9 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel5 = new System.Windows.Forms.Panel();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.panel7 = new System.Windows.Forms.Panel();
-			this.panel8 = new System.Windows.Forms.Panel();
-			this.panel9 = new System.Windows.Forms.Panel();
-			this.mainColorLabel = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
 			this.typeGroupBox.SuspendLayout();
 			this.paramGroupBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -81,6 +82,7 @@
 			this.flattopLabel.TabIndex = 1;
 			this.flattopLabel.Text = "Авианосец";
 			this.flattopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.flattopLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flattopLabel_MouseDown);
 			// 
 			// armyShipLabel
 			// 
@@ -91,6 +93,7 @@
 			this.armyShipLabel.TabIndex = 0;
 			this.armyShipLabel.Text = "Военный корабль";
 			this.armyShipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.armyShipLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.armyShipLabel_MouseDown);
 			// 
 			// paramGroupBox
 			// 
@@ -104,7 +107,7 @@
 			this.paramGroupBox.Controls.Add(this.numericUpDown1);
 			this.paramGroupBox.Location = new System.Drawing.Point(12, 124);
 			this.paramGroupBox.Name = "paramGroupBox";
-			this.paramGroupBox.Size = new System.Drawing.Size(374, 119);
+			this.paramGroupBox.Size = new System.Drawing.Size(374, 146);
 			this.paramGroupBox.TabIndex = 1;
 			this.paramGroupBox.TabStop = false;
 			this.paramGroupBox.Text = "Параметры";
@@ -213,18 +216,23 @@
 			// 
 			// pictureBoxShip
 			// 
-			this.pictureBoxShip.Location = new System.Drawing.Point(172, 25);
+			this.pictureBoxShip.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBoxShip.Location = new System.Drawing.Point(0, 0);
 			this.pictureBoxShip.Name = "pictureBoxShip";
-			this.pictureBoxShip.Size = new System.Drawing.Size(200, 80);
+			this.pictureBoxShip.Size = new System.Drawing.Size(358, 106);
 			this.pictureBoxShip.TabIndex = 2;
 			this.pictureBoxShip.TabStop = false;
 			// 
 			// panel1
 			// 
+			this.panel1.AllowDrop = true;
+			this.panel1.Controls.Add(this.pictureBoxShip);
 			this.panel1.Location = new System.Drawing.Point(161, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(225, 106);
+			this.panel1.Size = new System.Drawing.Size(358, 106);
 			this.panel1.TabIndex = 8;
+			this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragDrop);
+			this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragEnter);
 			// 
 			// groupBox1
 			// 
@@ -238,68 +246,38 @@
 			this.groupBox1.Controls.Add(this.panel5);
 			this.groupBox1.Controls.Add(this.panel3);
 			this.groupBox1.Controls.Add(this.panel2);
-			this.groupBox1.Location = new System.Drawing.Point(410, 12);
+			this.groupBox1.Location = new System.Drawing.Point(411, 124);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(224, 146);
 			this.groupBox1.TabIndex = 9;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "groupBox1";
 			// 
-			// panel2
+			// label2
 			// 
-			this.panel2.BackColor = System.Drawing.Color.Red;
-			this.panel2.Location = new System.Drawing.Point(23, 65);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(30, 30);
-			this.panel2.TabIndex = 0;
+			this.label2.AllowDrop = true;
+			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.label2.Location = new System.Drawing.Point(112, 19);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(85, 35);
+			this.label2.TabIndex = 3;
+			this.label2.Text = "Доп. цвет";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label2.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelDopColor_DragDrop);
+			this.label2.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragEnter);
 			// 
-			// panel3
+			// mainColorLabel
 			// 
-			this.panel3.BackColor = System.Drawing.Color.White;
-			this.panel3.Location = new System.Drawing.Point(167, 65);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(30, 30);
-			this.panel3.TabIndex = 1;
-			// 
-			// panel4
-			// 
-			this.panel4.BackColor = System.Drawing.Color.Black;
-			this.panel4.Location = new System.Drawing.Point(121, 65);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(30, 30);
-			this.panel4.TabIndex = 1;
-			// 
-			// panel5
-			// 
-			this.panel5.BackColor = System.Drawing.Color.Yellow;
-			this.panel5.Location = new System.Drawing.Point(73, 65);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(30, 30);
-			this.panel5.TabIndex = 1;
-			// 
-			// panel6
-			// 
-			this.panel6.BackColor = System.Drawing.Color.Gray;
-			this.panel6.Location = new System.Drawing.Point(23, 101);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(30, 30);
-			this.panel6.TabIndex = 1;
-			// 
-			// panel7
-			// 
-			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.panel7.Location = new System.Drawing.Point(73, 101);
-			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(30, 30);
-			this.panel7.TabIndex = 1;
-			// 
-			// panel8
-			// 
-			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-			this.panel8.Location = new System.Drawing.Point(121, 101);
-			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(30, 30);
-			this.panel8.TabIndex = 1;
+			this.mainColorLabel.AllowDrop = true;
+			this.mainColorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.mainColorLabel.Location = new System.Drawing.Point(23, 19);
+			this.mainColorLabel.Name = "mainColorLabel";
+			this.mainColorLabel.Size = new System.Drawing.Size(85, 35);
+			this.mainColorLabel.TabIndex = 2;
+			this.mainColorLabel.Text = "Основной цвет";
+			this.mainColorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.mainColorLabel.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragDrop);
+			this.mainColorLabel.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragEnter);
 			// 
 			// panel9
 			// 
@@ -308,33 +286,76 @@
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(30, 30);
 			this.panel9.TabIndex = 1;
+			this.panel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
-			// mainColorLabel
+			// panel8
 			// 
-			this.mainColorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.mainColorLabel.Location = new System.Drawing.Point(23, 19);
-			this.mainColorLabel.Name = "mainColorLabel";
-			this.mainColorLabel.Size = new System.Drawing.Size(85, 35);
-			this.mainColorLabel.TabIndex = 2;
-			this.mainColorLabel.Text = "Основной цвет";
-			this.mainColorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.panel8.Location = new System.Drawing.Point(121, 101);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(30, 30);
+			this.panel8.TabIndex = 1;
+			this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
-			// label2
+			// panel7
 			// 
-			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.label2.Location = new System.Drawing.Point(112, 19);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(85, 35);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "Доп. цвет";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.panel7.Location = new System.Drawing.Point(73, 101);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(30, 30);
+			this.panel7.TabIndex = 1;
+			this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			// 
+			// panel6
+			// 
+			this.panel6.BackColor = System.Drawing.Color.Gray;
+			this.panel6.Location = new System.Drawing.Point(23, 101);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(30, 30);
+			this.panel6.TabIndex = 1;
+			this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.Black;
+			this.panel4.Location = new System.Drawing.Point(121, 65);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(30, 30);
+			this.panel4.TabIndex = 1;
+			this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			// 
+			// panel5
+			// 
+			this.panel5.BackColor = System.Drawing.Color.Yellow;
+			this.panel5.Location = new System.Drawing.Point(73, 65);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(30, 30);
+			this.panel5.TabIndex = 1;
+			this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.White;
+			this.panel3.Location = new System.Drawing.Point(167, 65);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(30, 30);
+			this.panel3.TabIndex = 1;
+			this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.Red;
+			this.panel2.Location = new System.Drawing.Point(23, 65);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(30, 30);
+			this.panel2.TabIndex = 0;
+			this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// FormShipConfig
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(647, 255);
-			this.Controls.Add(this.pictureBoxShip);
+			this.ClientSize = new System.Drawing.Size(647, 309);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.paramGroupBox);
 			this.Controls.Add(this.typeGroupBox);
@@ -347,6 +368,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).EndInit();
+			this.panel1.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
 

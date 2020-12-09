@@ -38,7 +38,7 @@ namespace FlattopGame
 		/// <param name="e"></param>
 		private void labelBaseColor_DragEnter(object sender, DragEventArgs e)
 		{
-			if (e.Data.GetDataPresent("Color"))
+			if (e.Data.GetDataPresent(typeof(Color)))
 			{
 				e.Effect = DragDropEffects.Copy;
 			}
@@ -52,14 +52,11 @@ namespace FlattopGame
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
+		Color color = Color.White;
 		private void labelBaseColor_DragDrop(object sender, DragEventArgs e)
 		{
-			switch (e.Data.GetData(DataFormats.Text).ToString())
-			{
-				case "Red":
-					armyShip.SetMainColor(Color.Red);
-					break;
-			}
+			Color shipColor = (Color) e.Data.GetData(typeof(Color));
+			armyShip.SetMainColor(shipColor);					
 			DrawShip();
 		}
 		/// <summary>
@@ -69,13 +66,9 @@ namespace FlattopGame
 		/// <param name="e"></param>
 		private void labelDopColor_DragDrop(object sender, DragEventArgs e)
 		{
-			Flattop vehicle = sender as Flattop;
-			switch (e.Data.GetData(DataFormats.Text).ToString())
-			{
-				case "Red":
-					vehicle.SetDopColor(Color.Red);
-					break;
-			}
+			Color shipColor = (Color)e.Data.GetData(typeof(Color));
+			Flattop vehicle = (Flattop) sender;
+			vehicle.SetDopColor(shipColor);
 			DrawShip();
 		}
 

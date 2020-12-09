@@ -92,51 +92,9 @@ namespace FlattopGame
 		/// <param name="e"></param>
 		private void buttonSetArmyShip_Click(object sender, EventArgs e)
 		{
-			if (listBoxDocks.SelectedIndex > -1)
-			{
-				ColorDialog dialog = new ColorDialog();
-				if (dialog.ShowDialog() == DialogResult.OK)
-				{
-					var armyShip = new ArmyShip(100, 1000, dialog.Color);
-					if (dockCollection[listBoxDocks.SelectedItem.ToString()] + armyShip)
-					{
-						Draw();
-					}
-					else
-					{
-						MessageBox.Show("Доки переполнены");
-					}
-				}
-			}
-		}
-		/// <summary>
-		/// Обработка нажатия кнопки "Припарковать Авианосец"
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void buttonSetFlattop_Click(object sender, EventArgs e)
-		{
-			if (listBoxDocks.SelectedIndex > -1)
-			{
-				ColorDialog dialog = new ColorDialog();
-				if (dialog.ShowDialog() == DialogResult.OK)
-				{
-			    ColorDialog dialogDop = new ColorDialog();
-					if (dialogDop.ShowDialog() == DialogResult.OK)
-					{
-						var armyShip = new Flattop(100, 1000, dialog.Color, dialogDop.Color, true, true, true, true, true);
-						if (dockCollection[listBoxDocks.SelectedItem.ToString()] + armyShip)
-						{
-							Draw();
-
-						}
-						else
-						{
-							MessageBox.Show("Доки переполнены");
-						}
-					}
-				}
-			}
+			var formCarConfig = new FormShipConfig();
+			formCarConfig.AddEvent(AddCar);
+			formCarConfig.Show();
 		}
 		/// <summary>
 		/// Обработка нажатия кнопки "Забрать"
@@ -165,6 +123,21 @@ namespace FlattopGame
 		private void listBoxDocks_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			Draw();
+		}
+
+		private void AddCar(Vehicle car)
+		{
+			if (car != null && listBoxDocks.SelectedIndex > -1)
+			{
+				if ((dockCollection[listBoxDocks.SelectedItem.ToString()]) + car)
+				{
+					Draw();
+				}
+				else
+				{
+					MessageBox.Show("Машину не удалось поставить");
+				}
+			}
 		}
 
 	}

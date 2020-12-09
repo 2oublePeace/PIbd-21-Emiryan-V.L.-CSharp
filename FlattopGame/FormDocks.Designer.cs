@@ -144,6 +144,7 @@
 			this.addShip.TabIndex = 9;
 			this.addShip.Text = "Добавить корабль";
 			this.addShip.UseVisualStyleBackColor = true;
+			this.addShip.Click += new System.EventHandler(this.buttonSetArmyShip_Click);
 			// 
 			// FormDocks
 			// 
