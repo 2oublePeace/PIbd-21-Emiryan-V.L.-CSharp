@@ -6,8 +6,6 @@ using System.Windows.Forms;
 
 namespace FlattopGame
 {
-	public delegate void CarDelegate(Vehicle car);
-
 	static class Program
 	{
 		/// <summary>

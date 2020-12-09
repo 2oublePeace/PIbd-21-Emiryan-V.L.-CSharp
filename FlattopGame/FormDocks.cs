@@ -93,7 +93,7 @@ namespace FlattopGame
 		private void buttonSetArmyShip_Click(object sender, EventArgs e)
 		{
 			var formCarConfig = new FormShipConfig();
-			formCarConfig.AddEvent(AddCar);
+			formCarConfig.AddEvent(AddShip);
 			formCarConfig.Show();
 		}
 		/// <summary>
@@ -125,11 +125,11 @@ namespace FlattopGame
 			Draw();
 		}
 
-		private void AddCar(Vehicle car)
+		private void AddShip(Vehicle armyShip)
 		{
-			if (car != null && listBoxDocks.SelectedIndex > -1)
+			if (armyShip != null && listBoxDocks.SelectedIndex > -1)
 			{
-				if ((dockCollection[listBoxDocks.SelectedItem.ToString()]) + car)
+				if ((dockCollection[listBoxDocks.SelectedItem.ToString()]) + armyShip)
 				{
 					Draw();
 				}

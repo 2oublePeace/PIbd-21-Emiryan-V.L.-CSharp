@@ -13,10 +13,10 @@ namespace FlattopGame
 	public partial class FormShipConfig : Form
 	{
 		/// <summary>
-		/// Переменная-выбранная машина
+		/// Переменная-выбранный корабль
 		/// </summary>
 		Vehicle armyShip = null;
-		private event CarDelegate eventAddShip;
+		private event Action<Vehicle> eventAddShip;
 		public FormShipConfig()
 		{
 			InitializeComponent();
@@ -76,7 +76,7 @@ namespace FlattopGame
 			}
 		}
 		/// <summary>
-		/// Добавление машины
+		/// Добавление корабля
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -103,11 +103,11 @@ namespace FlattopGame
 		/// Добавление события
 		/// </summary>
 		/// <param name="ev"></param>
-		public void AddEvent(CarDelegate ev)
+		public void AddEvent(Action<Vehicle> ev)
 		{
 			if (eventAddShip == null)
 			{
-				eventAddShip = new CarDelegate(ev);
+				eventAddShip = new Action<Vehicle>(ev);
 			}
 			else
 			{
@@ -158,7 +158,7 @@ namespace FlattopGame
 			switch (e.Data.GetData(DataFormats.Text).ToString())
 			{
 				case "Военный корабль":
-					armyShip = new ArmyShip(100, 500, Color.White);
+					armyShip = new ArmyShip((int)numericMaxSpeed.Value, (int)numericWeight.Value, Color.White);
 					break;
 				case "Авианосец":
 					armyShip = new Flattop((int)numericMaxSpeed.Value, (int)numericWeight.Value, Color.White, Color.Black, frontGunsCheck.Checked, helicopterStandCheck.Checked, satelliteLocatorCheck.Checked, planeCheck.Checked,true);
