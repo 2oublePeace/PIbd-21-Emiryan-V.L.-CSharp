@@ -32,14 +32,14 @@
 			this.flattopLabel = new System.Windows.Forms.Label();
 			this.armyShipLabel = new System.Windows.Forms.Label();
 			this.paramGroupBox = new System.Windows.Forms.GroupBox();
-			this.checkBox4 = new System.Windows.Forms.CheckBox();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.planeCheck = new System.Windows.Forms.CheckBox();
+			this.helicopterStandCheck = new System.Windows.Forms.CheckBox();
+			this.satelliteLocatorCheck = new System.Windows.Forms.CheckBox();
+			this.frontGunsCheck = new System.Windows.Forms.CheckBox();
 			this.shipWeightLabel = new System.Windows.Forms.Label();
 			this.maxSpeedLabel = new System.Windows.Forms.Label();
-			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.numericMaxSpeed = new System.Windows.Forms.NumericUpDown();
+			this.numericWeight = new System.Windows.Forms.NumericUpDown();
 			this.pictureBoxShip = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,8 +57,8 @@
 			this.cancelButton = new System.Windows.Forms.Button();
 			this.typeGroupBox.SuspendLayout();
 			this.paramGroupBox.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericMaxSpeed)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericWeight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -103,14 +103,14 @@
 			// 
 			// paramGroupBox
 			// 
-			this.paramGroupBox.Controls.Add(this.checkBox4);
-			this.paramGroupBox.Controls.Add(this.checkBox3);
-			this.paramGroupBox.Controls.Add(this.checkBox2);
-			this.paramGroupBox.Controls.Add(this.checkBox1);
+			this.paramGroupBox.Controls.Add(this.planeCheck);
+			this.paramGroupBox.Controls.Add(this.helicopterStandCheck);
+			this.paramGroupBox.Controls.Add(this.satelliteLocatorCheck);
+			this.paramGroupBox.Controls.Add(this.frontGunsCheck);
 			this.paramGroupBox.Controls.Add(this.shipWeightLabel);
 			this.paramGroupBox.Controls.Add(this.maxSpeedLabel);
-			this.paramGroupBox.Controls.Add(this.numericUpDown2);
-			this.paramGroupBox.Controls.Add(this.numericUpDown1);
+			this.paramGroupBox.Controls.Add(this.numericMaxSpeed);
+			this.paramGroupBox.Controls.Add(this.numericWeight);
 			this.paramGroupBox.Location = new System.Drawing.Point(18, 191);
 			this.paramGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.paramGroupBox.Name = "paramGroupBox";
@@ -120,49 +120,49 @@
 			this.paramGroupBox.TabStop = false;
 			this.paramGroupBox.Text = "Параметры";
 			// 
-			// checkBox4
+			// planeCheck
 			// 
-			this.checkBox4.AutoSize = true;
-			this.checkBox4.Location = new System.Drawing.Point(356, 148);
-			this.checkBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.Size = new System.Drawing.Size(113, 24);
-			this.checkBox4.TabIndex = 7;
-			this.checkBox4.Text = "checkBox4";
-			this.checkBox4.UseVisualStyleBackColor = true;
+			this.planeCheck.AutoSize = true;
+			this.planeCheck.Location = new System.Drawing.Point(337, 151);
+			this.planeCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.planeCheck.Name = "planeCheck";
+			this.planeCheck.Size = new System.Drawing.Size(103, 24);
+			this.planeCheck.TabIndex = 7;
+			this.planeCheck.Text = "Самолет";
+			this.planeCheck.UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// helicopterStandCheck
 			// 
-			this.checkBox3.AutoSize = true;
-			this.checkBox3.Location = new System.Drawing.Point(356, 118);
-			this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(113, 24);
-			this.checkBox3.TabIndex = 6;
-			this.checkBox3.Text = "checkBox3";
-			this.checkBox3.UseVisualStyleBackColor = true;
+			this.helicopterStandCheck.AutoSize = true;
+			this.helicopterStandCheck.Location = new System.Drawing.Point(337, 121);
+			this.helicopterStandCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.helicopterStandCheck.Name = "helicopterStandCheck";
+			this.helicopterStandCheck.Size = new System.Drawing.Size(219, 24);
+			this.helicopterStandCheck.TabIndex = 6;
+			this.helicopterStandCheck.Text = "Вертолетная площадка";
+			this.helicopterStandCheck.UseVisualStyleBackColor = true;
 			// 
-			// checkBox2
+			// satelliteLocatorCheck
 			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.Location = new System.Drawing.Point(356, 88);
-			this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(113, 24);
-			this.checkBox2.TabIndex = 5;
-			this.checkBox2.Text = "checkBox2";
-			this.checkBox2.UseVisualStyleBackColor = true;
+			this.satelliteLocatorCheck.AutoSize = true;
+			this.satelliteLocatorCheck.Location = new System.Drawing.Point(337, 91);
+			this.satelliteLocatorCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.satelliteLocatorCheck.Name = "satelliteLocatorCheck";
+			this.satelliteLocatorCheck.Size = new System.Drawing.Size(202, 24);
+			this.satelliteLocatorCheck.TabIndex = 5;
+			this.satelliteLocatorCheck.Text = "Спутниковый локатор";
+			this.satelliteLocatorCheck.UseVisualStyleBackColor = true;
 			// 
-			// checkBox1
+			// frontGunsCheck
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(356, 58);
-			this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(113, 24);
-			this.checkBox1.TabIndex = 4;
-			this.checkBox1.Text = "checkBox1";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			this.frontGunsCheck.AutoSize = true;
+			this.frontGunsCheck.Location = new System.Drawing.Point(337, 61);
+			this.frontGunsCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.frontGunsCheck.Name = "frontGunsCheck";
+			this.frontGunsCheck.Size = new System.Drawing.Size(193, 24);
+			this.frontGunsCheck.TabIndex = 4;
+			this.frontGunsCheck.Text = "Фронтальные пушки";
+			this.frontGunsCheck.UseVisualStyleBackColor = true;
 			// 
 			// shipWeightLabel
 			// 
@@ -184,47 +184,47 @@
 			this.maxSpeedLabel.TabIndex = 2;
 			this.maxSpeedLabel.Text = "Макс. скорость:";
 			// 
-			// numericUpDown2
+			// numericMaxSpeed
 			// 
-			this.numericUpDown2.Location = new System.Drawing.Point(194, 68);
-			this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.numericUpDown2.Maximum = new decimal(new int[] {
+			this.numericMaxSpeed.Location = new System.Drawing.Point(194, 68);
+			this.numericMaxSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.numericMaxSpeed.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-			this.numericUpDown2.Minimum = new decimal(new int[] {
+			this.numericMaxSpeed.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(75, 26);
-			this.numericUpDown2.TabIndex = 1;
-			this.numericUpDown2.Value = new decimal(new int[] {
+			this.numericMaxSpeed.Name = "numericMaxSpeed";
+			this.numericMaxSpeed.Size = new System.Drawing.Size(75, 26);
+			this.numericMaxSpeed.TabIndex = 1;
+			this.numericMaxSpeed.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
 			// 
-			// numericUpDown1
+			// numericWeight
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(194, 128);
-			this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.numericUpDown1.Maximum = new decimal(new int[] {
+			this.numericWeight.Location = new System.Drawing.Point(194, 128);
+			this.numericWeight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.numericWeight.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-			this.numericUpDown1.Minimum = new decimal(new int[] {
+			this.numericWeight.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(75, 26);
-			this.numericUpDown1.TabIndex = 0;
-			this.numericUpDown1.Value = new decimal(new int[] {
+			this.numericWeight.Name = "numericWeight";
+			this.numericWeight.Size = new System.Drawing.Size(75, 26);
+			this.numericWeight.TabIndex = 0;
+			this.numericWeight.Value = new decimal(new int[] {
             100,
             0,
             0,
@@ -389,6 +389,7 @@
 			this.addButton.TabIndex = 10;
 			this.addButton.Text = "Добавить";
 			this.addButton.UseVisualStyleBackColor = true;
+			this.addButton.Click += new System.EventHandler(this.addButton_Click);
 			// 
 			// cancelButton
 			// 
@@ -416,8 +417,8 @@
 			this.typeGroupBox.ResumeLayout(false);
 			this.paramGroupBox.ResumeLayout(false);
 			this.paramGroupBox.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericMaxSpeed)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericWeight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
@@ -432,14 +433,14 @@
 		private System.Windows.Forms.PictureBox pictureBoxShip;
 		private System.Windows.Forms.Label flattopLabel;
 		private System.Windows.Forms.Label armyShipLabel;
-		private System.Windows.Forms.CheckBox checkBox4;
-		private System.Windows.Forms.CheckBox checkBox3;
-		private System.Windows.Forms.CheckBox checkBox2;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.CheckBox planeCheck;
+		private System.Windows.Forms.CheckBox helicopterStandCheck;
+		private System.Windows.Forms.CheckBox satelliteLocatorCheck;
+		private System.Windows.Forms.CheckBox frontGunsCheck;
 		private System.Windows.Forms.Label shipWeightLabel;
 		private System.Windows.Forms.Label maxSpeedLabel;
-		private System.Windows.Forms.NumericUpDown numericUpDown2;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.NumericUpDown numericMaxSpeed;
+		private System.Windows.Forms.NumericUpDown numericWeight;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label2;

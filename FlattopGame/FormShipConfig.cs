@@ -20,6 +20,7 @@ namespace FlattopGame
 		public FormShipConfig()
 		{
 			InitializeComponent();
+			cancelButton.Click += (object sender, EventArgs e) => { Close(); };
 		}
 		/// <summary>
 		/// Отправляем цвет с панели
@@ -74,7 +75,16 @@ namespace FlattopGame
 				DrawShip();
 			}
 		}
-
+		/// <summary>
+		/// Добавление машины
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void addButton_Click(object sender, EventArgs e)
+		{
+			eventAddShip?.Invoke(armyShip);
+			Close();
+		}
 		/// <summary>
 		/// Отрисовать машину
 		/// </summary>
@@ -151,7 +161,7 @@ namespace FlattopGame
 					armyShip = new ArmyShip(100, 500, Color.White);
 					break;
 				case "Авианосец":
-					armyShip = new Flattop(100, 500, Color.White, Color.Black, true, true,true,true,true);
+					armyShip = new Flattop((int)numericMaxSpeed.Value, (int)numericWeight.Value, Color.White, Color.Black, frontGunsCheck.Checked, helicopterStandCheck.Checked, satelliteLocatorCheck.Checked, planeCheck.Checked,true);
 					break;
 			}
 			DrawShip();

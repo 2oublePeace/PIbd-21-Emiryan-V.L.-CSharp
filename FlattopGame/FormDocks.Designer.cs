@@ -48,7 +48,7 @@
 			this.groupBox1.Controls.Add(this.button3);
 			this.groupBox1.Controls.Add(this.maskedTextBox);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(1017, 595);
+			this.groupBox1.Location = new System.Drawing.Point(1017, 541);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -150,7 +150,7 @@
 			// 
 			// addShip
 			// 
-			this.addShip.Location = new System.Drawing.Point(1017, 520);
+			this.addShip.Location = new System.Drawing.Point(1017, 466);
 			this.addShip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.addShip.Name = "addShip";
 			this.addShip.Size = new System.Drawing.Size(171, 65);
