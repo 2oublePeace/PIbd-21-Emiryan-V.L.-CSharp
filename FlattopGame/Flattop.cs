@@ -168,6 +168,5 @@ namespace FlattopGame
 		{
 			DopColor = color;
 		}
-
 	}
 }

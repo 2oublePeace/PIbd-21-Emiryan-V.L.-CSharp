@@ -16,7 +16,7 @@ namespace FlattopGame
 		/// Переменная-выбранная машина
 		/// </summary>
 		Vehicle armyShip = null;
-		private event CarDelegate eventAddCar;
+		private event CarDelegate eventAddShip;
 		public FormShipConfig()
 		{
 			InitializeComponent();
@@ -38,7 +38,7 @@ namespace FlattopGame
 		/// <param name="e"></param>
 		private void labelBaseColor_DragEnter(object sender, DragEventArgs e)
 		{
-			if (e.Data.GetDataPresent(typeof(Color)))
+			if (e.Data.GetDataPresent(typeof(Color)) && armyShip != null)
 			{
 				e.Effect = DragDropEffects.Copy;
 			}
@@ -67,9 +67,12 @@ namespace FlattopGame
 		private void labelDopColor_DragDrop(object sender, DragEventArgs e)
 		{
 			Color shipColor = (Color)e.Data.GetData(typeof(Color));
-			Flattop vehicle = (Flattop) sender;
-			vehicle.SetDopColor(shipColor);
-			DrawShip();
+			if (armyShip.GetType() == typeof(Flattop))
+			{
+				Flattop flattop = (Flattop)armyShip;
+				flattop.SetDopColor(shipColor);
+				DrawShip();
+			}
 		}
 
 		/// <summary>
@@ -92,13 +95,13 @@ namespace FlattopGame
 		/// <param name="ev"></param>
 		public void AddEvent(CarDelegate ev)
 		{
-			if (eventAddCar == null)
+			if (eventAddShip == null)
 			{
-				eventAddCar = new CarDelegate(ev);
+				eventAddShip = new CarDelegate(ev);
 			}
 			else
 			{
-				eventAddCar += ev;
+				eventAddShip += ev;
 			}
 		}
 		/// <summary>

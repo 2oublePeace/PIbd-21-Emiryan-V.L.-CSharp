@@ -48,18 +48,21 @@
 			this.groupBox1.Controls.Add(this.button3);
 			this.groupBox1.Controls.Add(this.maskedTextBox);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(678, 387);
+			this.groupBox1.Location = new System.Drawing.Point(1017, 595);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(114, 97);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.groupBox1.Size = new System.Drawing.Size(171, 149);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Забрать корабль";
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(21, 60);
+			this.button3.Location = new System.Drawing.Point(32, 92);
+			this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(77, 25);
+			this.button3.Size = new System.Drawing.Size(116, 38);
 			this.button3.TabIndex = 2;
 			this.button3.Text = "Забрать";
 			this.button3.UseVisualStyleBackColor = true;
@@ -67,17 +70,19 @@
 			// 
 			// maskedTextBox
 			// 
-			this.maskedTextBox.Location = new System.Drawing.Point(63, 30);
+			this.maskedTextBox.Location = new System.Drawing.Point(94, 46);
+			this.maskedTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.maskedTextBox.Name = "maskedTextBox";
-			this.maskedTextBox.Size = new System.Drawing.Size(35, 20);
+			this.maskedTextBox.Size = new System.Drawing.Size(50, 26);
 			this.maskedTextBox.TabIndex = 1;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(18, 33);
+			this.label1.Location = new System.Drawing.Point(27, 51);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(42, 13);
+			this.label1.Size = new System.Drawing.Size(61, 20);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Место:";
 			// 
@@ -85,8 +90,9 @@
 			// 
 			this.pictureBoxDock.Dock = System.Windows.Forms.DockStyle.Left;
 			this.pictureBoxDock.Location = new System.Drawing.Point(0, 0);
+			this.pictureBoxDock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.pictureBoxDock.Name = "pictureBoxDock";
-			this.pictureBoxDock.Size = new System.Drawing.Size(672, 496);
+			this.pictureBoxDock.Size = new System.Drawing.Size(1008, 763);
 			this.pictureBoxDock.TabIndex = 3;
 			this.pictureBoxDock.TabStop = false;
 			// 
@@ -94,33 +100,38 @@
 			// 
 			this.listBoxDocks.Cursor = System.Windows.Forms.Cursors.Default;
 			this.listBoxDocks.FormattingEnabled = true;
-			this.listBoxDocks.Location = new System.Drawing.Point(678, 82);
+			this.listBoxDocks.ItemHeight = 20;
+			this.listBoxDocks.Location = new System.Drawing.Point(1017, 126);
+			this.listBoxDocks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.listBoxDocks.Name = "listBoxDocks";
-			this.listBoxDocks.Size = new System.Drawing.Size(114, 82);
+			this.listBoxDocks.Size = new System.Drawing.Size(169, 124);
 			this.listBoxDocks.TabIndex = 4;
 			this.listBoxDocks.SelectedIndexChanged += new System.EventHandler(this.listBoxDocks_SelectedIndexChanged);
 			// 
 			// textBoxNewLevelName
 			// 
-			this.textBoxNewLevelName.Location = new System.Drawing.Point(678, 29);
+			this.textBoxNewLevelName.Location = new System.Drawing.Point(1017, 45);
+			this.textBoxNewLevelName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.textBoxNewLevelName.Name = "textBoxNewLevelName";
-			this.textBoxNewLevelName.Size = new System.Drawing.Size(113, 20);
+			this.textBoxNewLevelName.Size = new System.Drawing.Size(168, 26);
 			this.textBoxNewLevelName.TabIndex = 5;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(713, 13);
+			this.label2.Location = new System.Drawing.Point(1070, 20);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(45, 13);
+			this.label2.Size = new System.Drawing.Size(64, 20);
 			this.label2.TabIndex = 6;
 			this.label2.Text = "Уровни";
 			// 
 			// addLevel
 			// 
-			this.addLevel.Location = new System.Drawing.Point(678, 55);
+			this.addLevel.Location = new System.Drawing.Point(1017, 85);
+			this.addLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.addLevel.Name = "addLevel";
-			this.addLevel.Size = new System.Drawing.Size(114, 21);
+			this.addLevel.Size = new System.Drawing.Size(171, 32);
 			this.addLevel.TabIndex = 7;
 			this.addLevel.Text = "Добавить уровень";
 			this.addLevel.UseVisualStyleBackColor = true;
@@ -128,9 +139,10 @@
 			// 
 			// delLevel
 			// 
-			this.delLevel.Location = new System.Drawing.Point(678, 170);
+			this.delLevel.Location = new System.Drawing.Point(1017, 262);
+			this.delLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.delLevel.Name = "delLevel";
-			this.delLevel.Size = new System.Drawing.Size(114, 22);
+			this.delLevel.Size = new System.Drawing.Size(171, 34);
 			this.delLevel.TabIndex = 8;
 			this.delLevel.Text = "Удалить уровень";
 			this.delLevel.UseVisualStyleBackColor = true;
@@ -138,9 +150,10 @@
 			// 
 			// addShip
 			// 
-			this.addShip.Location = new System.Drawing.Point(691, 317);
+			this.addShip.Location = new System.Drawing.Point(1017, 520);
+			this.addShip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.addShip.Name = "addShip";
-			this.addShip.Size = new System.Drawing.Size(97, 42);
+			this.addShip.Size = new System.Drawing.Size(171, 65);
 			this.addShip.TabIndex = 9;
 			this.addShip.Text = "Добавить корабль";
 			this.addShip.UseVisualStyleBackColor = true;
@@ -148,9 +161,9 @@
 			// 
 			// FormDocks
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 496);
+			this.ClientSize = new System.Drawing.Size(1200, 763);
 			this.Controls.Add(this.addShip);
 			this.Controls.Add(this.delLevel);
 			this.Controls.Add(this.addLevel);
@@ -159,6 +172,7 @@
 			this.Controls.Add(this.listBoxDocks);
 			this.Controls.Add(this.pictureBoxDock);
 			this.Controls.Add(this.groupBox1);
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FormDocks";
 			this.Text = "FormParking";
 			this.groupBox1.ResumeLayout(false);
