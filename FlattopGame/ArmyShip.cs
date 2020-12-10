@@ -149,5 +149,9 @@ namespace FlattopGame
 			br = new SolidBrush(Color.Gray);
 			g.FillEllipse(br, _startPosX + 85, _startPosY + 60, 60, 30);
 		}
+		public override string ToString()
+		{
+			return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
+		}
 	}
 }

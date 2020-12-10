@@ -188,5 +188,9 @@ namespace FlattopGame
 		{
 			DopColor = color;
 		}
+		public override string ToString()
+		{
+			return $"{base.ToString()}{separator}{DopColor.Name}{separator}{FrontGun}{separator}{HelicopterStand}{separator}{SatelliteLocator}{separator}{Plane}";
+		}
 	}
 }
