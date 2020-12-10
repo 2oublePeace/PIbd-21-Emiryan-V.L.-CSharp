@@ -55,6 +55,26 @@ namespace FlattopGame
 			LandingStrip = landingStrip;
 		}
 
+		/// <summary>
+		/// Конструктор для загрузки с файла
+		/// </summary>
+		/// <summary>
+		public Flattop(string info) : base(info)
+		{
+			string[] strs = info.Split(separator);
+			if (strs.Length == 3)
+			{
+				MaxSpeed = Convert.ToInt32(strs[0]);
+				Weight = Convert.ToInt32(strs[1]);
+				MainColor = Color.FromName(strs[2]);
+				DopColor = Color.FromName(strs[3]);
+				FrontGun = Convert.ToBoolean(strs[4]);
+				HelicopterStand = Convert.ToBoolean(strs[5]);
+				SatelliteLocator = Convert.ToBoolean(strs[6]);
+				Plane = Convert.ToBoolean(strs[7]);
+			}
+		}
+
 		public override void DrawTransport(Graphics g)
 		{
 			//Конвертируем double в int

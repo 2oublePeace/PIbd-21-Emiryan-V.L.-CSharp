@@ -34,6 +34,19 @@ namespace FlattopGame
 			MainColor = mainColor;
 		}
 		/// <summary>
+		/// Конструктор для загрузки с файла
+		/// </summary>
+		/// <summary>
+		public ArmyShip(string info)
+		{
+			string[] strs = info.Split(separator);
+			if (strs.Length == 3)
+			{
+				MaxSpeed = Convert.ToInt32(strs[0]);
+				Weight = Convert.ToInt32(strs[1]);
+				MainColor = Color.FromName(strs[2]);
+			}
+		}
 		/// Конструктор с изменением размеров армейского корабля
 		/// </summary>
 		/// <param name="maxSpeed">Максимальная скорость</param>
