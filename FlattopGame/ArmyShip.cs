@@ -18,6 +18,10 @@ namespace FlattopGame
 		/// </summary>
 		protected readonly int shipHeight = 90;
 		/// <summary>
+		/// Разделитель для записи информации по объекту в файл
+		/// </summary>
+		protected readonly char separator = ';';
+		/// <summary>
 		/// Конструктор
 		/// </summary>
 		/// <param name="maxSpeed">Максимальная скорость</param>
