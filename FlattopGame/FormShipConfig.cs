@@ -161,7 +161,7 @@ namespace FlattopGame
 					armyShip = new ArmyShip((int)numericMaxSpeed.Value, (int)numericWeight.Value, Color.White);
 					break;
 				case "Авианосец":
-					armyShip = new Flattop((int)numericMaxSpeed.Value, (int)numericWeight.Value, Color.White, Color.Black, frontGunsCheck.Checked, helicopterStandCheck.Checked, satelliteLocatorCheck.Checked, planeCheck.Checked,true);
+					armyShip = new Flattop((int)numericMaxSpeed.Value, (int)numericWeight.Value, Color.White, Color.Black, frontGunsCheck.Checked, helicopterStandCheck.Checked, satelliteLocatorCheck.Checked, planeCheck.Checked, true);
 					break;
 			}
 			DrawShip();
