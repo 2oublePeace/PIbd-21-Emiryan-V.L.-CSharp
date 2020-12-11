@@ -20,6 +20,7 @@ namespace FlattopGame
 		public FormShipConfig()
 		{
 			InitializeComponent();
+			//Соединение панелей с методом
 			foreach(Control control in colorGroupBox.Controls)
 			{
 				if(control.GetType() == typeof(Panel))
