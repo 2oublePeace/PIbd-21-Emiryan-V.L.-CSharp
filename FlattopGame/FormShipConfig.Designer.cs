@@ -68,11 +68,9 @@
 			// 
 			this.typeGroupBox.Controls.Add(this.flattopLabel);
 			this.typeGroupBox.Controls.Add(this.armyShipLabel);
-			this.typeGroupBox.Location = new System.Drawing.Point(18, 18);
-			this.typeGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.typeGroupBox.Location = new System.Drawing.Point(12, 12);
 			this.typeGroupBox.Name = "typeGroupBox";
-			this.typeGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.typeGroupBox.Size = new System.Drawing.Size(214, 163);
+			this.typeGroupBox.Size = new System.Drawing.Size(143, 106);
 			this.typeGroupBox.TabIndex = 0;
 			this.typeGroupBox.TabStop = false;
 			this.typeGroupBox.Text = "Тип корабля";
@@ -80,10 +78,9 @@
 			// flattopLabel
 			// 
 			this.flattopLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.flattopLabel.Location = new System.Drawing.Point(14, 89);
-			this.flattopLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.flattopLabel.Location = new System.Drawing.Point(9, 58);
 			this.flattopLabel.Name = "flattopLabel";
-			this.flattopLabel.Size = new System.Drawing.Size(186, 53);
+			this.flattopLabel.Size = new System.Drawing.Size(125, 35);
 			this.flattopLabel.TabIndex = 1;
 			this.flattopLabel.Text = "Авианосец";
 			this.flattopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,10 +89,9 @@
 			// armyShipLabel
 			// 
 			this.armyShipLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.armyShipLabel.Location = new System.Drawing.Point(14, 29);
-			this.armyShipLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.armyShipLabel.Location = new System.Drawing.Point(9, 19);
 			this.armyShipLabel.Name = "armyShipLabel";
-			this.armyShipLabel.Size = new System.Drawing.Size(186, 53);
+			this.armyShipLabel.Size = new System.Drawing.Size(125, 35);
 			this.armyShipLabel.TabIndex = 0;
 			this.armyShipLabel.Text = "Военный корабль";
 			this.armyShipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,11 +107,9 @@
 			this.paramGroupBox.Controls.Add(this.maxSpeedLabel);
 			this.paramGroupBox.Controls.Add(this.numericMaxSpeed);
 			this.paramGroupBox.Controls.Add(this.numericWeight);
-			this.paramGroupBox.Location = new System.Drawing.Point(18, 191);
-			this.paramGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.paramGroupBox.Location = new System.Drawing.Point(12, 124);
 			this.paramGroupBox.Name = "paramGroupBox";
-			this.paramGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.paramGroupBox.Size = new System.Drawing.Size(561, 225);
+			this.paramGroupBox.Size = new System.Drawing.Size(374, 146);
 			this.paramGroupBox.TabIndex = 1;
 			this.paramGroupBox.TabStop = false;
 			this.paramGroupBox.Text = "Параметры";
@@ -123,10 +117,9 @@
 			// planeCheck
 			// 
 			this.planeCheck.AutoSize = true;
-			this.planeCheck.Location = new System.Drawing.Point(337, 151);
-			this.planeCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.planeCheck.Location = new System.Drawing.Point(225, 98);
 			this.planeCheck.Name = "planeCheck";
-			this.planeCheck.Size = new System.Drawing.Size(103, 24);
+			this.planeCheck.Size = new System.Drawing.Size(70, 17);
 			this.planeCheck.TabIndex = 7;
 			this.planeCheck.Text = "Самолет";
 			this.planeCheck.UseVisualStyleBackColor = true;
@@ -134,10 +127,9 @@
 			// helicopterStandCheck
 			// 
 			this.helicopterStandCheck.AutoSize = true;
-			this.helicopterStandCheck.Location = new System.Drawing.Point(337, 121);
-			this.helicopterStandCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.helicopterStandCheck.Location = new System.Drawing.Point(225, 79);
 			this.helicopterStandCheck.Name = "helicopterStandCheck";
-			this.helicopterStandCheck.Size = new System.Drawing.Size(219, 24);
+			this.helicopterStandCheck.Size = new System.Drawing.Size(145, 17);
 			this.helicopterStandCheck.TabIndex = 6;
 			this.helicopterStandCheck.Text = "Вертолетная площадка";
 			this.helicopterStandCheck.UseVisualStyleBackColor = true;
@@ -145,10 +137,9 @@
 			// satelliteLocatorCheck
 			// 
 			this.satelliteLocatorCheck.AutoSize = true;
-			this.satelliteLocatorCheck.Location = new System.Drawing.Point(337, 91);
-			this.satelliteLocatorCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.satelliteLocatorCheck.Location = new System.Drawing.Point(225, 59);
 			this.satelliteLocatorCheck.Name = "satelliteLocatorCheck";
-			this.satelliteLocatorCheck.Size = new System.Drawing.Size(202, 24);
+			this.satelliteLocatorCheck.Size = new System.Drawing.Size(137, 17);
 			this.satelliteLocatorCheck.TabIndex = 5;
 			this.satelliteLocatorCheck.Text = "Спутниковый локатор";
 			this.satelliteLocatorCheck.UseVisualStyleBackColor = true;
@@ -156,10 +147,9 @@
 			// frontGunsCheck
 			// 
 			this.frontGunsCheck.AutoSize = true;
-			this.frontGunsCheck.Location = new System.Drawing.Point(337, 61);
-			this.frontGunsCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.frontGunsCheck.Location = new System.Drawing.Point(225, 40);
 			this.frontGunsCheck.Name = "frontGunsCheck";
-			this.frontGunsCheck.Size = new System.Drawing.Size(193, 24);
+			this.frontGunsCheck.Size = new System.Drawing.Size(132, 17);
 			this.frontGunsCheck.TabIndex = 4;
 			this.frontGunsCheck.Text = "Фронтальные пушки";
 			this.frontGunsCheck.UseVisualStyleBackColor = true;
@@ -167,27 +157,24 @@
 			// shipWeightLabel
 			// 
 			this.shipWeightLabel.AutoSize = true;
-			this.shipWeightLabel.Location = new System.Drawing.Point(50, 132);
-			this.shipWeightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.shipWeightLabel.Location = new System.Drawing.Point(33, 86);
 			this.shipWeightLabel.Name = "shipWeightLabel";
-			this.shipWeightLabel.Size = new System.Drawing.Size(108, 20);
+			this.shipWeightLabel.Size = new System.Drawing.Size(74, 13);
 			this.shipWeightLabel.TabIndex = 3;
 			this.shipWeightLabel.Text = "Вес корабля:";
 			// 
 			// maxSpeedLabel
 			// 
 			this.maxSpeedLabel.AutoSize = true;
-			this.maxSpeedLabel.Location = new System.Drawing.Point(50, 72);
-			this.maxSpeedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.maxSpeedLabel.Location = new System.Drawing.Point(33, 47);
 			this.maxSpeedLabel.Name = "maxSpeedLabel";
-			this.maxSpeedLabel.Size = new System.Drawing.Size(128, 20);
+			this.maxSpeedLabel.Size = new System.Drawing.Size(90, 13);
 			this.maxSpeedLabel.TabIndex = 2;
 			this.maxSpeedLabel.Text = "Макс. скорость:";
 			// 
 			// numericMaxSpeed
 			// 
-			this.numericMaxSpeed.Location = new System.Drawing.Point(194, 68);
-			this.numericMaxSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.numericMaxSpeed.Location = new System.Drawing.Point(129, 44);
 			this.numericMaxSpeed.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -199,7 +186,7 @@
             0,
             0});
 			this.numericMaxSpeed.Name = "numericMaxSpeed";
-			this.numericMaxSpeed.Size = new System.Drawing.Size(75, 26);
+			this.numericMaxSpeed.Size = new System.Drawing.Size(50, 20);
 			this.numericMaxSpeed.TabIndex = 1;
 			this.numericMaxSpeed.Value = new decimal(new int[] {
             100,
@@ -209,8 +196,7 @@
 			// 
 			// numericWeight
 			// 
-			this.numericWeight.Location = new System.Drawing.Point(194, 128);
-			this.numericWeight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.numericWeight.Location = new System.Drawing.Point(129, 83);
 			this.numericWeight.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -222,10 +208,10 @@
             0,
             0});
 			this.numericWeight.Name = "numericWeight";
-			this.numericWeight.Size = new System.Drawing.Size(75, 26);
+			this.numericWeight.Size = new System.Drawing.Size(50, 20);
 			this.numericWeight.TabIndex = 0;
 			this.numericWeight.Value = new decimal(new int[] {
-            100,
+            500,
             0,
             0,
             0});
@@ -234,9 +220,8 @@
 			// 
 			this.pictureBoxShip.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pictureBoxShip.Location = new System.Drawing.Point(0, 0);
-			this.pictureBoxShip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.pictureBoxShip.Name = "pictureBoxShip";
-			this.pictureBoxShip.Size = new System.Drawing.Size(537, 163);
+			this.pictureBoxShip.Size = new System.Drawing.Size(358, 106);
 			this.pictureBoxShip.TabIndex = 2;
 			this.pictureBoxShip.TabStop = false;
 			// 
@@ -244,43 +229,41 @@
 			// 
 			this.panel1.AllowDrop = true;
 			this.panel1.Controls.Add(this.pictureBoxShip);
-			this.panel1.Location = new System.Drawing.Point(242, 18);
-			this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel1.Location = new System.Drawing.Point(161, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(537, 163);
+			this.panel1.Size = new System.Drawing.Size(358, 106);
 			this.panel1.TabIndex = 8;
 			this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragDrop);
 			this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragEnter);
 			// 
 			// colorGroupBox
 			// 
-			this.colorGroupBox.Controls.Add(this.label2);
-			this.colorGroupBox.Controls.Add(this.mainColorLabel);
-			this.colorGroupBox.Controls.Add(this.bluePanel);
-			this.colorGroupBox.Controls.Add(this.greenPanel);
-			this.colorGroupBox.Controls.Add(this.orangePanel);
-			this.colorGroupBox.Controls.Add(this.grayPanel);
-			this.colorGroupBox.Controls.Add(this.blackPanel);
-			this.colorGroupBox.Controls.Add(this.yellowPanel);
-			this.colorGroupBox.Controls.Add(this.whitePanel);
-			this.colorGroupBox.Controls.Add(this.redPanel);
-			this.colorGroupBox.Location = new System.Drawing.Point(616, 191);
-			this.colorGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.colorGroupBox.Name = "colorGroupBox";
-			this.colorGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.colorGroupBox.Size = new System.Drawing.Size(336, 225);
-			this.colorGroupBox.TabIndex = 9;
-			this.colorGroupBox.TabStop = false;
-			this.colorGroupBox.Text = "Палитра";
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.mainColorLabel);
+			this.groupBox1.Controls.Add(this.panel9);
+			this.groupBox1.Controls.Add(this.panel8);
+			this.groupBox1.Controls.Add(this.panel7);
+			this.groupBox1.Controls.Add(this.panel6);
+			this.groupBox1.Controls.Add(this.panel4);
+			this.groupBox1.Controls.Add(this.panel5);
+			this.groupBox1.Controls.Add(this.panel3);
+			this.groupBox1.Controls.Add(this.panel2);
+			this.groupBox1.Location = new System.Drawing.Point(616, 191);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.groupBox1.Size = new System.Drawing.Size(336, 225);
+			this.groupBox1.TabIndex = 9;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "groupBox1";
 			// 
 			// label2
 			// 
 			this.label2.AllowDrop = true;
 			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.label2.Location = new System.Drawing.Point(168, 29);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Location = new System.Drawing.Point(112, 19);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(126, 53);
+			this.label2.Size = new System.Drawing.Size(85, 35);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Доп. цвет";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -291,10 +274,9 @@
 			// 
 			this.mainColorLabel.AllowDrop = true;
 			this.mainColorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.mainColorLabel.Location = new System.Drawing.Point(34, 29);
-			this.mainColorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.mainColorLabel.Location = new System.Drawing.Point(23, 19);
 			this.mainColorLabel.Name = "mainColorLabel";
-			this.mainColorLabel.Size = new System.Drawing.Size(126, 53);
+			this.mainColorLabel.Size = new System.Drawing.Size(85, 35);
 			this.mainColorLabel.TabIndex = 2;
 			this.mainColorLabel.Text = "Основной цвет";
 			this.mainColorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,81 +285,90 @@
 			// 
 			// bluePanel
 			// 
-			this.bluePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.bluePanel.Location = new System.Drawing.Point(250, 155);
-			this.bluePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.bluePanel.Name = "bluePanel";
-			this.bluePanel.Size = new System.Drawing.Size(45, 46);
-			this.bluePanel.TabIndex = 1;
+			this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.panel9.Location = new System.Drawing.Point(250, 155);
+			this.panel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel9.Name = "panel9";
+			this.panel9.Size = new System.Drawing.Size(45, 46);
+			this.panel9.TabIndex = 1;
+			this.panel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// greenPanel
 			// 
-			this.greenPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-			this.greenPanel.Location = new System.Drawing.Point(182, 155);
-			this.greenPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.greenPanel.Name = "greenPanel";
-			this.greenPanel.Size = new System.Drawing.Size(45, 46);
-			this.greenPanel.TabIndex = 1;
+			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.panel8.Location = new System.Drawing.Point(182, 155);
+			this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(45, 46);
+			this.panel8.TabIndex = 1;
+			this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// orangePanel
 			// 
-			this.orangePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.orangePanel.Location = new System.Drawing.Point(110, 155);
-			this.orangePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.orangePanel.Name = "orangePanel";
-			this.orangePanel.Size = new System.Drawing.Size(45, 46);
-			this.orangePanel.TabIndex = 1;
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.panel7.Location = new System.Drawing.Point(110, 155);
+			this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(45, 46);
+			this.panel7.TabIndex = 1;
+			this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// grayPanel
 			// 
-			this.grayPanel.BackColor = System.Drawing.Color.Gray;
-			this.grayPanel.Location = new System.Drawing.Point(34, 155);
-			this.grayPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.grayPanel.Name = "grayPanel";
-			this.grayPanel.Size = new System.Drawing.Size(45, 46);
-			this.grayPanel.TabIndex = 1;
+			this.panel6.BackColor = System.Drawing.Color.Gray;
+			this.panel6.Location = new System.Drawing.Point(34, 155);
+			this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(45, 46);
+			this.panel6.TabIndex = 1;
+			this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// blackPanel
 			// 
-			this.blackPanel.BackColor = System.Drawing.Color.Black;
-			this.blackPanel.Location = new System.Drawing.Point(182, 100);
-			this.blackPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.blackPanel.Name = "blackPanel";
-			this.blackPanel.Size = new System.Drawing.Size(45, 46);
-			this.blackPanel.TabIndex = 1;
+			this.panel4.BackColor = System.Drawing.Color.Black;
+			this.panel4.Location = new System.Drawing.Point(182, 100);
+			this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(45, 46);
+			this.panel4.TabIndex = 1;
+			this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// yellowPanel
 			// 
-			this.yellowPanel.BackColor = System.Drawing.Color.Yellow;
-			this.yellowPanel.Location = new System.Drawing.Point(110, 100);
-			this.yellowPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.yellowPanel.Name = "yellowPanel";
-			this.yellowPanel.Size = new System.Drawing.Size(45, 46);
-			this.yellowPanel.TabIndex = 1;
+			this.panel5.BackColor = System.Drawing.Color.Yellow;
+			this.panel5.Location = new System.Drawing.Point(110, 100);
+			this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(45, 46);
+			this.panel5.TabIndex = 1;
+			this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// whitePanel
 			// 
-			this.whitePanel.BackColor = System.Drawing.Color.White;
-			this.whitePanel.Location = new System.Drawing.Point(250, 100);
-			this.whitePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.whitePanel.Name = "whitePanel";
-			this.whitePanel.Size = new System.Drawing.Size(45, 46);
-			this.whitePanel.TabIndex = 1;
+			this.panel3.BackColor = System.Drawing.Color.White;
+			this.panel3.Location = new System.Drawing.Point(250, 100);
+			this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(45, 46);
+			this.panel3.TabIndex = 1;
+			this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// redPanel
 			// 
-			this.redPanel.BackColor = System.Drawing.Color.Red;
-			this.redPanel.Location = new System.Drawing.Point(34, 100);
-			this.redPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.redPanel.Name = "redPanel";
-			this.redPanel.Size = new System.Drawing.Size(45, 46);
-			this.redPanel.TabIndex = 0;
+			this.panel2.BackColor = System.Drawing.Color.Red;
+			this.panel2.Location = new System.Drawing.Point(34, 100);
+			this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(45, 46);
+			this.panel2.TabIndex = 0;
+			this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// addButton
 			// 
-			this.addButton.Location = new System.Drawing.Point(650, 424);
+			this.addButton.Location = new System.Drawing.Point(433, 276);
+			this.addButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.addButton.Name = "addButton";
-			this.addButton.Size = new System.Drawing.Size(121, 40);
+			this.addButton.Size = new System.Drawing.Size(81, 26);
 			this.addButton.TabIndex = 10;
 			this.addButton.Text = "Добавить";
 			this.addButton.UseVisualStyleBackColor = true;
@@ -385,24 +376,25 @@
 			// 
 			// cancelButton
 			// 
-			this.cancelButton.Location = new System.Drawing.Point(798, 424);
+			this.cancelButton.Location = new System.Drawing.Point(532, 276);
+			this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.cancelButton.Name = "cancelButton";
-			this.cancelButton.Size = new System.Drawing.Size(113, 40);
+			this.cancelButton.Size = new System.Drawing.Size(75, 26);
 			this.cancelButton.TabIndex = 11;
 			this.cancelButton.Text = "Отмена";
 			this.cancelButton.UseVisualStyleBackColor = true;
 			// 
 			// FormShipConfig
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(970, 476);
+			this.ClientSize = new System.Drawing.Size(647, 309);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.addButton);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.paramGroupBox);
 			this.Controls.Add(this.typeGroupBox);
-			this.Controls.Add(this.colorGroupBox);
+			this.Controls.Add(this.groupBox1);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FormShipConfig";
 			this.Text = "FormShipConfig";
