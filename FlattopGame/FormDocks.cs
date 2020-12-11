@@ -143,6 +143,7 @@ namespace FlattopGame
 		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			saveFileDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				if (dockCollection.SaveData(saveFileDialog.FileName))
@@ -159,6 +160,7 @@ namespace FlattopGame
 		private void downloadToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
+			openFileDialog.Filter = "Text files|*.txt|All files|*.*";
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				if (dockCollection.LoadData(openFileDialog.FileName))
