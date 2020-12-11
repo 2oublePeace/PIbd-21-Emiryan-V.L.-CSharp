@@ -20,7 +20,13 @@ namespace FlattopGame
 		public FormShipConfig()
 		{
 			InitializeComponent();
-			this.bluePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			foreach(Control control in colorGroupBox.Controls)
+			{
+				if(control.GetType() == typeof(Panel))
+				{
+					control.MouseDown += new MouseEventHandler(this.panelColor_MouseDown);
+				}
+			}
 			cancelButton.Click += (object sender, EventArgs e) => { Close(); };
 		}
 		/// <summary>

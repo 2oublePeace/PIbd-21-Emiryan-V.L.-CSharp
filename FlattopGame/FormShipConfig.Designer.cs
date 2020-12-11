@@ -309,7 +309,6 @@
 			this.bluePanel.Name = "bluePanel";
 			this.bluePanel.Size = new System.Drawing.Size(45, 46);
 			this.bluePanel.TabIndex = 1;
-			this.bluePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// greenPanel
 			// 
@@ -319,7 +318,6 @@
 			this.greenPanel.Name = "greenPanel";
 			this.greenPanel.Size = new System.Drawing.Size(45, 46);
 			this.greenPanel.TabIndex = 1;
-			this.greenPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// orangePanel
 			// 
@@ -329,7 +327,6 @@
 			this.orangePanel.Name = "orangePanel";
 			this.orangePanel.Size = new System.Drawing.Size(45, 46);
 			this.orangePanel.TabIndex = 1;
-			this.orangePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// grayPanel
 			// 
@@ -339,7 +336,6 @@
 			this.grayPanel.Name = "grayPanel";
 			this.grayPanel.Size = new System.Drawing.Size(45, 46);
 			this.grayPanel.TabIndex = 1;
-			this.grayPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// blackPanel
 			// 
@@ -349,7 +345,6 @@
 			this.blackPanel.Name = "blackPanel";
 			this.blackPanel.Size = new System.Drawing.Size(45, 46);
 			this.blackPanel.TabIndex = 1;
-			this.blackPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// yellowPanel
 			// 
@@ -359,7 +354,6 @@
 			this.yellowPanel.Name = "yellowPanel";
 			this.yellowPanel.Size = new System.Drawing.Size(45, 46);
 			this.yellowPanel.TabIndex = 1;
-			this.yellowPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// whitePanel
 			// 
@@ -369,7 +363,6 @@
 			this.whitePanel.Name = "whitePanel";
 			this.whitePanel.Size = new System.Drawing.Size(45, 46);
 			this.whitePanel.TabIndex = 1;
-			this.whitePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// redPanel
 			// 
@@ -379,7 +372,6 @@
 			this.redPanel.Name = "redPanel";
 			this.redPanel.Size = new System.Drawing.Size(45, 46);
 			this.redPanel.TabIndex = 0;
-			this.redPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
 			// 
 			// addButton
 			// 
