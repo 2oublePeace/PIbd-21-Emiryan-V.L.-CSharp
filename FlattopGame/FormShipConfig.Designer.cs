@@ -42,7 +42,7 @@
 			this.numericWeight = new System.Windows.Forms.NumericUpDown();
 			this.pictureBoxShip = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.Палитра = new System.Windows.Forms.GroupBox();
+			this.colorGroupBox = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.mainColorLabel = new System.Windows.Forms.Label();
 			this.bluePanel = new System.Windows.Forms.Panel();
@@ -61,7 +61,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.numericWeight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).BeginInit();
 			this.panel1.SuspendLayout();
-			this.Палитра.SuspendLayout();
+			this.colorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// typeGroupBox
@@ -252,26 +252,26 @@
 			this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragDrop);
 			this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragEnter);
 			// 
-			// Палитра
+			// colorGroupBox
 			// 
-			this.Палитра.Controls.Add(this.label2);
-			this.Палитра.Controls.Add(this.mainColorLabel);
-			this.Палитра.Controls.Add(this.bluePanel);
-			this.Палитра.Controls.Add(this.greenPanel);
-			this.Палитра.Controls.Add(this.orangePanel);
-			this.Палитра.Controls.Add(this.grayPanel);
-			this.Палитра.Controls.Add(this.blackPanel);
-			this.Палитра.Controls.Add(this.yellowPanel);
-			this.Палитра.Controls.Add(this.whitePanel);
-			this.Палитра.Controls.Add(this.redPanel);
-			this.Палитра.Location = new System.Drawing.Point(616, 191);
-			this.Палитра.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.Палитра.Name = "Палитра";
-			this.Палитра.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.Палитра.Size = new System.Drawing.Size(336, 225);
-			this.Палитра.TabIndex = 9;
-			this.Палитра.TabStop = false;
-			this.Палитра.Text = "groupBox1";
+			this.colorGroupBox.Controls.Add(this.label2);
+			this.colorGroupBox.Controls.Add(this.mainColorLabel);
+			this.colorGroupBox.Controls.Add(this.bluePanel);
+			this.colorGroupBox.Controls.Add(this.greenPanel);
+			this.colorGroupBox.Controls.Add(this.orangePanel);
+			this.colorGroupBox.Controls.Add(this.grayPanel);
+			this.colorGroupBox.Controls.Add(this.blackPanel);
+			this.colorGroupBox.Controls.Add(this.yellowPanel);
+			this.colorGroupBox.Controls.Add(this.whitePanel);
+			this.colorGroupBox.Controls.Add(this.redPanel);
+			this.colorGroupBox.Location = new System.Drawing.Point(616, 191);
+			this.colorGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.colorGroupBox.Name = "colorGroupBox";
+			this.colorGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.colorGroupBox.Size = new System.Drawing.Size(336, 225);
+			this.colorGroupBox.TabIndex = 9;
+			this.colorGroupBox.TabStop = false;
+			this.colorGroupBox.Text = "Палитра";
 			// 
 			// label2
 			// 
@@ -410,7 +410,7 @@
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.paramGroupBox);
 			this.Controls.Add(this.typeGroupBox);
-			this.Controls.Add(this.Палитра);
+			this.Controls.Add(this.colorGroupBox);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FormShipConfig";
 			this.Text = "FormShipConfig";
@@ -421,7 +421,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.numericWeight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).EndInit();
 			this.panel1.ResumeLayout(false);
-			this.Палитра.ResumeLayout(false);
+			this.colorGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -442,7 +442,7 @@
 		private System.Windows.Forms.NumericUpDown numericMaxSpeed;
 		private System.Windows.Forms.NumericUpDown numericWeight;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.GroupBox Палитра;
+		private System.Windows.Forms.GroupBox colorGroupBox;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label mainColorLabel;
 		private System.Windows.Forms.Panel bluePanel;
