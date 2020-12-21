@@ -55,6 +55,7 @@
       <DependentUpon>ArmyShipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DockCollection.cs" />
+    <Compile Include="DockNotFoundException.cs" />
     <Compile Include="Flattop.cs" />
     <Compile Include="FormDocks.cs">
       <SubType>Form</SubType>
@@ -69,6 +70,7 @@
     <Compile Include="FormShipConfig.Designer.cs">
       <DependentUpon>FormShipConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="DockOverflowException.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />

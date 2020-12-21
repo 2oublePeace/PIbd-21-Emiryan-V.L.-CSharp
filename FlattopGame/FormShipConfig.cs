@@ -27,7 +27,7 @@ namespace FlattopGame
 					control.MouseDown += new MouseEventHandler(this.panelColor_MouseDown);
 				}
 			}
-			cancelButton.Click += (object sender, EventArgs e) => { Close(); };
+			cancelButton.Click += (object sender, EventArgs e) => Close(); 
 		}
 		/// <summary>
 		/// Отправляем цвет с панели
