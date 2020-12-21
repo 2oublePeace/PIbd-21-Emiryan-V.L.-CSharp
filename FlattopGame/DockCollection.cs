@@ -101,13 +101,13 @@ namespace FlattopGame
 			{
 				File.Delete(filename);
 			}
-			using (FileStream fs = new FileStream(filename, FileMode.Create))
+			using (StreamWriter sw = new StreamWriter(filename))
 			{
-				WriteToFile($"DockCollection{Environment.NewLine}", fs);
+				sw.WriteLine($"DockCollection{Environment.NewLine}");
 				foreach (var level in dockStages)
 				{
 					//Начинаем парковку
-					WriteToFile($"Dock{separator}{level.Key}{Environment.NewLine}", fs);
+					sw.WriteLine($"DockCollection{Environment.NewLine}");
 					ITransport armyShip = null;
 					for (int i = 0; (armyShip = level.Value.GetNext(i)) != null; i++)
 					{
@@ -117,14 +117,14 @@ namespace FlattopGame
 							//Записываем тип машины
 							if (armyShip.GetType().Name == "ArmyShip")
 							{
-								WriteToFile($"ArmyShip{separator}", fs);
+								sw.WriteLine($"ArmyShip{separator}");
 							}
 							if (armyShip.GetType().Name == "Flattop")
 							{
-								WriteToFile($"Flattop{separator}", fs);
+								sw.WriteLine($"Flattop{separator}");
 							}
 							//Записываемые параметры
-							WriteToFile(armyShip + Environment.NewLine, fs);
+							sw.WriteLine(armyShip + Environment.NewLine);
 						}
 					}
 				}
@@ -142,59 +142,49 @@ namespace FlattopGame
 			{
 				return false;
 			}
-			string bufferTextFromFile = "";
-			using (FileStream fs = new FileStream(filename, FileMode.Open))
+			
+			using (StreamReader sr = new StreamReader(filename))
 			{
-				byte[] b = new byte[fs.Length];
-				UTF8Encoding temp = new UTF8Encoding(true);
-				while (fs.Read(b, 0, b.Length) > 0)
+				string line = sr.ReadLine();
+				Vehicle armyShip = null;
+				string key = string.Empty;
+				if (line.Contains("DockCollection"));
 				{
-					bufferTextFromFile += temp.GetString(b);
+					dockStages.Clear();
+					line = sr.ReadLine();
+					while (line != null)
+					{
+						//идем по считанным записям
+						if (line.Contains("Dock"))
+						{
+							//начинаем новую парковку
+							key = line.Split(separator)[1];
+							dockStages.Add(key, new Docks<Vehicle>(pictureWidth, pictureHeight));
+							line = sr.ReadLine();
+							continue;
+						}
+						if (string.IsNullOrEmpty(line))
+						{
+							continue;
+						}
+						if (line.Split(separator)[0] == "ArmyShip")
+						{
+							armyShip = new ArmyShip(line.Split(separator)[1]);
+						}
+						else if (line.Split(separator)[0] == "Flattop")
+						{
+							armyShip = new Flattop(line.Split(separator)[1]);
+						}
+						var result = dockStages[key] + armyShip;
+						if (!result)
+						{
+							return false;
+						}
+						line = sr.ReadLine();
+					}
+					return true;
 				}
 			}
-			bufferTextFromFile = bufferTextFromFile.Replace("\r", "");
-			var strs = bufferTextFromFile.Split('\n');
-			if (strs[0].Contains("DockCollection"))
-			{
-				//очищаем записи
-				dockStages.Clear();
-			}
-			else
-			{
-				//если нет такой записи, то это не те данные
-				return false;
-			}
-			Vehicle armyShip = null;
-			string key = string.Empty;
-			for (int i = 1; i < strs.Length; ++i)
-			{
-				//идем по считанным записям
-				if (strs[i].Contains("Dock"))
-				{
-					//начинаем новую парковку
-					key = strs[i].Split(separator)[1];
-					dockStages.Add(key, new Docks<Vehicle>(pictureWidth, pictureHeight));
-					continue;
-				}
-				if (string.IsNullOrEmpty(strs[i]))
-				{
-					continue;
-				}
-				if (strs[i].Split(separator)[0] == "ArmyShip")
-				{
-					armyShip = new ArmyShip(strs[i].Split(separator)[1]);
-				}
-				else if (strs[i].Split(separator)[0] == "Flattop")
-				{
-					armyShip = new Flattop(strs[i].Split(separator)[1]);
-				}
-				var result = dockStages[key] + armyShip;
-				if (!result)
-				{
-					return false;
-				}
-			}
-			return true;
 		}
 
 		internal bool SaveData(object fileName)

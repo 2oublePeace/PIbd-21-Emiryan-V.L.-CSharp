@@ -42,17 +42,17 @@
 			this.numericWeight = new System.Windows.Forms.NumericUpDown();
 			this.pictureBoxShip = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.colorGroupBox = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.mainColorLabel = new System.Windows.Forms.Label();
-			this.panel9 = new System.Windows.Forms.Panel();
-			this.panel8 = new System.Windows.Forms.Panel();
-			this.panel7 = new System.Windows.Forms.Panel();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
+			this.bluePanel = new System.Windows.Forms.Panel();
+			this.greenPanel = new System.Windows.Forms.Panel();
+			this.orangePanel = new System.Windows.Forms.Panel();
+			this.grayPanel = new System.Windows.Forms.Panel();
+			this.blackPanel = new System.Windows.Forms.Panel();
+			this.yellowPanel = new System.Windows.Forms.Panel();
+			this.whitePanel = new System.Windows.Forms.Panel();
+			this.redPanel = new System.Windows.Forms.Panel();
 			this.addButton = new System.Windows.Forms.Button();
 			this.cancelButton = new System.Windows.Forms.Button();
 			this.typeGroupBox.SuspendLayout();
@@ -61,7 +61,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.numericWeight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).BeginInit();
 			this.panel1.SuspendLayout();
-			this.groupBox1.SuspendLayout();
+			this.colorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// typeGroupBox
@@ -115,7 +115,7 @@
 			this.paramGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.paramGroupBox.Name = "paramGroupBox";
 			this.paramGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.paramGroupBox.Size = new System.Drawing.Size(561, 225);
+			this.paramGroupBox.Size = new System.Drawing.Size(518, 225);
 			this.paramGroupBox.TabIndex = 1;
 			this.paramGroupBox.TabStop = false;
 			this.paramGroupBox.Text = "Параметры";
@@ -123,7 +123,7 @@
 			// planeCheck
 			// 
 			this.planeCheck.AutoSize = true;
-			this.planeCheck.Location = new System.Drawing.Point(338, 151);
+			this.planeCheck.Location = new System.Drawing.Point(294, 151);
 			this.planeCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.planeCheck.Name = "planeCheck";
 			this.planeCheck.Size = new System.Drawing.Size(103, 24);
@@ -134,7 +134,7 @@
 			// helicopterStandCheck
 			// 
 			this.helicopterStandCheck.AutoSize = true;
-			this.helicopterStandCheck.Location = new System.Drawing.Point(338, 122);
+			this.helicopterStandCheck.Location = new System.Drawing.Point(294, 122);
 			this.helicopterStandCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.helicopterStandCheck.Name = "helicopterStandCheck";
 			this.helicopterStandCheck.Size = new System.Drawing.Size(219, 24);
@@ -145,7 +145,7 @@
 			// satelliteLocatorCheck
 			// 
 			this.satelliteLocatorCheck.AutoSize = true;
-			this.satelliteLocatorCheck.Location = new System.Drawing.Point(338, 91);
+			this.satelliteLocatorCheck.Location = new System.Drawing.Point(294, 91);
 			this.satelliteLocatorCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.satelliteLocatorCheck.Name = "satelliteLocatorCheck";
 			this.satelliteLocatorCheck.Size = new System.Drawing.Size(202, 24);
@@ -156,7 +156,7 @@
 			// frontGunsCheck
 			// 
 			this.frontGunsCheck.AutoSize = true;
-			this.frontGunsCheck.Location = new System.Drawing.Point(338, 62);
+			this.frontGunsCheck.Location = new System.Drawing.Point(294, 62);
 			this.frontGunsCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.frontGunsCheck.Name = "frontGunsCheck";
 			this.frontGunsCheck.Size = new System.Drawing.Size(193, 24);
@@ -167,7 +167,7 @@
 			// shipWeightLabel
 			// 
 			this.shipWeightLabel.AutoSize = true;
-			this.shipWeightLabel.Location = new System.Drawing.Point(50, 132);
+			this.shipWeightLabel.Location = new System.Drawing.Point(6, 132);
 			this.shipWeightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.shipWeightLabel.Name = "shipWeightLabel";
 			this.shipWeightLabel.Size = new System.Drawing.Size(108, 20);
@@ -177,7 +177,7 @@
 			// maxSpeedLabel
 			// 
 			this.maxSpeedLabel.AutoSize = true;
-			this.maxSpeedLabel.Location = new System.Drawing.Point(50, 72);
+			this.maxSpeedLabel.Location = new System.Drawing.Point(6, 72);
 			this.maxSpeedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.maxSpeedLabel.Name = "maxSpeedLabel";
 			this.maxSpeedLabel.Size = new System.Drawing.Size(128, 20);
@@ -186,49 +186,49 @@
 			// 
 			// numericMaxSpeed
 			// 
-			this.numericMaxSpeed.Location = new System.Drawing.Point(194, 68);
+			this.numericMaxSpeed.Location = new System.Drawing.Point(150, 68);
 			this.numericMaxSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.numericMaxSpeed.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
+			1000,
+			0,
+			0,
+			0});
 			this.numericMaxSpeed.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+			100,
+			0,
+			0,
+			0});
 			this.numericMaxSpeed.Name = "numericMaxSpeed";
 			this.numericMaxSpeed.Size = new System.Drawing.Size(75, 26);
 			this.numericMaxSpeed.TabIndex = 1;
 			this.numericMaxSpeed.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+			100,
+			0,
+			0,
+			0});
 			// 
 			// numericWeight
 			// 
-			this.numericWeight.Location = new System.Drawing.Point(194, 128);
+			this.numericWeight.Location = new System.Drawing.Point(150, 128);
 			this.numericWeight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.numericWeight.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
+			1000,
+			0,
+			0,
+			0});
 			this.numericWeight.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+			100,
+			0,
+			0,
+			0});
 			this.numericWeight.Name = "numericWeight";
 			this.numericWeight.Size = new System.Drawing.Size(75, 26);
 			this.numericWeight.TabIndex = 0;
 			this.numericWeight.Value = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
+			500,
+			0,
+			0,
+			0});
 			// 
 			// pictureBoxShip
 			// 
@@ -252,32 +252,32 @@
 			this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragDrop);
 			this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.shipPanel_DragEnter);
 			// 
-			// groupBox1
+			// colorGroupBox
 			// 
-			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Controls.Add(this.mainColorLabel);
-			this.groupBox1.Controls.Add(this.panel9);
-			this.groupBox1.Controls.Add(this.panel8);
-			this.groupBox1.Controls.Add(this.panel7);
-			this.groupBox1.Controls.Add(this.panel6);
-			this.groupBox1.Controls.Add(this.panel4);
-			this.groupBox1.Controls.Add(this.panel5);
-			this.groupBox1.Controls.Add(this.panel3);
-			this.groupBox1.Controls.Add(this.panel2);
-			this.groupBox1.Location = new System.Drawing.Point(616, 191);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.groupBox1.Size = new System.Drawing.Size(336, 225);
-			this.groupBox1.TabIndex = 9;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "groupBox1";
+			this.colorGroupBox.Controls.Add(this.label2);
+			this.colorGroupBox.Controls.Add(this.mainColorLabel);
+			this.colorGroupBox.Controls.Add(this.bluePanel);
+			this.colorGroupBox.Controls.Add(this.greenPanel);
+			this.colorGroupBox.Controls.Add(this.orangePanel);
+			this.colorGroupBox.Controls.Add(this.grayPanel);
+			this.colorGroupBox.Controls.Add(this.blackPanel);
+			this.colorGroupBox.Controls.Add(this.yellowPanel);
+			this.colorGroupBox.Controls.Add(this.whitePanel);
+			this.colorGroupBox.Controls.Add(this.redPanel);
+			this.colorGroupBox.Location = new System.Drawing.Point(546, 194);
+			this.colorGroupBox.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.colorGroupBox.Name = "colorGroupBox";
+			this.colorGroupBox.Padding = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.colorGroupBox.Size = new System.Drawing.Size(282, 225);
+			this.colorGroupBox.TabIndex = 9;
+			this.colorGroupBox.TabStop = false;
+			this.colorGroupBox.Text = "Палитра";
 			// 
 			// label2
 			// 
 			this.label2.AllowDrop = true;
 			this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.label2.Location = new System.Drawing.Point(168, 29);
+			this.label2.Location = new System.Drawing.Point(145, 29);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(126, 53);
@@ -291,7 +291,7 @@
 			// 
 			this.mainColorLabel.AllowDrop = true;
 			this.mainColorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.mainColorLabel.Location = new System.Drawing.Point(34, 29);
+			this.mainColorLabel.Location = new System.Drawing.Point(11, 29);
 			this.mainColorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.mainColorLabel.Name = "mainColorLabel";
 			this.mainColorLabel.Size = new System.Drawing.Size(126, 53);
@@ -301,89 +301,81 @@
 			this.mainColorLabel.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragDrop);
 			this.mainColorLabel.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragEnter);
 			// 
-			// panel9
+			// bluePanel
 			// 
-			this.panel9.BackColor = System.Drawing.Color.Blue;
-			this.panel9.Location = new System.Drawing.Point(250, 155);
-			this.panel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(45, 46);
-			this.panel9.TabIndex = 1;
-			this.panel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.bluePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.bluePanel.Location = new System.Drawing.Point(202, 162);
+			this.bluePanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.bluePanel.Name = "bluePanel";
+			this.bluePanel.Size = new System.Drawing.Size(45, 45);
+			this.bluePanel.TabIndex = 1;
 			// 
-			// panel8
+			// greenPanel
 			// 
-			this.panel8.BackColor = System.Drawing.Color.Green;
-			this.panel8.Location = new System.Drawing.Point(182, 155);
-			this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(45, 46);
-			this.panel8.TabIndex = 1;
-			this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.greenPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.greenPanel.Location = new System.Drawing.Point(145, 162);
+			this.greenPanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.greenPanel.Name = "greenPanel";
+			this.greenPanel.Size = new System.Drawing.Size(45, 45);
+			this.greenPanel.TabIndex = 1;
 			// 
-			// panel7
+			// orangePanel
 			// 
-			this.panel7.BackColor = System.Drawing.Color.Orange;
-			this.panel7.Location = new System.Drawing.Point(110, 155);
-			this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(45, 46);
-			this.panel7.TabIndex = 1;
-			this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.orangePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.orangePanel.Location = new System.Drawing.Point(88, 162);
+			this.orangePanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.orangePanel.Name = "orangePanel";
+			this.orangePanel.Size = new System.Drawing.Size(45, 45);
+			this.orangePanel.TabIndex = 1;
 			// 
-			// panel6
+			// grayPanel
 			// 
-			this.panel6.BackColor = System.Drawing.Color.Gray;
-			this.panel6.Location = new System.Drawing.Point(34, 155);
-			this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(45, 46);
-			this.panel6.TabIndex = 1;
-			this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.grayPanel.BackColor = System.Drawing.Color.Gray;
+			this.grayPanel.Location = new System.Drawing.Point(31, 162);
+			this.grayPanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.grayPanel.Name = "grayPanel";
+			this.grayPanel.Size = new System.Drawing.Size(45, 45);
+			this.grayPanel.TabIndex = 1;
 			// 
-			// panel4
+			// blackPanel
 			// 
-			this.panel4.BackColor = System.Drawing.Color.Black;
-			this.panel4.Location = new System.Drawing.Point(182, 100);
-			this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(45, 46);
-			this.panel4.TabIndex = 1;
-			this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.blackPanel.BackColor = System.Drawing.Color.Black;
+			this.blackPanel.Location = new System.Drawing.Point(145, 107);
+			this.blackPanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.blackPanel.Name = "blackPanel";
+			this.blackPanel.Size = new System.Drawing.Size(45, 45);
+			this.blackPanel.TabIndex = 1;
 			// 
-			// panel5
+			// yellowPanel
 			// 
-			this.panel5.BackColor = System.Drawing.Color.Yellow;
-			this.panel5.Location = new System.Drawing.Point(110, 100);
-			this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(45, 46);
-			this.panel5.TabIndex = 1;
-			this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.yellowPanel.BackColor = System.Drawing.Color.Yellow;
+			this.yellowPanel.Location = new System.Drawing.Point(88, 107);
+			this.yellowPanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.yellowPanel.Name = "yellowPanel";
+			this.yellowPanel.Size = new System.Drawing.Size(45, 45);
+			this.yellowPanel.TabIndex = 1;
 			// 
-			// panel3
+			// whitePanel
 			// 
-			this.panel3.BackColor = System.Drawing.Color.White;
-			this.panel3.Location = new System.Drawing.Point(250, 100);
-			this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(45, 46);
-			this.panel3.TabIndex = 1;
-			this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.whitePanel.BackColor = System.Drawing.Color.White;
+			this.whitePanel.Location = new System.Drawing.Point(202, 107);
+			this.whitePanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.whitePanel.Name = "whitePanel";
+			this.whitePanel.Size = new System.Drawing.Size(45, 45);
+			this.whitePanel.TabIndex = 1;
 			// 
-			// panel2
+			// redPanel
 			// 
-			this.panel2.BackColor = System.Drawing.Color.Red;
-			this.panel2.Location = new System.Drawing.Point(34, 100);
-			this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(45, 46);
-			this.panel2.TabIndex = 0;
-			this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+			this.redPanel.BackColor = System.Drawing.Color.Red;
+			this.redPanel.Location = new System.Drawing.Point(31, 107);
+			this.redPanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+			this.redPanel.Name = "redPanel";
+			this.redPanel.Size = new System.Drawing.Size(45, 45);
+			this.redPanel.TabIndex = 0;
 			// 
 			// addButton
 			// 
-			this.addButton.Location = new System.Drawing.Point(650, 425);
+			this.addButton.Location = new System.Drawing.Point(546, 430);
 			this.addButton.Name = "addButton";
 			this.addButton.Size = new System.Drawing.Size(122, 40);
 			this.addButton.TabIndex = 10;
@@ -393,7 +385,7 @@
 			// 
 			// cancelButton
 			// 
-			this.cancelButton.Location = new System.Drawing.Point(798, 425);
+			this.cancelButton.Location = new System.Drawing.Point(716, 430);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(112, 40);
 			this.cancelButton.TabIndex = 11;
@@ -404,14 +396,14 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(970, 475);
+			this.ClientSize = new System.Drawing.Size(845, 486);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.addButton);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.paramGroupBox);
 			this.Controls.Add(this.typeGroupBox);
-			this.Controls.Add(this.groupBox1);
-			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.Controls.Add(this.colorGroupBox);
+			this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.Name = "FormShipConfig";
 			this.Text = "FormShipConfig";
 			this.typeGroupBox.ResumeLayout(false);
@@ -421,9 +413,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.numericWeight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).EndInit();
 			this.panel1.ResumeLayout(false);
-			this.groupBox1.ResumeLayout(false);
+			this.colorGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
-
 		}
 
 		#endregion
@@ -442,17 +433,17 @@
 		private System.Windows.Forms.NumericUpDown numericMaxSpeed;
 		private System.Windows.Forms.NumericUpDown numericWeight;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox colorGroupBox;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label mainColorLabel;
-		private System.Windows.Forms.Panel panel9;
-		private System.Windows.Forms.Panel panel8;
-		private System.Windows.Forms.Panel panel7;
-		private System.Windows.Forms.Panel panel6;
-		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel bluePanel;
+		private System.Windows.Forms.Panel greenPanel;
+		private System.Windows.Forms.Panel orangePanel;
+		private System.Windows.Forms.Panel grayPanel;
+		private System.Windows.Forms.Panel blackPanel;
+		private System.Windows.Forms.Panel yellowPanel;
+		private System.Windows.Forms.Panel whitePanel;
+		private System.Windows.Forms.Panel redPanel;
 		private System.Windows.Forms.Button addButton;
 		private System.Windows.Forms.Button cancelButton;
 	}
