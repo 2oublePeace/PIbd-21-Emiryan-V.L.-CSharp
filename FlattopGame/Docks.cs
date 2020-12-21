@@ -162,7 +162,8 @@ namespace FlattopGame
 		/// <returns></returns>
 		public bool MoveNext()
 		{
-			throw new NotImplementedException();
+			_currentIndex++;
+			return true ? _currentIndex < _places.Count : false;
 		}
 
 		/// <summary>

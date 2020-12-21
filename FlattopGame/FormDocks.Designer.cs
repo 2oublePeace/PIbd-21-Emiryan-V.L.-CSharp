@@ -43,6 +43,7 @@
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.buttonSort = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDock)).BeginInit();
 			this.menuStrip1.SuspendLayout();
@@ -173,22 +174,33 @@
 			// saveToolStripMenuItem
 			// 
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
 			this.saveToolStripMenuItem.Text = "Сохранить";
 			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
 			// 
 			// downloadToolStripMenuItem
 			// 
 			this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-			this.downloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.downloadToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
 			this.downloadToolStripMenuItem.Text = "Загрузить";
 			this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
+			// 
+			// buttonSort
+			// 
+			this.buttonSort.Location = new System.Drawing.Point(678, 254);
+			this.buttonSort.Name = "buttonSort";
+			this.buttonSort.Size = new System.Drawing.Size(114, 43);
+			this.buttonSort.TabIndex = 11;
+			this.buttonSort.Text = "Сортировка";
+			this.buttonSort.UseVisualStyleBackColor = true;
+			this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
 			// 
 			// FormDocks
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 496);
+			this.Controls.Add(this.buttonSort);
 			this.Controls.Add(this.addShip);
 			this.Controls.Add(this.delLevel);
 			this.Controls.Add(this.addLevel);
@@ -227,5 +239,6 @@
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
+		private System.Windows.Forms.Button buttonSort;
 	}
 }

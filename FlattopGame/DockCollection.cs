@@ -98,13 +98,12 @@ namespace FlattopGame
 				{
 					//Начинаем парковку
 					sw.WriteLine($"DockCollection{Environment.NewLine}");
-					ITransport armyShip = null;
-					foreach (ITransport car in level.Value)
+					foreach (ITransport armyShip in level.Value)
 					{
 						if (armyShip != null)
 						{
 							//если место не пустое
-							//Записываем тип машины
+							//Записываем тип корабля
 							if (armyShip.GetType().Name == "ArmyShip")
 							{
 								sw.WriteLine($"ArmyShip{separator}");
@@ -122,7 +121,7 @@ namespace FlattopGame
 			return true;
 		}
 		/// <summary>
-		/// Загрузка нформации по автомобилям на парковках из файла
+		/// Загрузка нформации по кораблям на доках из файла
 		/// </summary>
 		/// <param name="filename"></param>
 		/// <returns></returns>
