@@ -148,7 +148,7 @@ namespace FlattopGame
 				string line = sr.ReadLine();
 				Vehicle armyShip = null;
 				string key = string.Empty;
-				if (line.Contains("DockCollection"));
+				if (line.Contains("DockCollection"))
 				{
 					dockStages.Clear();
 					line = sr.ReadLine();
@@ -163,11 +163,6 @@ namespace FlattopGame
 							line = sr.ReadLine();
 							continue;
 						} 
-						else
-						{
-							//если нет такой записи, то это не те данные
-							throw new Exception("Неверный формат файла");
-						}
 						if (string.IsNullOrEmpty(line))
 						{
 							continue;
@@ -182,18 +177,18 @@ namespace FlattopGame
 						}
 						if (!(dockStages[key] + armyShip))
 						{
-							throw new Exception("Не удалось загрузить корабль в док");
+							throw new NullReferenceException("Не удалось загрузить корабль в док");
 						}
 						line = sr.ReadLine();
 					}
 					return true;
 				}
+				else
+				{
+					//если нет такой записи, то это не те данные
+					throw new IOException();
+				}
 			}
-		}
-
-		internal bool SaveData(object fileName)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }
