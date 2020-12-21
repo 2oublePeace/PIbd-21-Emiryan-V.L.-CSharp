@@ -157,11 +157,16 @@ namespace FlattopGame
 						//идем по считанным записям
 						if (line.Contains("Dock"))
 						{
-							//начинаем новую парковку
+							//начинаем новый док
 							key = line.Split(separator)[1];
 							dockStages.Add(key, new Docks<Vehicle>(pictureWidth, pictureHeight));
 							line = sr.ReadLine();
 							continue;
+						} 
+						else
+						{
+							//если нет такой записи, то это не те данные
+							throw new Exception("Неверный формат файла");
 						}
 						if (string.IsNullOrEmpty(line))
 						{
@@ -175,10 +180,9 @@ namespace FlattopGame
 						{
 							armyShip = new Flattop(line.Split(separator)[1]);
 						}
-						var result = dockStages[key] + armyShip;
-						if (!result)
+						if (!(dockStages[key] + armyShip))
 						{
-							return false;
+							throw new Exception("Не удалось загрузить корабль в док");
 						}
 						line = sr.ReadLine();
 					}
