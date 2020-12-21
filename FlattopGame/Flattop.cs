@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FlattopGame
 {
-	class Flattop : ArmyShip
+	class Flattop : ArmyShip, IEquatable<Flattop>
 	{
 		/// <summary>
 		/// Дополнительный цвет
@@ -192,6 +192,76 @@ namespace FlattopGame
 		public override string ToString()
 		{
 			return $"{base.ToString()}{separator}{DopColor.Name}{separator}{FrontGun}{separator}{HelicopterStand}{separator}{SatelliteLocator}{separator}{Plane}";
+		}
+
+		public bool Equals(Flattop other)
+		{
+			if (other == null)
+			{
+				return false;
+			}
+			if (GetType().Name != other.GetType().Name)
+			{
+				return false;
+			}
+			if (MaxSpeed != other.MaxSpeed)
+			{
+				return false;
+			}
+			if (Weight != other.Weight)
+			{
+				return false;
+			}
+			if (MainColor != other.MainColor)
+			{
+				return false;
+			}
+			if (DopColor != other.DopColor)
+			{
+				return false;
+			}
+			if (Plane != other.Plane)
+			{
+				return false;
+			}
+			if (SatelliteLocator != other.SatelliteLocator)
+			{
+				return false;
+			}
+			if (LandingStrip != other.LandingStrip)
+			{
+				return false;
+			}
+			if (HelicopterStand != other.HelicopterStand)
+			{
+				return false;
+			}
+			if (FrontGun != other.FrontGun)
+			{
+				return false;
+			}
+			return true;
+		}
+
+		/// <summary>
+		/// Перегрузка метода от object
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
+		public override bool Equals(Object obj)
+		{
+			if (obj == null)
+			{
+				return false;
+			}
+			if (!(obj is Flattop shipObj))
+			{
+				return false;
+			}
+			else
+			{
+				return Equals(shipObj);
+			}
 		}
 	}
 }
