@@ -80,6 +80,8 @@
     </Compile>
     <Compile Include="DockOverflowException.cs" />
     <Compile Include="DockOccupiedPlaceException.cs" />
+    <Compile Include="ParkingAlreadyHaveException.cs" />
+    <Compile Include="ShipComparer.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="Program.cs" />

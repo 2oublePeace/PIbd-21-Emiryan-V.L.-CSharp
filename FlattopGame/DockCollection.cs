@@ -81,16 +81,6 @@ namespace FlattopGame
 			}
 		}
 		/// <summary>
-		/// Метод записи информации в файл
-		/// </summary>
-		/// <param name="text">Строка, которую следует записать</param>
-		/// <param name="stream">Поток для записи</param>
-		private void WriteToFile(string text, FileStream stream)
-		{
-			byte[] info = new UTF8Encoding(true).GetBytes(text);
-			stream.Write(info, 0, info.Length);
-		}
-		/// <summary>
 		/// Сохранение информации по автомобилям на парковках в файл
 		/// </summary>
 		/// <param name="filename">Путь и имя файла</param>
@@ -114,7 +104,7 @@ namespace FlattopGame
 						if (armyShip != null)
 						{
 							//если место не пустое
-							//Записываем тип машины
+							//Записываем тип корабля
 							if (armyShip.GetType().Name == "ArmyShip")
 							{
 								sw.Write($"ArmyShip{separator}");
@@ -132,7 +122,7 @@ namespace FlattopGame
 			return true;
 		}
 		/// <summary>
-		/// Загрузка нформации по автомобилям на парковках из файла
+		/// Загрузка нформации по кораблям на доках из файла
 		/// </summary>
 		/// <param name="filename"></param>
 		/// <returns></returns>
