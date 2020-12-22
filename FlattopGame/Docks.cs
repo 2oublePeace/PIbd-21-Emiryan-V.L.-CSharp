@@ -62,7 +62,7 @@ namespace FlattopGame
 		{
 			if (p._places.Count >= p._maxCount)
 			{
-				return false;
+				throw new DockOverflowException();
 			}
 			p._places.Add(armyShip);
 			return true;
@@ -79,7 +79,7 @@ namespace FlattopGame
 		{
 			if (index < -1 || index > p._places.Count)
 			{
-				return null;
+				throw new DockNotFoundException(index);
 			}
 			T armyShip = p._places[index];
 			p._places.RemoveAt(index);

@@ -103,11 +103,11 @@ namespace FlattopGame
 			}
 			using (StreamWriter sw = new StreamWriter(filename))
 			{
-				sw.WriteLine($"DockCollection{Environment.NewLine}");
+				sw.WriteLine($"DockCollection");
 				foreach (var level in dockStages)
 				{
 					//Начинаем парковку
-					sw.WriteLine($"DockCollection{Environment.NewLine}");
+					sw.WriteLine($"Dock{separator}{level.Key}");
 					ITransport armyShip = null;
 					for (int i = 0; (armyShip = level.Value.GetNext(i)) != null; i++)
 					{
@@ -117,14 +117,14 @@ namespace FlattopGame
 							//Записываем тип машины
 							if (armyShip.GetType().Name == "ArmyShip")
 							{
-								sw.WriteLine($"ArmyShip{separator}");
+								sw.Write($"ArmyShip{separator}");
 							}
 							if (armyShip.GetType().Name == "Flattop")
 							{
-								sw.WriteLine($"Flattop{separator}");
+								sw.Write($"Flattop{separator}");
 							}
 							//Записываемые параметры
-							sw.WriteLine(armyShip + Environment.NewLine);
+							sw.WriteLine(armyShip);
 						}
 					}
 				}
@@ -140,7 +140,7 @@ namespace FlattopGame
 		{
 			if (!File.Exists(filename))
 			{
-				return false;
+				throw new FileNotFoundException();
 			}
 			
 			using (StreamReader sr = new StreamReader(filename))
@@ -148,7 +148,7 @@ namespace FlattopGame
 				string line = sr.ReadLine();
 				Vehicle armyShip = null;
 				string key = string.Empty;
-				if (line.Contains("DockCollection"));
+				if (line.Contains("DockCollection"))
 				{
 					dockStages.Clear();
 					line = sr.ReadLine();
@@ -157,12 +157,12 @@ namespace FlattopGame
 						//идем по считанным записям
 						if (line.Contains("Dock"))
 						{
-							//начинаем новую парковку
+							//начинаем новый док
 							key = line.Split(separator)[1];
 							dockStages.Add(key, new Docks<Vehicle>(pictureWidth, pictureHeight));
 							line = sr.ReadLine();
 							continue;
-						}
+						} 
 						if (string.IsNullOrEmpty(line))
 						{
 							continue;
@@ -175,21 +175,20 @@ namespace FlattopGame
 						{
 							armyShip = new Flattop(line.Split(separator)[1]);
 						}
-						var result = dockStages[key] + armyShip;
-						if (!result)
+						if (!(dockStages[key] + armyShip))
 						{
-							return false;
+							throw new NullReferenceException("Не удалось загрузить корабль в док");
 						}
 						line = sr.ReadLine();
 					}
 					return true;
 				}
+				else
+				{
+					//если нет такой записи, то это не те данные
+					throw new IOException();
+				}
 			}
-		}
-
-		internal bool SaveData(object fileName)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

@@ -189,46 +189,46 @@
 			this.numericMaxSpeed.Location = new System.Drawing.Point(150, 68);
 			this.numericMaxSpeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.numericMaxSpeed.Maximum = new decimal(new int[] {
-			1000,
-			0,
-			0,
-			0});
+            1000,
+            0,
+            0,
+            0});
 			this.numericMaxSpeed.Minimum = new decimal(new int[] {
-			100,
-			0,
-			0,
-			0});
+            100,
+            0,
+            0,
+            0});
 			this.numericMaxSpeed.Name = "numericMaxSpeed";
 			this.numericMaxSpeed.Size = new System.Drawing.Size(75, 26);
 			this.numericMaxSpeed.TabIndex = 1;
 			this.numericMaxSpeed.Value = new decimal(new int[] {
-			100,
-			0,
-			0,
-			0});
+            100,
+            0,
+            0,
+            0});
 			// 
 			// numericWeight
 			// 
 			this.numericWeight.Location = new System.Drawing.Point(150, 128);
 			this.numericWeight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.numericWeight.Maximum = new decimal(new int[] {
-			1000,
-			0,
-			0,
-			0});
+            1000,
+            0,
+            0,
+            0});
 			this.numericWeight.Minimum = new decimal(new int[] {
-			100,
-			0,
-			0,
-			0});
+            100,
+            0,
+            0,
+            0});
 			this.numericWeight.Name = "numericWeight";
 			this.numericWeight.Size = new System.Drawing.Size(75, 26);
 			this.numericWeight.TabIndex = 0;
 			this.numericWeight.Value = new decimal(new int[] {
-			500,
-			0,
-			0,
-			0});
+            500,
+            0,
+            0,
+            0});
 			// 
 			// pictureBoxShip
 			// 
@@ -303,7 +303,7 @@
 			// 
 			// bluePanel
 			// 
-			this.bluePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.bluePanel.BackColor = System.Drawing.Color.Blue;
 			this.bluePanel.Location = new System.Drawing.Point(202, 162);
 			this.bluePanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.bluePanel.Name = "bluePanel";
@@ -312,7 +312,7 @@
 			// 
 			// greenPanel
 			// 
-			this.greenPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.greenPanel.BackColor = System.Drawing.Color.Green;
 			this.greenPanel.Location = new System.Drawing.Point(145, 162);
 			this.greenPanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.greenPanel.Name = "greenPanel";
@@ -321,7 +321,7 @@
 			// 
 			// orangePanel
 			// 
-			this.orangePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.orangePanel.BackColor = System.Drawing.Color.Orange;
 			this.orangePanel.Location = new System.Drawing.Point(88, 162);
 			this.orangePanel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.orangePanel.Name = "orangePanel";
@@ -415,6 +415,7 @@
 			this.panel1.ResumeLayout(false);
 			this.colorGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
+
 		}
 
 		#endregion

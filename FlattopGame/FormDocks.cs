@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace FlattopGame
 {
@@ -16,10 +17,17 @@ namespace FlattopGame
 		/// Объект от класса-коллекции уровней доков
 		/// </summary>
 		private readonly DockCollection dockCollection;
+
+		/// <summary>
+		/// Логгер
+		/// </summary>
+		private readonly Logger logger;
+
 		public FormDocks()
 		{
 			InitializeComponent();
 			dockCollection = new DockCollection(pictureBoxDock.Width, pictureBoxDock.Height);
+			logger = LogManager.GetCurrentClassLogger();
 		}
 		/// <summary>
 		/// Заполнение listBoxLevels
@@ -60,11 +68,13 @@ namespace FlattopGame
 		/// <param name="e"></param>
 		private void addLevel_Click(object sender, EventArgs e)
 		{
+
 			if (string.IsNullOrEmpty(textBoxNewLevelName.Text))
 			{
-				MessageBox.Show("Введите название парковки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Введите название дока", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
+			logger.Info($"Добавили док {textBoxNewLevelName.Text}");
 			dockCollection.AddDock(textBoxNewLevelName.Text);
 			ReloadLevels();
 		}
@@ -77,7 +87,7 @@ namespace FlattopGame
 		{
 			if (listBoxDocks.SelectedIndex > -1)
 			{
-				if (MessageBox.Show($"Удалить парковку { listBoxDocks.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show($"Удалить док { listBoxDocks.SelectedItem.ToString()}?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
  {
 					dockCollection.DelDock(textBoxNewLevelName.Text);
 					ReloadLevels();
@@ -105,14 +115,28 @@ namespace FlattopGame
 		{
 			if (listBoxDocks.SelectedIndex > -1 && maskedTextBox.Text != "")
 			{
-				var armyShip = dockCollection[listBoxDocks.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox.Text);
-				if (armyShip != null)
+				try
 				{
-					ArmyShipForm form = new ArmyShipForm();
-					form.SetArmyShip(armyShip);
-					form.ShowDialog();
+					var armyShip = dockCollection[listBoxDocks.SelectedItem.ToString()] - Convert.ToInt32(maskedTextBox.Text);
+					if (armyShip != null)
+					{
+						ArmyShipForm form = new ArmyShipForm();
+						form.SetArmyShip(armyShip);
+						form.ShowDialog();
+						logger.Info($"Изъят корабль {armyShip} с места {maskedTextBox.Text}");
+					}
+					Draw();
 				}
-				Draw();
+				catch (DockNotFoundException ex)
+				{
+					logger.Warn("Не найдено");
+					MessageBox.Show(ex.Message, "Не найдено", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				catch (Exception ex)
+				{
+					logger.Warn("Неизвестная ошибка");
+					MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 		}
 		/// <summary>
@@ -122,6 +146,7 @@ namespace FlattopGame
 		/// <param name="e"></param>
 		private void listBoxDocks_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			logger.Info($"Перешли на док {listBoxDocks.SelectedItem.ToString()}");
 			Draw();
 		}
 
@@ -129,13 +154,28 @@ namespace FlattopGame
 		{
 			if (armyShip != null && listBoxDocks.SelectedIndex > -1)
 			{
-				if ((dockCollection[listBoxDocks.SelectedItem.ToString()]) + armyShip)
+				try
 				{
-					Draw();
+					if ((dockCollection[listBoxDocks.SelectedItem.ToString()]) + armyShip)
+					{
+						Draw();
+						logger.Info($"Добавлен корабль {armyShip}");
+					}
+					else
+					{
+						logger.Warn("Корабль не удалось поставить");
+						MessageBox.Show("Корабль не удалось поставить");
+					}
+				} 
+				catch(DockOverflowException ex)
+				{
+					logger.Warn("Переполнение");
+					MessageBox.Show(ex.Message, "Переполнение", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else
+				catch(Exception ex)
 				{
-					MessageBox.Show("Машину не удалось поставить");
+					logger.Warn("Неизвестная ошибка");
+					MessageBox.Show(ex.Message, "Неизвестная ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
@@ -146,14 +186,17 @@ namespace FlattopGame
 			saveFileDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				if (dockCollection.SaveData(saveFileDialog.FileName))
+				try
 				{
+					dockCollection.SaveData(saveFileDialog.FileName);
 					MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					logger.Info("Сохранено в файл " + saveFileDialog.FileName);
 				}
-				else
+				catch
 				{
+					logger.Warn("Не сохранилось", "Результат");
 					MessageBox.Show("Не сохранилось", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
+				}				
 			}
 		}
 
@@ -163,15 +206,23 @@ namespace FlattopGame
 			openFileDialog.Filter = "Text files|*.txt|All files|*.*";
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				if (dockCollection.LoadData(openFileDialog.FileName))
+				try
 				{
+					dockCollection.LoadData(openFileDialog.FileName);
 					MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					logger.Info("Загружено из файла " + openFileDialog.FileName);
 					ReloadLevels();
 					Draw();
 				}
-				else
+				catch (DockOccupiedPlaceException ex)
 				{
-					MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					logger.Warn("Занятое место");
+					MessageBox.Show(ex.Message, "Занятое место", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				catch (Exception ex)
+				{
+					logger.Warn("Неизвестная ошибка при сохранении");
+					MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
