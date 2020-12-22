@@ -93,12 +93,13 @@ namespace FlattopGame
 			}
 			using (StreamWriter sw = new StreamWriter(filename))
 			{
-				sw.WriteLine($"DockCollection{Environment.NewLine}");
+				sw.WriteLine($"DockCollection");
 				foreach (var level in dockStages)
 				{
 					//Начинаем парковку
-					sw.WriteLine($"DockCollection{Environment.NewLine}");
-					foreach (ITransport armyShip in level.Value)
+					sw.WriteLine($"Dock{separator}{level.Key}");
+					ITransport armyShip = null;
+					for (int i = 0; (armyShip = level.Value.GetNext(i)) != null; i++)
 					{
 						if (armyShip != null)
 						{
@@ -106,14 +107,14 @@ namespace FlattopGame
 							//Записываем тип корабля
 							if (armyShip.GetType().Name == "ArmyShip")
 							{
-								sw.WriteLine($"ArmyShip{separator}");
+								sw.Write($"ArmyShip{separator}");
 							}
 							if (armyShip.GetType().Name == "Flattop")
 							{
-								sw.WriteLine($"Flattop{separator}");
+								sw.Write($"Flattop{separator}");
 							}
 							//Записываемые параметры
-							sw.WriteLine(armyShip + Environment.NewLine);
+							sw.WriteLine(armyShip);
 						}
 					}
 				}
